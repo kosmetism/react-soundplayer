@@ -1,6 +1,6 @@
 # <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;react-soundplayer
 
-![](http://img.shields.io/badge/Status-Work%20In%20Progress-e22228.svg?style=flat-square)
+![](http://img.shields.io/badge/Status-Work%20In%20Progress-brightgreen.svg?style=flat)
 
 > Create custom SoundCloud players with React.
 
