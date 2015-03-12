@@ -1,0 +1,23 @@
+{
+  "name": "react-soundplayer",
+  "version": "0.1.0",
+  "description": "Create custom SoundCloud players with React",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "build": "babel components --out-dir dist",
+    "test": "jest ."
+  },
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": ">=0.12.2",
+    "react-progressbar": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel": "^4.7.8",
+    "jest": "^0.1.39"
+  }
+}
