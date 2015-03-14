@@ -1,5 +1,7 @@
 import React from 'react';
 import Timer from './Timer.jsx';
+import Progress from './Progress.jsx';
+import PlayButton from './PlayButton.jsx';
 
 let Player = React.createClass({
     propTypes: {
@@ -25,16 +27,13 @@ let Player = React.createClass({
     },
 
     render() {
-        let { currentTime, duration } = this.state;
+        let { currentTime, duration, playing, seeking } = this.state;
+        const progressVal = (currentTime / duration) || 0;
 
         return (
             <div className="sb-soundplayer">
-                <div className="play-btn" onClick={this.playPauseTrack}>
-                    <img src={btnIcon} />
-                </div>
-                <div className="waveform">
-                    <progress onClick={this.seekTrack} value={progressVal}></progress>
-                </div>
+                <PlayButton playing={playing} seeking={seeking} onClick={this.togglePlay} />
+                <Progress value={progressVal} onClick={this.seekTrack} />
                 <Timer currentTime={currentTime} duration={duration} />
             </div>
         );

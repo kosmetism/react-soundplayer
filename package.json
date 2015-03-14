@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "build": "babel components --out-dir dist",
+    "build": "babel src -d lib --source-maps-inline --modules umd",
     "test": "jest ."
   },
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",

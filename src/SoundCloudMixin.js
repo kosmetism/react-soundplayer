@@ -1,40 +1,44 @@
-export default function (soundcloud) {
+export default function (soundCloudAudio) {
     return {
-
-        componentDidMount: function () {
-            soundcloud.preload(this.props.streamUrl);
-
-            soundcloud.on('timeupdate', this.getCurrentTime);
-            soundcloud.on('loadedmetadata', this.getDuration);
-            soundcloud.on('seeking', this.onSeekingTrack);
-            soundcloud.on('seeked', this.onSeekedTrack);
-            soundcloud.on('ended', this.onAudioEnded);
+        getInitialState() {
+            return {
+                duration: 0,
+                currentTime: 0,
+                playing: false,
+                seeking: false
+            };
         },
 
-        componentWillUnmount: function () {
-            soundcloud.pause();
-            soundcloud.unbindAll();
+        componentDidMount() {
+            soundCloudAudio.on('timeupdate', this.getCurrentTime);
+            soundCloudAudio.on('loadedmetadata', this.getDuration);
+            soundCloudAudio.on('seeking', this.onSeekingTrack);
+            soundCloudAudio.on('seeked', this.onSeekedTrack);
+            soundCloudAudio.on('ended', this.onAudioEnded);
         },
 
-        onSeekingTrack: function () {
+        componentWillUnmount() {
+            soundCloudAudio.unbindAll();
+        },
+
+        onSeekingTrack() {
             this.setState({seeking: true});
         },
 
-        onSeekedTrack: function () {
+        onSeekedTrack() {
             this.setState({seeking: false});
         },
 
-        onAudioEnded: function () {
+        onAudioEnded() {
             this.setState({playing: false});
         },
 
-        getCurrentTime: function () {
-            this.setState({currentTime: soundcloud.audio.currentTime});
+        getCurrentTime() {
+            this.setState({currentTime: soundCloudAudio.audio.currentTime});
         },
 
-        getDuration: function () {
-            this.setState({duration: soundcloud.audio.duration});
-        },
-
-    }
-};
+        getDuration() {
+            this.setState({duration: soundCloudAudio.audio.duration});
+        }
+    };
+}
