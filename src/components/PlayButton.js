@@ -7,7 +7,7 @@ let PlayIcon = React.createClass({
 
     render() {
         return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
                 <path d="M0 0 L32 16 L0 32 z"></path>
             </svg>
         );
@@ -21,7 +21,7 @@ let PauseIcon = React.createClass({
 
     render() {
         return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
                 <path d="M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z"></path>
             </svg>
         );
@@ -44,7 +44,7 @@ let PlayButton = React.createClass({
 
         return (
             <div className="sb-soundplayer-play-btn">
-                <img src={btnIcon} />
+                <PlayIcon />
             </div>
         );
     }
