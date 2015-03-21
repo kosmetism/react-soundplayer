@@ -6,7 +6,7 @@ import PlayButton from './PlayButton';
 
 const noop = () => {};
 
-let Player = React.createClass({
+let SimplePlayer = React.createClass({
     propTypes: {
         duration: React.PropTypes.oneOfType([
             React.PropTypes.string,
@@ -28,8 +28,8 @@ let Player = React.createClass({
             currentTime: 0,
             playing: false,
             seeking: false,
-            togglePlay: noop,
-            seekTrack: noop
+            seekTrack: noop,
+            togglePlay: noop
         };
     },
 
@@ -39,12 +39,12 @@ let Player = React.createClass({
 
         return (
             <div className="sb-soundplayer">
-                <PlayButton playing={playing} seeking={seeking} onClick={togglePlay} />
-                <Progress value={progressVal} onClick={seekTrack} />
+                <PlayButton playing={playing} seeking={seeking} togglePlay={togglePlay} />
+                <Progress value={progressVal} seekTrack={seekTrack} />
                 <Timer currentTime={currentTime} duration={duration} />
             </div>
         );
     }
 });
 
-export default Player;
+export default SimplePlayer;

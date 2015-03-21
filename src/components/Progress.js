@@ -5,7 +5,8 @@ let Progress = React.createClass({
         value: React.PropTypes.oneOfType([
             React.PropTypes.string,
             React.PropTypes.number
-        ])
+        ]),
+        seekTrack: React.PropTypes.func
     },
 
     getDefaultProps() {
@@ -15,7 +16,9 @@ let Progress = React.createClass({
     },
 
     render() {
-        let value = parseInt(this.props.value, 10);
+        let { value, seekTrack } = this.props;
+
+        value = parseInt(this.props.value, 10);
 
         if (value < 0) {
             value = 0;
@@ -27,8 +30,8 @@ let Progress = React.createClass({
         let style = {width: `${value}%`};
 
         return (
-            <div className="sb-soundplayer-progressbar-container" >
-                <div className="sb-soundplayer-progressbar-container" style={style} />
+            <div className="sb-soundplayer-progressbar-container" onClick={seekTrack}>
+                <div className="sb-soundplayer-progressbar-inner" style={style} />
             </div>
         );
     }

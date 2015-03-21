@@ -2,11 +2,13 @@ import React from 'react/addons';
 import assign from 'object-assign';
 import SoundCloudAudio from 'soundcloud-audio';
 
+let cloneWithProps = React.addons.cloneWithProps;
+
 /**
  *  SoundCloud Component
  *
  * <SoundCloudComponent soundCloudAudio={soundCloudAudio} />
- *     <SimplePlayer />
+ *     <SimplePlayer streamUrl="https://api.soundcloud.com/tracks/196308250/stream" />
  * </SoundCloudComponent>
  */
 
@@ -14,7 +16,7 @@ let SoundCloudComponent = React.createClass({
     propTypes: {
         soundCloudAudio: React.PropTypes.instanceOf(
             SoundCloudAudio
-        ).isRequired()
+        ).isRequired
     },
 
     getInitialState() {
@@ -24,11 +26,25 @@ let SoundCloudComponent = React.createClass({
             duration: 0,
             currentTime: 0,
             playing: false,
-            seeking: false
+            seeking: false,
+            resolving: false
         };
     },
 
     componentDidMount() {
+        let { streamUrl, resolveUrl, soundCloudAudio } = this.props;
+        if (streamUrl) {
+            soundCloudAudio.preload(streamUrl);
+        } else if (resolveUrl) {
+            this.setState({resolving: true});
+            soundCloudAudio.resolve(resolveUrl, (data) => {
+                this.setState({
+                    resolving: false,
+                    [data.tracks ? 'playlist' : 'track']: data
+                });
+            });
+        }
+
         this.soundCloudAudio.on('timeupdate', this.getCurrentTime);
         this.soundCloudAudio.on('loadedmetadata', this.getDuration);
         this.soundCloudAudio.on('seeking', this.onSeekingTrack);
@@ -76,11 +92,11 @@ let SoundCloudComponent = React.createClass({
     },
 
     wrapChild(child) {
-        let { children, ...props } = this.props;
-
-        return React.addons.cloneWithProps(child, assign({
+        return cloneWithProps(child, assign({
             soundCloudAudio: this.soundCloudAudio,
-        }, this.state, props));
+            togglePlay: this.togglePlay,
+            seekTrack: this.seekTrack
+        }, this.state));
     },
 
     render() {

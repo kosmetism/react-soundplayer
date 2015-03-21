@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
-bower_components
 *.log
 
 example
 lib
+styles

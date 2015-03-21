@@ -7,12 +7,16 @@
     "example": "example"
   },
   "scripts": {
-    "build": "babel src -d lib --experimental --source-maps-inline --modules umd",
-    "test": "jest ."
+    "prebuild": "rm -rf lib",
+    "build-js": "babel src -d lib --experimental",
+    "build-css": "npm run cssnext cssnext/main.css css/react-soundplayer.css",
+    "build": "npm run build-js",
+    "prepublish": "npm run build"
   },
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "object-assign": "^2.0.0",
     "react": ">=0.12.2",
     "soundcloud-audio": "^0.1.2"
   },
@@ -20,8 +24,7 @@
     "babel": "^4.7.8",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
-    "jest": "^0.1.39",
-    "uglify-js": "^2.4.17",
+    "cssnext": "^1.1.0",
     "watchify": "^2.4.0"
   }
 }
