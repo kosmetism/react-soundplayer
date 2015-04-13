@@ -1,5 +1,4 @@
 import React from 'react/addons';
-import assign from 'object-assign';
 import SoundCloudAudio from 'soundcloud-audio';
 
 let cloneWithProps = React.addons.cloneWithProps;
@@ -11,6 +10,8 @@ let cloneWithProps = React.addons.cloneWithProps;
  *     <SimplePlayer streamUrl="https://api.soundcloud.com/tracks/196308250/stream" />
  * </SoundCloudComponent>
  */
+
+
 
 let SoundCloudComponent = React.createClass({
     propTypes: {
@@ -92,7 +93,7 @@ let SoundCloudComponent = React.createClass({
     },
 
     wrapChild(child) {
-        return cloneWithProps(child, assign({
+        return cloneWithProps(child, Object.assign({
             soundCloudAudio: this.soundCloudAudio,
             togglePlay: this.togglePlay,
             seekTrack: this.seekTrack

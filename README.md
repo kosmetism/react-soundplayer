@@ -8,7 +8,7 @@
 
 ## Usage
 
-### Using with SoundCloudAudio
+### Using _with_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
 
 This way you have benefit of global singleton audio object.
 
@@ -24,5 +24,7 @@ let { SoundCloudPlayer } = new ReactSoundPlayer('YOUR_CLIENT_ID');
 
 // <SoundCloudPlayer streamUrl={streamUrl} playerType="simple" />
 ```
+
+### Using _without_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
 
 ---

@@ -1,17 +1,4 @@
 {
-    "predef": [
-        "after",
-        "afterEach",
-        "before",
-        "beforeEach",
-        "describe",
-        "expect",
-        "it",
-        "jest",
-        "xit",
-        "xdescribe"
-    ],
-
     "asi" : false,
     "bitwise" : true,
     "browser": true,

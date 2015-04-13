@@ -1,24 +1,20 @@
 import React from 'react';
 
-let Progress = React.createClass({
-    propTypes: {
-        value: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
-        ]),
-        seekTrack: React.PropTypes.func
-    },
+let { PropTypes } = React;
 
-    getDefaultProps() {
-        return {
-            value: 0
-        };
-    },
+class Progress extends React.Component {
+    handleSeekTrack(e) {
+        let { seekTrack } = this.props;
+        if (seekTrack) {
+            let xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
+            seekTrack.call(this, Math.round(xPos * 100), e);
+        }
+    }
 
     render() {
-        let { value, seekTrack } = this.props;
+        let { value } = this.props;
 
-        value = parseInt(this.props.value, 10);
+        value = parseInt(value, 10);
 
         if (value < 0) {
             value = 0;
@@ -30,11 +26,23 @@ let Progress = React.createClass({
         let style = {width: `${value}%`};
 
         return (
-            <div className="sb-soundplayer-progressbar-container" onClick={seekTrack}>
-                <div className="sb-soundplayer-progressbar-inner" style={style} />
+            <div className="sb-soundplayer-progress-container" onClick={this.handleSeekTrack.bind(this)}>
+                <div className="sb-soundplayer-progress-inner" style={style} />
             </div>
         );
     }
-});
+}
+
+Progress.propTypes = {
+    value: PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.number
+    ]),
+    seekTrack: PropTypes.func
+};
+
+Progress.defaultProps = {
+    value: 0
+};
 
 export default Progress;

@@ -4,27 +4,26 @@
   "description": "Create custom SoundCloud players with React",
   "main": "index.js",
   "directories": {
-    "example": "example"
+    "example": "examples"
   },
   "scripts": {
-    "prebuild": "rm -rf lib",
-    "build-js": "babel src -d lib --experimental",
-    "build-css": "npm run cssnext cssnext/main.css css/react-soundplayer.css",
-    "build": "npm run build-js",
+    "build-js": "rm -rf ./lib && babel src -d lib --stage 0",
+    "build-css": "rm -rf ./styles && mkdir styles && node .cssnext",
+    "build": "npm run build-js && npm run build-css",
     "prepublish": "npm run build"
   },
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "object-assign": "^2.0.0",
-    "react": ">=0.12.2",
+    "react": "^0.13.1",
     "soundcloud-audio": "^0.1.2"
   },
   "devDependencies": {
-    "babel": "^4.7.8",
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
-    "cssnext": "^1.1.0",
+    "babel": "^5.1.2",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "cssnext": "^1.2.3",
     "watchify": "^2.4.0"
   }
 }

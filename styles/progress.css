@@ -1,0 +1,13 @@
+.sb-soundplayer-progress-container {
+    background-color: #DDD;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+}
+
+.sb-soundplayer-progress-inner {
+    background-color: #FC561E;
+    height: 100%;
+    -webkit-transition: width .2s ease-in;
+            transition: width .2s ease-in;
+}

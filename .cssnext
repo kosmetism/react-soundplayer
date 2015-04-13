@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+// Compile folder of `.css` files.
+// Remove this when issue will be resolved:
+// https://github.com/cssnext/cssnext/issues/93
+
+var fs = require('fs');
+var path = require('path');
+var cssnext = require('cssnext');
+
+var cssnextPath = path.join(__dirname, './cssnext/');
+
+fs.readdir(cssnextPath, function (err, files) {
+    if (err) {
+        throw err;
+    }
+
+    files.forEach(function (file) {
+        var input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
+        var output = cssnext(input);
+        fs.writeFileSync(path.join(__dirname, './styles/'+file), output);
+    });
+});
