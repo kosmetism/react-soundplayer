@@ -8,7 +8,9 @@ var fs = require('fs');
 var path = require('path');
 var cssnext = require('cssnext');
 
-var cssnextPath = path.join(__dirname, './cssnext/');
+var inputFolderName = 'cssnext/';
+var outputFolderName = 'styles/';
+var cssnextPath = path.join(__dirname, inputFolderName);
 
 fs.readdir(cssnextPath, function (err, files) {
     if (err) {
@@ -16,8 +18,10 @@ fs.readdir(cssnextPath, function (err, files) {
     }
 
     files.forEach(function (file) {
+        console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
         var input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
         var output = cssnext(input);
-        fs.writeFileSync(path.join(__dirname, './styles/'+file), output);
+        fs.writeFileSync(path.join(__dirname, outputFolderName+file), output);
     });
+    console.log(' ');
 });

@@ -2,7 +2,7 @@
   "main": "app.js",
   "scripts": {
     "start": "../../node_modules/watchify/bin/cmd.js . -o bundle.js -v -d",
-    "build": "rm build.js && browserify app.js > bundle.js"
+    "build": "browserify app.js > bundle.js"
   },
   "browserify": {
     "transform": [

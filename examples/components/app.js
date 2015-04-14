@@ -1,8 +1,7 @@
 import React from 'react';
 import PlayButton from '../../lib/components/PlayButton';
 import Progress from '../../lib/components/Progress';
-
-const seekIconUrl = 'http://icons.iconarchive.com/icons/iconsmind/outline/256/Eci-Icon-icon.png';
+import Timer from '../../lib/components/Timer';
 
 class App extends React.Component {
     constructor() {
@@ -11,6 +10,7 @@ class App extends React.Component {
             seeking: false,
             playing: false,
             currentTime: 0,
+            progressVal: 0,
             duration: 300
         };
     }
@@ -28,12 +28,15 @@ class App extends React.Component {
 
     }
 
-    seekTrack(xPos, e) {
-        this.setState({currentTime: xPos});
+    seekTrack(xPos, xPosRound, e) {
+        this.setState({
+            currentTime: Math.round(xPos * this.state.duration),
+            progressVal: Math.round(xPos * 100)
+        });
     }
 
     render() {
-        let { playing, seeking, currentTime } = this.state;
+        let { playing, seeking, duration, currentTime, progressVal } = this.state;
         return (
             <div>
                 <PlayButton
@@ -41,10 +44,11 @@ class App extends React.Component {
                     seeking={seeking}
                     togglePlay={this.handleClick.bind(this)}
                     seekingIcon={
-                        <img src={seekIconUrl} className="sb-soundplayer-play-icon" />
+                        <img src="./preloader.gif" className="sb-soundplayer-play-icon" />
                     }
                 />
-                <Progress value={currentTime} seekTrack={this.seekTrack.bind(this)} />
+                <Progress value={progressVal} seekTrack={this.seekTrack.bind(this)} />
+                <Timer duration={duration} currentTime={currentTime} />
             </div>
         );
     }

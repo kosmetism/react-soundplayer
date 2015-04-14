@@ -7,7 +7,7 @@ class Progress extends React.Component {
         let { seekTrack } = this.props;
         if (seekTrack) {
             let xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
-            seekTrack.call(this, Math.round(xPos * 100), e);
+            seekTrack.call(this, xPos, e);
         }
     }
 

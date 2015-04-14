@@ -1,17 +1,8 @@
 import React from 'react';
 
-let Timer = React.createClass({
-    propTypes: {
-        duration: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
-        ]).isRequired,
-        currentTime: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number
-        ]).isRequired
-    },
+let { PropTypes } = React;
 
+class Timer extends React.Component {
     prettyTime(time) {
         let hours = Math.floor(time / 3600);
         let mins = '0' + Math.floor((time % 3600) / 60);
@@ -29,7 +20,7 @@ let Timer = React.createClass({
         } else {
             return '00:00';
         }
-    },
+    }
 
     render() {
         let { duration, currentTime } = this.props;
@@ -40,6 +31,17 @@ let Timer = React.createClass({
             </div>
         );
     }
-});
+}
+
+Timer.propTypes = {
+    duration: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired,
+    currentTime: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired
+};
 
 export default Timer;
