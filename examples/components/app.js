@@ -2,10 +2,18 @@ import React from 'react';
 import PlayButton from '../../lib/components/PlayButton';
 import Progress from '../../lib/components/Progress';
 import Timer from '../../lib/components/Timer';
+import Cover from '../../lib/components/Cover';
+
+const data = {
+    image: 'https://d1v2xm8p2pd3wl.cloudfront.net/tracks/1a87a43ec633f01a917d23fc5e026bf9/640x400.jpg',
+    artist: 'franiefroufrou',
+    track: 'Exploding Whale by Sufjan Stevens'
+};
 
 class App extends React.Component {
     constructor() {
         super();
+
         this.state = {
             seeking: false,
             playing: false,
@@ -17,6 +25,7 @@ class App extends React.Component {
 
     handleClick() {
         let { playing } = this.state;
+
         if (!playing) {
             this.setState({seeking: true});
             setTimeout(() => {
@@ -37,6 +46,7 @@ class App extends React.Component {
 
     render() {
         let { playing, seeking, duration, currentTime, progressVal } = this.state;
+
         return (
             <div>
                 <PlayButton
@@ -49,6 +59,7 @@ class App extends React.Component {
                 />
                 <Progress value={progressVal} seekTrack={this.seekTrack.bind(this)} />
                 <Timer duration={duration} currentTime={currentTime} />
+                <Cover backgroundUrl={data.image} artist={data.artist} track={data.track} />
             </div>
         );
     }

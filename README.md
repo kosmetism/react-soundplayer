@@ -6,6 +6,10 @@
 
 ![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-screen.png)
 
+```
+npm install react-soundplayer --save
+```
+
 ## Usage
 
 ### Using _with_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
