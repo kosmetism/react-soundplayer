@@ -1,8 +1,9 @@
 import React from 'react/addons';
+import ClassNames from 'classnames';
 
 let { PropTypes } = React;
 
-class SoundCloudLogo extends React.Component {
+class SoundCloudLogoSVG extends React.Component {
     shouldComponentUpdate() {
         return false;
     }
@@ -22,12 +23,13 @@ class SoundCloudLogo extends React.Component {
 
 class Cover extends React.Component {
     render() {
-        let { backgroundUrl, track, artist, children } = this.props;
+        let { backgroundUrl, track, artist, className, children } = this.props;
+        let classNames = ClassNames('sb-soundplayer-cover', className);
 
         return (
-            <div style={{backgroundImage: `url(${backgroundUrl})`}} className="sb-soundplayer-cover">
+            <div style={{backgroundImage: `url(${backgroundUrl})`}} className={classNames}>
                 <div>
-                    <SoundCloudLogo />
+                    <SoundCloudLogoSVG />
                 </div>
                 <div>
                     <span className="sb-soundplayer-track sb-soundplayer-info-box">{track}</span>
@@ -42,6 +44,7 @@ class Cover extends React.Component {
 }
 
 Cover.propTypes = {
+    className: PropTypes.string,
     backgroundUrl: PropTypes.string.isRequired,
     track: PropTypes.string.isRequired,
     artist: PropTypes.string.isRequired

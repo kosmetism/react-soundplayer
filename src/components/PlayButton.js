@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassNames from 'classnames';
 
 let { PropTypes } = React;
 
@@ -54,7 +55,7 @@ class PlayButton extends React.Component {
     }
 
     render() {
-        let { playing, seekingIcon, seeking, togglePlay } = this.props;
+        let { playing, seekingIcon, seeking, togglePlay, className } = this.props;
 
         let iconNode;
         if (seeking && seekingIcon) {
@@ -65,8 +66,10 @@ class PlayButton extends React.Component {
             iconNode = <PlayIcon />;
         }
 
+        let classNames = ClassNames('sb-soundplayer-play-btn', className);
+
         return (
-            <button className="sb-soundplayer-play-btn" onClick={togglePlay}>
+            <button className={classNames} onClick={togglePlay}>
                 {iconNode}
             </button>
         );
@@ -74,6 +77,7 @@ class PlayButton extends React.Component {
 }
 
 PlayButton.propTypes = {
+    className: PropTypes.string,
     seeking: PropTypes.bool,
     playing: PropTypes.bool,
     togglePlay: PropTypes.func,

@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassNames from 'classnames';
 
 let { PropTypes } = React;
 
@@ -23,10 +24,11 @@ class Timer extends React.Component {
     }
 
     render() {
-        let { duration, currentTime } = this.props;
+        let { duration, currentTime, className } = this.props;
+        let classNames = ClassNames('sb-soundplayer-timer', className);
 
         return (
-            <div className="sb-soundplayer-timer">
+            <div className={classNames}>
                 {this.prettyTime(currentTime)} / {this.prettyTime(duration)}
             </div>
         );
@@ -34,6 +36,7 @@ class Timer extends React.Component {
 }
 
 Timer.propTypes = {
+    className: PropTypes.string,
     duration: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number

@@ -12,9 +12,10 @@
     border-radius: 3px;
     text-decoration: none;
     border: 0;
-    box-shadow: inset 0 0 0 3px #FC561E;
     outline: none;
     cursor: pointer;
+    -webkit-transition: -webkit-transform, box-shadow, .05s ease;
+            transition: transform, box-shadow, .05s ease;
     box-sizing: border-box;
     -webkit-appearance: none;
 }
@@ -24,12 +25,20 @@
     position: relative;
     vertical-align: middle;
 }
-.sb-soundplayer-play-btn:focus {
-
-}
-.sb-soundplayer-playbtn:active {
-
-}
 .sb-soundplayer-play-btn:hover {
-
+    -webkit-transform: scale(1.0625);
+        -ms-transform: scale(1.0625);
+            transform: scale(1.0625);
+}
+.sb-soundplayer-play-btn:focus {
+    -webkit-transform: scale(.9375);
+        -ms-transform: scale(.9375);
+            transform: scale(.9375);
+}
+.sb-soundplayer-play-btn:active {
+    box-shadow: inset 0 0 0 2px #FC561E;
+}
+.sb-soundplayer-play-btn:hover,
+.sb-soundplayer-play-btn:focus {
+    box-shadow: none;
 }

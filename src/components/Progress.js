@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassNames from 'classnames';
 
 let { PropTypes } = React;
 
@@ -12,7 +13,7 @@ class Progress extends React.Component {
     }
 
     render() {
-        let { value } = this.props;
+        let { value, className } = this.props;
 
         value = parseInt(value, 10);
 
@@ -24,9 +25,10 @@ class Progress extends React.Component {
         }
 
         let style = {width: `${value}%`};
+        let classNames = ClassNames('sb-soundplayer-progress-container', className);
 
         return (
-            <div className="sb-soundplayer-progress-container" onClick={this.handleSeekTrack.bind(this)}>
+            <div className={classNames} onClick={this.handleSeekTrack.bind(this)}>
                 <div className="sb-soundplayer-progress-inner" style={style} />
             </div>
         );
@@ -34,6 +36,7 @@ class Progress extends React.Component {
 }
 
 Progress.propTypes = {
+    className: PropTypes.string,
     value: PropTypes.oneOfType([
         React.PropTypes.string,
         React.PropTypes.number

@@ -29,7 +29,6 @@
     background-color: var(--sb-cover-info-bg);
     padding: 5px 10px;
     margin-bottom: 5px;
-    max-width: 80%;
     border-radius: 1px;
 }
 .sb-soundplayer-cover .sb-soundplayer-track {

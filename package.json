@@ -15,6 +15,7 @@
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^1.2.0",
     "object-assign": "^2.0.0",
     "react": "^0.13.1",
     "soundcloud-audio": "^0.1.2"
