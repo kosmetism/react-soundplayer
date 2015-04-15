@@ -49,7 +49,7 @@
 }
 
 :root {
-    --sb-cover-fallback-bg: '../assets/empty-card.png';
+    --sb-cover-fallback-bg: '';
     --sb-cover-info-bg: rgba(0, 0, 0, .8);
     --sb-cover-logo-color: rgba(255,255,255,.9);
 }

@@ -31,4 +31,17 @@ let { SoundCloudPlayer } = new ReactSoundPlayer('YOUR_CLIENT_ID');
 
 ### Using _without_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
 
+```javascript
+
+class AppPlayer extends React.Component {
+    render() {
+        <div>
+            <SoundPlayerComponent>
+                
+            </SoundPlayerComponent>
+        </div>
+    }
+}
+```
+
 ---
