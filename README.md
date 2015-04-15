@@ -103,7 +103,7 @@ All of these self-descriptive state properties are passed into `<SoundPlayerComp
 
 - `playing` _(Boolean)_ - `true` if audio is playing currently
 - `seeking` _(Boolean)_ - `true` if audio is seeking for position
-- `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url pointed to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks
+- `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url was pointing to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks
 - `duration` _(Number)_ - audio duration in seconds
 - `currentTime` _(Number)_ - audio current time in seconds
 - `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
@@ -126,7 +126,7 @@ class TrackInfo extends React.Component {
         }
 
         return (
-            <div className="track-info">
+            <div>
                 <h2>{track.title}</h2>
                 <h3>{track.user.username}</h3>
             </div>
@@ -162,12 +162,12 @@ class PlayPause extends React.Component {
 
 class CustomPlayer extends React.Component {
     render() {
-        <div className="custom-player">
+        return (
             <SoundPlayerComponent resolveUrl={resolveUrl} clientId={client}>
                 <TrackInfo />
                 <PlayPause />
             </SoundPlayerComponent>
-        </div>
+        );
     }
 }
 
