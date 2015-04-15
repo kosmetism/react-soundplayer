@@ -23,6 +23,7 @@
   "devDependencies": {
     "babel": "^5.1.2",
     "babelify": "^6.0.2",
+    "basscss": "^6.0.0",
     "browserify": "^9.0.8",
     "cssnext": "^1.2.3",
     "watchify": "^2.4.0"

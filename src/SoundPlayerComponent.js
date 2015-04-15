@@ -48,6 +48,7 @@ class SoundPlayerComponent extends React.Component {
         this.soundCloudAudio.on('loadedmetadata', this.getDuration.bind(this));
         this.soundCloudAudio.on('seeking', this.onSeekingTrack.bind(this));
         this.soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
+        this.soundCloudAudio.on('pause', this.onAudioEnded.bind(this));
         this.soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
     }
 

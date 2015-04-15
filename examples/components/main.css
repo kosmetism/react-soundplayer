@@ -1,0 +1,13 @@
+@import 'basscss';
+@import '../../styles/buttons.css';
+@import '../../styles/progress.css';
+@import '../../styles/cover.css';
+
+.b2 {
+    border-width: 2px;
+}
+
+:root {
+    --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --container-width: 800px;
+}

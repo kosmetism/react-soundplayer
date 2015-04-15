@@ -13,27 +13,36 @@ const data = {
     track: 'Exploding Whale by Sufjan Stevens'
 };
 const seekingIcon = (
-    <img src="./preloader.gif" className="sb-soundplayer-play-icon" />
+    <img src="../assets/preloader.svg" className="sb-soundplayer-play-icon" />
 );
 
 class CustomPlayer extends React.Component {
     play() {
-        let { soundCloudAudio } = this.props;
-        soundCloudAudio.play();
+        let { soundCloudAudio, playing } = this.props;
+        if (playing) {
+            soundCloudAudio.pause();
+        } else {
+            soundCloudAudio.play();
+        }
     }
 
     render() {
-        let { track } = this.props;
+        let { track, playing } = this.props;
 
         if (!track) {
             return <div>Loading...</div>;
         }
 
         return (
-            <div>
-                <h2>{track.title}</h2>
-                <h3>{track.user.username}</h3>
-                <PlayButton {...this.props} togglePlay={this.play.bind(this)} />
+            <div className="mt3 mb3 border p2 rounded b2">
+                <h2 className="m0">{track.title}</h2>
+                <h3 className="mt0">{track.user.username}</h3>
+                <button
+                    className="button button-small bg-teal"
+                    onClick={this.play.bind(this)}
+                >
+                    {playing ? 'Pause' : 'Play'}
+                </button>
             </div>
         );
     }
@@ -77,45 +86,51 @@ class App extends React.Component {
         let { playing, seeking, duration, currentTime, progressVal } = this.state;
 
         return (
-            <div className="example-container">
+            <div className="container">
                 {/* independent components */}
-                <div className="example-text">
+                <h1 className="h1 h1-responsive caps mt3">Pure Components</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
+
+                <div className="mt3">
                     <strong>ReactSoundPlayer</strong> is bundled with several player related pure components inside.
                     All of them can be styled and customized as you wish, allowing you to create a player of your dream easily.
                 </div>
 
-                <h3><code>{'<PlayButton />'}</code></h3>
+                <h2>{'<PlayButton />'}</h2>
                 <PlayButton
+                    className="button button-transparent button-grow"
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
                     togglePlay={this.handleClick.bind(this)}
                 />
 
-                <h3><code>{'<Progress />'}</code></h3>
+                <h2>{'<Progress />'}</h2>
                 <Progress
                     value={progressVal}
                     seekTrack={this.seekTrack.bind(this)}
                 />
 
-                <h3><code>{'<Timer />'}</code></h3>
+                <h2>{'<Timer />'}</h2>
                 <Timer
                     duration={duration}
                     currentTime={currentTime}
                 />
 
-                <h3><code>{'<Cover />'}</code></h3>
+                <h2>{'<Cover />'}</h2>
                 <Cover
                     track={data.track}
                     artist={data.artist}
                     backgroundUrl={data.image}
                 />
 
-                <hr />
-
                 {/* container component */}
-                <div className="example-text">
-                    In the heart of <strong>ReactSoundPlayer</strong> is container <code>{'<SoundPlayerComponent />'}</code> that drives creation of players.
+                <h1 className="h1 h1-responsive caps mt3">Containers</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
+
+                <div className="mt3">
+                    In the heart of <strong>ReactSoundPlayer</strong> is container {'<SoundPlayerComponent />'} that incapsulates
+                    interaction with audio object and passes all necessary data as properties inside children.
                 </div>
                 <SoundPlayerComponent
                     clientId={clientId}
