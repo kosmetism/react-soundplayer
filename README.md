@@ -16,7 +16,7 @@ npm install react-soundplayer --save
 
 ## SoundPlayerComponent
 
-This higher level container `<SoundPlayerComponent />` propagates its' children with all necessary [data]() you need in order to design an audio player. In order to use it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be `Audio` element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
+This higher level container `<SoundPlayerComponent />` propagates its' children with all necessary [data]() you need in order to design an audio player. In order to use it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
 
 Why not mixin?
 
@@ -44,7 +44,9 @@ _(String)_ - pass here pure stream url as it's returned by [SoundCloud API](http
 
 ##### `clientId`
 
-_(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com, [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be create per each component instance:
+_(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com
+
+[SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be created per each component instance:
 
 ```javascript
 import React from 'react';
