@@ -19,9 +19,18 @@ class SoundPlayerComponent extends React.Component {
     }
 
     componentDidMount() {
-        let { clientId, resolveUrl, streamUrl } = this.props;
+        let { clientId, resolveUrl, streamUrl, soundCloudAudio } = this.props;
 
-        this.soundCloudAudio = new SoundCloudAudio(clientId);
+        if (!clientId && !soundCloudAudio) {
+            throw new Error(
+                `You need to pass either clientId or SoundCloudAudio instance
+                https://github.com/soundblogs/react-soundplayer#usage`
+            );
+        }
+
+        this.soundCloudAudio = (
+            soundCloudAudio instanceof SoundCloudAudio ? soundCloudAudio : new SoundCloudAudio(clientId)
+        );
 
         if (streamUrl) {
             this.soundCloudAudio.preload(streamUrl);
@@ -33,6 +42,7 @@ class SoundPlayerComponent extends React.Component {
             });
         }
 
+        // https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events
         this.soundCloudAudio.on('playing', this.onAudioStarted.bind(this));
         this.soundCloudAudio.on('timeupdate', this.getCurrentTime.bind(this));
         this.soundCloudAudio.on('loadedmetadata', this.getDuration.bind(this));
@@ -97,7 +107,8 @@ class SoundPlayerComponent extends React.Component {
 SoundPlayerComponent.propTypes = {
     streamUrl: PropTypes.string,
     resolveUrl: PropTypes.string,
-    clientId: PropTypes.string
+    clientId: PropTypes.string,
+    soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
 
 export default SoundPlayerComponent;
