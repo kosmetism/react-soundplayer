@@ -163,7 +163,7 @@ class PlayPause extends React.Component {
 class CustomPlayer extends React.Component {
     render() {
         return (
-            <SoundPlayerComponent resolveUrl={resolveUrl} clientId={client}>
+            <SoundPlayerComponent resolveUrl={resolveUrl} clientId={clientId}>
                 <TrackInfo />
                 <PlayPause />
             </SoundPlayerComponent>
