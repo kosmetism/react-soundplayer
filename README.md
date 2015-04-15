@@ -101,12 +101,12 @@ React.render(<AppPlayer />, document.body);
 
 All of these self-descriptive state properties are passed into `<SoundPlayerComponent />` children components as `props`:
 
-- `playing` _(Boolean)_
-- `seeking` _(Boolean)_
-- `track` _(Object)_ or `tracks` _(Array)_
-- `duration` _(Number)_
-- `currentTime` _(Number)_
-- `soundCloudAudio` _(instanceof SoundCloudAudio)_
+- `playing` _(Boolean)_ - `true` if audio is playing currently
+- `seeking` _(Boolean)_ - `true` if audio is seeking for position
+- `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url pointed to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks
+- `duration` _(Number)_ - audio duration in seconds
+- `currentTime` _(Number)_ - audio current time in seconds
+- `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
 
 ```javascript
 ```
