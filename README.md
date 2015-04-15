@@ -22,7 +22,9 @@ Why not mixin?
 
 ### Props
 
-**`resolveUrl`** _(String)_ - this could be regular link from SoundCloud web app which points to track or playlist, examples:
+##### `resolveUrl`
+
+_(String)_ - this could be regular link from SoundCloud web app which points to track or playlist, examples:
 
 ```
 // track
@@ -32,13 +34,17 @@ Why not mixin?
 "https://soundcloud.com/stepan-i-meduza-official/sets/dolgo-obyasnyat-ep"
 ```
 
-**`streamUrl`** _(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), example: 
+##### `streamUrl`
+
+_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), example: 
 
 ```
 "https://api.soundcloud.com/tracks/200494743/stream"
 ```
 
-**`clientId`** _(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com, [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be create per each component instance:
+##### `clientId`
+
+_(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com, [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be create per each component instance:
 
 ```javascript
 import React from 'react';
@@ -61,7 +67,9 @@ class AppPlayer extends React.Component {
 React.render(<AppPlayer />, document.body);
 ```
 
-**`soundCloudAudio`** _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global singleton audio object:
+##### `soundCloudAudio` 
+
+_(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global singleton audio object:
 
 ```javascript
 import React from 'react';
