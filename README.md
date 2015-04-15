@@ -26,7 +26,7 @@ Why not mixin?
 
 _(String)_ - this could be regular link from SoundCloud web app which points to track or playlist, examples:
 
-```
+```javascript
 // track
 "https://soundcloud.com/thrilljockey/future-islands-balance"
 
@@ -38,7 +38,7 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 
 _(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), example: 
 
-```
+```javascript
 "https://api.soundcloud.com/tracks/200494743/stream"
 ```
 
