@@ -109,6 +109,69 @@ All of these self-descriptive state properties are passed into `<SoundPlayerComp
 - `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
 
 ```javascript
+import React from 'react';
+import SoundCloudAudio from 'soundcloud-audio';
+import ReactSoundPlayer from 'react-soundplayer';
+
+const { SoundPlayerComponent } = ReactSoundPlayer;
+const clientId = 'YOUR CLIENT ID';
+const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
+
+class TrackInfo extends React.Component {
+    render() {
+        let { track } = this.props;
+        
+        if (!track) {
+            return <div>Loading...</div>;
+        }
+
+        return (
+            <div className="track-info">
+                <h2>{track.title}</h2>
+                <h3>{track.user.username}</h3>
+            </div>
+        );
+    }
+}
+
+class PlayPause extends React.Component {
+    togglePlay() {
+        let { playing, soundCloudAudio } = this.props;
+        if (playing) {
+            soundCloudAudio.pause();
+        } else {
+            soundCloudAudio.play();
+        }
+    }
+
+    render() {
+        let { playing } = this.props;
+        let text = playing ? 'Pause' : 'Play';
+        
+        if (!track) {
+            return <div>Loading...</div>;
+        }
+
+        return (
+            <button onClick={this.togglePlay.bind(this)}>
+                {text}
+            </button>
+        );
+    }
+}
+
+class CustomPlayer extends React.Component {
+    render() {
+        <div className="custom-player">
+            <SoundPlayerComponent resolveUrl={resolveUrl} clientId={client}>
+                <TrackInfo />
+                <PlayPause />
+            </SoundPlayerComponent>
+        </div>
+    }
+}
+
+React.render(<CustomPlayer />, document.body);
 ```
 
 ## SoundCloud API
