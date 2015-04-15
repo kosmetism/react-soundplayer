@@ -10,38 +10,60 @@
 npm install react-soundplayer --save
 ```
 
-## Usage
+# API
 
-### Using _with_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
+## Pure Components
 
-This way you have benefit of global singleton audio object.
+## SoundPlayerComponent
+
+### Props
+
+- `resolveUrl` _(String)_ - 
+- `streamUrl` _(String)_ -
+- `clientId` _(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com, [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be create per each component instance:
 
 ```javascript
 import React from 'react';
 import ReactSoundPlayer from 'react-soundplayer';
 
-import { SimplePlayer, CoverPlayer } from 'react-soundplayer/components';
-
-const streamUrl = 'https://api.soundcloud.com/tracks/194964548/stream';
-
-let { SoundCloudPlayer } = new ReactSoundPlayer('YOUR_CLIENT_ID');
-
-// <SoundCloudPlayer streamUrl={streamUrl} playerType="simple" />
-```
-
-### Using _without_ [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js)
-
-```javascript
+const { SoundPlayerComponent } = ReactSoundPlayer;
+const clientId = 'YOUR CLIENT ID';
 
 class AppPlayer extends React.Component {
     render() {
         <div>
-            <SoundPlayerComponent>
-                
+            <SoundPlayerComponent clientId={client}>
             </SoundPlayerComponent>
         </div>
     }
 }
+
+React.render(<AppPlayer />, document.body);
+```
+
+- `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global singleton audio object:
+
+```javascript
+import React from 'react';
+import SoundCloudAudio from 'soundcloud-audio';
+import ReactSoundPlayer from 'react-soundplayer';
+
+const { SoundPlayerComponent } = ReactSoundPlayer;
+const clientId = 'YOUR CLIENT ID';
+const soundCloudAudio = new SoundCloudAudio(clientId);
+
+class AppPlayer extends React.Component {
+    render() {
+        <div>
+            <SoundPlayerComponent streamUrl={} soundCloudAudio={soundCloudAudio}>
+            </SoundPlayerComponent>
+        </div>
+    }
+}
+
+React.render(<AppPlayer />, document.body);
 ```
 
 ---
+
+**MIT Licensed**
