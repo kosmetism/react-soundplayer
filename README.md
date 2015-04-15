@@ -18,7 +18,7 @@ npm install react-soundplayer --save
 
 This higher level container `<SoundPlayerComponent />` propagates its' children with all necessary [data]() you need in order to design an audio player. In order to use it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
 
-_If you're wondering "Why not mixin?!", please read the notes by @acdlite - ["Why Component Is Better than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md)._
+_If you're wondering "Why not mixin?!", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
 ### Props
 
@@ -97,13 +97,27 @@ class AppPlayer extends React.Component {
 React.render(<AppPlayer />, document.body);
 ```
 
+### State
+
+All of these self-descriptive state properties are passed into `<SoundPlayerComponent />` children components as `props`:
+
+- `playing` _(Boolean)_
+- `seeking` _(Boolean)_
+- `track` _(Object)_ or `tracks` _(Array)_
+- `duration` _(Number)_
+- `currentTime` _(Number)_
+- `soundCloudAudio` _(instanceof SoundCloudAudio)_
+
+```javascript
+```
+
 ## SoundCloud API
 
 If you're curious what data you can use inside player just take a look into official SoundCloud Developers docs for [tracks](https://developers.soundcloud.com/docs/api/reference#tracks).
 
 ## Troubleshooting
 
-Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps. If your sound isn't playing check the track object's `streamable` property. If it's set to `false`, there is no way to play that sound with the API.
+Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps. If your sound isn't playing check the [track](https://developers.soundcloud.com/docs/api/reference#tracks)'s `streamable` property. If it's set to `false`, there is no way to play that sound with the API.
 
 ## References
 
