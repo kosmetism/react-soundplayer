@@ -1,4 +1,5 @@
 import React from 'react';
+import hljs from 'highlight.js';
 import PlayButton from '../../lib/components/PlayButton';
 import Progress from '../../lib/components/Progress';
 import Timer from '../../lib/components/Timer';
@@ -65,6 +66,11 @@ class App extends React.Component {
             progressVal: 0,
             duration: 300
         };
+    }
+
+    componentDidMount() {
+        console.log(hljs);
+        hljs.initHighlighting();
     }
 
     handleClick() {
@@ -169,8 +175,9 @@ class App extends React.Component {
                     </a>
                 </h3>
                 <div className="mt1">
-                    In order to use it just choose what kind of data you're consuming (via <code>resolveUrl</code> or <code>streamUrl</code>) and will be Audio global
-                    or created per each player (via <code>clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a> instance passed).
+                    In order to use it just choose what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>) and will Audio be global
+                    or created automagically per each player (via <code className="black bg-darken-1 rounded">clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a>
+                    &nbsp;instance passed respectively). With this information in mind it's really easy to create your own custom players like on example below:
                 </div>
                 <SoundPlayerComponent
                     clientId={clientId}
@@ -178,6 +185,60 @@ class App extends React.Component {
                 >
                     <CustomPlayer />
                 </SoundPlayerComponent>
+                <div className="mt2">
+                    <pre><code className="javascript">{`import React from 'react';
+import ReactSoundPlayer from 'react-soundplayer';
+
+const { SoundPlayerComponent } = ReactSoundPlayer;
+
+const clientId = 'YOUR CLIENT ID';
+const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
+
+class CustomPlayer extends React.Component {
+    play() {
+        let { soundCloudAudio, playing } = this.props;
+        if (playing) {
+            soundCloudAudio.pause();
+        } else {
+            soundCloudAudio.play();
+        }
+    }
+
+    render() {
+        let { track, playing } = this.props;
+
+        if (!track) {
+            return <div>Loading...</div>;
+        }
+
+        return (
+            <div>
+                <h2>{track.title}</h2>
+                <h3>{track.user.username}</h3>
+                <button onClick={this.play.bind(this)}>
+                    {playing ? 'Pause' : 'Play'}
+                </button>
+            </div>
+        );
+    }
+}
+
+class App extends React.Component {
+    render() {
+        return (
+            <SoundPlayerComponent resolveUrl={streamUrl} clientId={client}>
+                <CustomPlayer />
+            </SoundPlayerComponent>
+        );
+    }
+}
+
+React.render(<App />, document.body);`}</code></pre>
+                </div>
+
+                {/* resources */}
+                <h1 className="h1 h1-responsive caps mt3">Useful Resources</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
             </div>
         );
     }

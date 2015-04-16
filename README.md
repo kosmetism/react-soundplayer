@@ -14,6 +14,18 @@ npm install react-soundplayer --save
 
 ## Pure Components
 
+### PlayButton
+
+### NextButton
+
+### PrevButton
+
+### Timer
+
+### Progress
+
+### Cover
+
 ## SoundPlayerComponent
 
 `<SoundPlayerComponent />` is higher level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) you need in order to design an audio player. When using it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
