@@ -103,9 +103,9 @@ class App extends React.Component {
                     Each of the components accept className prop as regular DOM elements which makes it simple to apply different styles.
                 </div>
 
-                <h3 id="PlayButton" className="mb2 h5">
+                <h3 id="PlayButton" className="mb2 h4">
                     <a href="#PlayButton" className="black bg-yellow rounded">
-                        <code>{'<PlayButton className={String} playing={Bool} seeking={Bool} />'}</code>
+                        <code>{'<PlayButton className={String} playing={Bool} seeking={Bool} seekingIcon={ReactElement} />'}</code>
                     </a>
                 </h3>
                 <PlayButton
@@ -116,9 +116,9 @@ class App extends React.Component {
                     togglePlay={this.handleClick.bind(this)}
                 />
 
-                <h3 id="Progress" className="mb2 h5">
+                <h3 id="Progress" className="mb2 h4">
                     <a href="#Progress" className="black bg-yellow rounded">
-                        <code>{'<Progress className={String} value={Number} seekTrack={Func} seekingIcon={ReactElement} />'}</code>
+                        <code>{'<Progress className={String} value={Number} seekTrack={Func} />'}</code>
                     </a>
                 </h3>
                 <Progress
@@ -126,7 +126,7 @@ class App extends React.Component {
                     seekTrack={this.seekTrack.bind(this)}
                 />
 
-                <h3 id="Timer" className="mb2 h5">
+                <h3 id="Timer" className="mb2 h4">
                     <a href="#Timer" className="black bg-yellow rounded">
                         <code>{'<Timer className={String} duration={Number} currentTime={Number} />'}</code>
                     </a>
@@ -136,7 +136,7 @@ class App extends React.Component {
                     currentTime={currentTime}
                 />
 
-                <h3 id="Cover" className="mb2 h5">
+                <h3 id="Cover" className="mb2 h4">
                     <a href="#Cover" className="black bg-yellow rounded">
                         <code>{'<Cover className={String} backgroundUrl={String} artist={String} track={String} />'}</code>
                     </a>
@@ -148,7 +148,7 @@ class App extends React.Component {
                 />
 
                 {/* icons */}
-                <h1 className="h1 h1-responsive caps mt3">Icons</h1>
+                <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 {/* players */}
@@ -156,18 +156,22 @@ class App extends React.Component {
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 {/* container component */}
-                <h1 className="h1 h1-responsive caps mt3">Containers</h1>
+                <h1 className="h1 h1-responsive caps mt3">Container</h1>
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3">
                     In the heart of <strong>ReactSoundPlayer</strong> is container that incapsulates
-                    interaction with browser's audio object and passes all necessary state data as properties inside children.
+                    interaction with browser's Audio object and passes all necessary state data as properties inside children.
                 </div>
-                <h3 id="SoundPlayerComponent" className="mb2 h5">
+                <h3 id="SoundPlayerComponent" className="mb2 h4">
                     <a href="#SoundPlayerComponent" className="black bg-yellow rounded">
                         <code>{'<SoundPlayerComponent streamUrl={String} resolveUrl={String} clientId={String} soundCloudAudio={SoundCloudAudio} />'}</code>
                     </a>
                 </h3>
+                <div className="mt1">
+                    In order to use it just choose what kind of data you're consuming (via <code>resolveUrl</code> or <code>streamUrl</code>) and will be Audio global
+                    or created per each player (via <code>clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a> instance passed).
+                </div>
                 <SoundPlayerComponent
                     clientId={clientId}
                     resolveUrl={resolveUrl}
@@ -179,4 +183,4 @@ class App extends React.Component {
     }
 }
 
-React.render(<App />, document.body);
+React.render(<App />, document.getElementById('app'));
