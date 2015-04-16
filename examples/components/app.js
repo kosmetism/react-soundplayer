@@ -4,6 +4,12 @@ import Progress from '../../lib/components/Progress';
 import Timer from '../../lib/components/Timer';
 import Cover from '../../lib/components/Cover';
 import SoundPlayerComponent from '../../lib/SoundPlayerComponent';
+import {
+    SoundCloudLogoSVG,
+    PlayButtonSVG,
+    PrevButtonSVG,
+    NextButtonSVG
+} from '../../lib/components/Icons';
 
 const clientId = '08f79801a998c381762ec5b15e4914d5';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
@@ -94,9 +100,14 @@ class App extends React.Component {
                 <div className="mt3">
                     <strong>ReactSoundPlayer</strong> is bundled with several player related pure components inside.
                     All of them can be styled and customized as you wish, allowing you to create a player of your dream easily.
+                    Each of the components accept className prop as regular DOM elements which makes it simple to apply different styles.
                 </div>
 
-                <h2>{'<PlayButton />'}</h2>
+                <h3 id="PlayButton" className="mb2 h5">
+                    <a href="#PlayButton" className="black bg-yellow rounded">
+                        <code>{'<PlayButton className={String} playing={Bool} seeking={Bool} />'}</code>
+                    </a>
+                </h3>
                 <PlayButton
                     className="button button-transparent button-grow"
                     playing={playing}
@@ -105,33 +116,58 @@ class App extends React.Component {
                     togglePlay={this.handleClick.bind(this)}
                 />
 
-                <h2>{'<Progress />'}</h2>
+                <h3 id="Progress" className="mb2 h5">
+                    <a href="#Progress" className="black bg-yellow rounded">
+                        <code>{'<Progress className={String} value={Number} seekTrack={Func} seekingIcon={ReactElement} />'}</code>
+                    </a>
+                </h3>
                 <Progress
                     value={progressVal}
                     seekTrack={this.seekTrack.bind(this)}
                 />
 
-                <h2>{'<Timer />'}</h2>
+                <h3 id="Timer" className="mb2 h5">
+                    <a href="#Timer" className="black bg-yellow rounded">
+                        <code>{'<Timer className={String} duration={Number} currentTime={Number} />'}</code>
+                    </a>
+                </h3>
                 <Timer
                     duration={duration}
                     currentTime={currentTime}
                 />
 
-                <h2>{'<Cover />'}</h2>
+                <h3 id="Cover" className="mb2 h5">
+                    <a href="#Cover" className="black bg-yellow rounded">
+                        <code>{'<Cover className={String} backgroundUrl={String} artist={String} track={String} />'}</code>
+                    </a>
+                </h3>
                 <Cover
                     track={data.track}
                     artist={data.artist}
                     backgroundUrl={data.image}
                 />
 
+                {/* icons */}
+                <h1 className="h1 h1-responsive caps mt3">Icons</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
+
+                {/* players */}
+                <h1 className="h1 h1-responsive caps mt3">Built-in Players</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
+
                 {/* container component */}
                 <h1 className="h1 h1-responsive caps mt3">Containers</h1>
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3">
-                    In the heart of <strong>ReactSoundPlayer</strong> is container {'<SoundPlayerComponent />'} that incapsulates
-                    interaction with audio object and passes all necessary data as properties inside children.
+                    In the heart of <strong>ReactSoundPlayer</strong> is container that incapsulates
+                    interaction with browser's audio object and passes all necessary state data as properties inside children.
                 </div>
+                <h3 id="SoundPlayerComponent" className="mb2 h5">
+                    <a href="#SoundPlayerComponent" className="black bg-yellow rounded">
+                        <code>{'<SoundPlayerComponent streamUrl={String} resolveUrl={String} clientId={String} soundCloudAudio={SoundCloudAudio} />'}</code>
+                    </a>
+                </h3>
                 <SoundPlayerComponent
                     clientId={clientId}
                     resolveUrl={resolveUrl}

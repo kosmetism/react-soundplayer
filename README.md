@@ -16,7 +16,7 @@ npm install react-soundplayer --save
 
 ## SoundPlayerComponent
 
-This higher level container `<SoundPlayerComponent />` propagates its' children with all necessary [data]() you need in order to design an audio player. In order to use it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
+`<SoundPlayerComponent />` is higher level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) you need in order to design an audio player. When using it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
 
 _If you're wondering "Why not mixin?!", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
@@ -24,7 +24,7 @@ _If you're wondering "Why not mixin?!", please read ["Why Component Is Better Th
 
 ##### `resolveUrl`
 
-_(String)_ - this could be regular link from SoundCloud web app which points to track or playlist, examples:
+_(String)_ - this could be regular link from SoundCloud web app which points to track or playlist, example urls:
 
 ```javascript
 // track
@@ -36,7 +36,7 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 
 ##### `streamUrl`
 
-_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), example: 
+_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example url: 
 
 ```javascript
 "https://api.soundcloud.com/tracks/200494743/stream"
@@ -71,7 +71,7 @@ React.render(<AppPlayer />, document.body);
 
 ##### `soundCloudAudio` 
 
-_(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global singleton audio object:
+_(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global audio object:
 
 ```javascript
 import React from 'react';
