@@ -1,16 +1,12 @@
 import React from 'react';
 import hljs from 'highlight.js';
 import PlayButton from '../../lib/components/PlayButton';
+import NextButton from '../../lib/components/NextButton';
+import PrevButton from '../../lib/components/PrevButton';
 import Progress from '../../lib/components/Progress';
 import Timer from '../../lib/components/Timer';
 import Cover from '../../lib/components/Cover';
 import SoundPlayerComponent from '../../lib/SoundPlayerComponent';
-import {
-    SoundCloudLogoSVG,
-    PlayButtonSVG,
-    PrevButtonSVG,
-    NextButtonSVG
-} from '../../lib/components/Icons';
 
 const clientId = '08f79801a998c381762ec5b15e4914d5';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
@@ -69,7 +65,6 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log(hljs);
         hljs.initHighlighting();
     }
 
@@ -119,8 +114,22 @@ class App extends React.Component {
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
-                    togglePlay={this.handleClick.bind(this)}
+                    onTogglePlay={this.handleClick.bind(this)}
                 />
+
+                <h3 id="NextButton" className="mb2 h4">
+                    <a href="#NextButton" className="black bg-yellow rounded">
+                        <code>{'<NextButton className={String} />'}</code>
+                    </a>
+                </h3>
+                <NextButton className="button button-transparent button-grow" />
+
+                <h3 id="PrevButton" className="mb2 h4">
+                    <a href="#PrevButton" className="black bg-yellow rounded">
+                        <code>{'<PrevButton className={String} />'}</code>
+                    </a>
+                </h3>
+                <PrevButton className="button button-transparent button-grow" />
 
                 <h3 id="Progress" className="mb2 h4">
                     <a href="#Progress" className="black bg-yellow rounded">
@@ -152,10 +161,6 @@ class App extends React.Component {
                     artist={data.artist}
                     backgroundUrl={data.image}
                 />
-
-                {/* icons */}
-                <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>
-                <hr className="mt1 mb1 b2 border-orange" />
 
                 {/* players */}
                 <h1 className="h1 h1-responsive caps mt3">Built-in Players</h1>
@@ -235,6 +240,10 @@ class App extends React.Component {
 
 React.render(<App />, document.body);`}</code></pre>
                 </div>
+
+                {/* icons */}
+                <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>
+                <hr className="mt1 mb1 b2 border-orange" />
 
                 {/* resources */}
                 <h1 className="h1 h1-responsive caps mt3">Useful Resources</h1>
