@@ -23,8 +23,8 @@ Plays/pauses audio in the player.
 ```javascript
 <PlayButton 
     className={String}
-    playing={Bool}
-    seeking={Bool}
+    playing={Boolean}
+    seeking={Boolean}
     seekingIcon={
         ReactElement 
         /*optional icon that will be showed when track is seeking new position to play*/
@@ -33,7 +33,7 @@ Plays/pauses audio in the player.
         instanceof SoundCloudAudio 
         /*if passed automagically handles play and pause*/
     }
-    onTogglePlay={Func} 
+    onTogglePlay={Function} 
 />
 ```
 
@@ -48,7 +48,7 @@ Goes to the next track in the playlist.
         instanceof SoundCloudAudio 
         /*if passed automagically calls its' `next()` method on click*/
     }
-    onNextClick={Func}
+    onNextClick={Function}
 />
 ```
 
@@ -63,7 +63,7 @@ Returns back to the previous track in the playlist.
         instanceof SoundCloudAudio 
         /*if passed automagically calls its' `previous()` method on click*/
     }
-    onPrevClick={Func}
+    onPrevClick={Function}
 />
 ```
 
