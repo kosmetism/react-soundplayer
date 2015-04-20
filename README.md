@@ -25,8 +25,14 @@ Plays/pauses audio in the player.
     className={String}
     playing={Bool}
     seeking={Bool}
-seekingIcon={ReactElement /*optional icon that will be showed when track is seeking new position to play*/}
-    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically handles play and pause*/}
+    seekingIcon={
+        ReactElement 
+        /*optional icon that will be showed when track is seeking new position to play*/
+    }
+    soundCloudAudio={
+        instanceof SoundCloudAudio 
+        /*if passed automagically handles play and pause*/
+    }
     onTogglePlay={Func} 
 />
 ```
@@ -38,7 +44,10 @@ Goes to the next track in the playlist.
 ```javascript
 <NextButton 
     className={String} 
-    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically calls its' `next()` method on click*/}
+    soundCloudAudio={
+        instanceof SoundCloudAudio 
+        /*if passed automagically calls its' `next()` method on click*/
+    }
     onNextClick={Func}
 />
 ```
@@ -50,7 +59,10 @@ Returns back to the previous track in the playlist.
 ```javascript
 <PrevButton 
     className={String} 
-    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically calls its' `previous()` method on click*/}
+    soundCloudAudio={
+        instanceof SoundCloudAudio 
+        /*if passed automagically calls its' `previous()` method on click*/
+    }
     onPrevClick={Func}
 />
 ```
@@ -75,13 +87,16 @@ Component that replaces native [`<progress>` DOM element](https://developer.mozi
 <Progress 
     className={String}
     value={Number}
-    seekTrack={Func /*receives `x` position as first argument and `event` as second*/} 
+    seekTrack={
+        Function 
+        /*receives `x` position as first argument and `event` as second*/
+    } 
 />
 ```
 
 ### Cover
 
-Nice looking cover box inspire by original SoundCloud players.
+Nice looking cover box inspired by original SoundCloud players.
 
 ```javascript
 <Cover 
