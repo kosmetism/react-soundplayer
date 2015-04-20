@@ -1,12 +1,14 @@
 import React from 'react';
 import hljs from 'highlight.js';
-import PlayButton from '../../lib/components/PlayButton';
-import NextButton from '../../lib/components/NextButton';
-import PrevButton from '../../lib/components/PrevButton';
-import Progress from '../../lib/components/Progress';
-import Timer from '../../lib/components/Timer';
-import Cover from '../../lib/components/Cover';
-import SoundPlayerComponent from '../../lib/SoundPlayerComponent';
+import {
+    PlayButton,
+    NextButton,
+    PrevButton,
+    Progress,
+    Timer,
+    Cover
+} from '../../components';
+import { SoundPlayerComponent } from '../../addons';
 
 const clientId = '08f79801a998c381762ec5b15e4914d5';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
@@ -180,9 +182,13 @@ class App extends React.Component {
                     </a>
                 </h3>
                 <div className="mt1">
-                    In order to use it just choose what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>) and will Audio be global
-                    or created automagically per each player (via <code className="black bg-darken-1 rounded">clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a>
-                    &nbsp;instance passed respectively). With this information in mind it's really easy to create your own custom players like on example below:
+                    <p>In order to use it just choose:</p>
+                    <ul>
+                        <li>what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>)</li>
+                        <li>will Audio element be global or created automagically per each player (via <code className="black bg-darken-1 rounded">clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a>
+                    &nbsp;instance passed).</li>
+                    </ul>
+                    <p>With this information in mind it's really easy to create your own custom players like on example below:</p>
                 </div>
                 <SoundPlayerComponent
                     clientId={clientId}
@@ -192,9 +198,7 @@ class App extends React.Component {
                 </SoundPlayerComponent>
                 <div className="mt2">
                     <pre><code className="javascript">{`import React from 'react';
-import ReactSoundPlayer from 'react-soundplayer';
-
-const { SoundPlayerComponent } = ReactSoundPlayer;
+import { SoundPlayerComponent } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';

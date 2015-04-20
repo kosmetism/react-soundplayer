@@ -133,9 +133,8 @@ _(String)_ - your SoundCloud app's client ID, get at https://developers.soundclo
 
 ```javascript
 import React from 'react';
-import ReactSoundPlayer from 'react-soundplayer';
+import { SoundPlayerComponent } from 'react-soundplayer/addons';
 
-const { SoundPlayerComponent } = ReactSoundPlayer;
 const clientId = 'YOUR CLIENT ID';
 const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
 
@@ -159,9 +158,8 @@ _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.
 ```javascript
 import React from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
-import ReactSoundPlayer from 'react-soundplayer';
+import { SoundPlayerComponent } from 'react-soundplayer/addons';
 
-const { SoundPlayerComponent } = ReactSoundPlayer;
 const clientId = 'YOUR CLIENT ID';
 const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
 
@@ -196,9 +194,8 @@ As you can see it's really easy to create your own components from scratch and w
 ```javascript
 import React from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
-import ReactSoundPlayer from 'react-soundplayer';
+import { SoundPlayerComponent } from 'react-soundplayer/addons';
 
-const { SoundPlayerComponent } = ReactSoundPlayer;
 const clientId = 'YOUR CLIENT ID';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
 
