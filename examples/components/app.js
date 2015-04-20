@@ -157,8 +157,8 @@ class App extends React.Component {
                     </a>
                 </h3>
                 <Cover
-                    track={data.track}
-                    artist={data.artist}
+                    trackName={data.track}
+                    artistName={data.artist}
                     backgroundUrl={data.image}
                 />
 

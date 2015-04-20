@@ -11,10 +11,10 @@ class NextButton extends React.Component {
     }
 
     handleClick() {
-        let { soundCloudAudio, onToggleNext } = this.props;
+        let { soundCloudAudio, onNextClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.next();
-        onToggleNext && onToggleNext.call(this);
+        onNextClick && onNextClick.call(this);
     }
 
     render() {
@@ -32,7 +32,7 @@ class NextButton extends React.Component {
 
 NextButton.propTypes = {
     className: PropTypes.string,
-    onToggleNext: PropTypes.func,
+    onNextClick: PropTypes.func,
     soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
 

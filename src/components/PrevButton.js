@@ -11,10 +11,10 @@ class PrevButton extends React.Component {
     }
 
     handleClick() {
-        let { soundCloudAudio, onTogglePrev } = this.props;
+        let { soundCloudAudio, onPrevClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.previous();
-        onTogglePrev && onTogglePrev.call(this);
+        onPrevClick && onPrevClick.call(this);
     }
 
     render() {
@@ -32,7 +32,7 @@ class PrevButton extends React.Component {
 
 PrevButton.propTypes = {
     className: PropTypes.string,
-    onTogglePrev: PropTypes.func,
+    onPrevClick: PropTypes.func,
     soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
 

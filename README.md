@@ -14,21 +14,92 @@ npm install react-soundplayer --save
 
 ## Pure Components
 
+With **ReactSoundPlayer** creation of SoundCloud players becomes as easy as pointing different controls in the right places. Here is the list of available pure so-called ["dumb"](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) components that accept data and callbacks only as `props`:
+
 ### PlayButton
+
+Plays/pauses audio in the player. 
+
+```javascript
+<PlayButton 
+    className={String}
+    playing={Bool}
+    seeking={Bool}
+seekingIcon={ReactElement /*optional icon that will be showed when track is seeking new position to play*/}
+    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically handles play and pause*/}
+    onTogglePlay={Func} 
+/>
+```
 
 ### NextButton
 
+Goes to the next track in the playlist.
+
+```javascript
+<NextButton 
+    className={String} 
+    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically calls its' `next()` method on click*/}
+    onNextClick={Func}
+/>
+```
+
 ### PrevButton
+
+Returns back to the previous track in the playlist.
+
+```javascript
+<PrevButton 
+    className={String} 
+    soundCloudAudio={instanceof SoundCloudAudio /*if passed automagically calls its' `previous()` method on click*/}
+    onPrevClick={Func}
+/>
+```
 
 ### Timer
 
+Shows current time of the track and its' duration in `mm:ss/mm:ss` format.
+
+```javascript
+<Timer 
+    className={String} 
+    duration={Number}
+    currentTime={Number}
+/>
+```
+
 ### Progress
+
+Component that replaces native [`<progress>` DOM element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+
+```javascript
+<Progress 
+    className={String}
+    value={Number}
+    seekTrack={Func /*receives `x` position as first argument and `event` as second*/} 
+/>
+```
 
 ### Cover
 
+Nice looking cover box inspire by original SoundCloud players.
+
+```javascript
+<Cover 
+    className={String}
+    trackName={String}
+    artistName={String}
+    backgroundUrl={String}
+/>
+```
+
+As you see each component contains a set of self-descriptive properties. One of them is `className` which allows you to setup custom classnames as on regular DOM elements and style components as you wish.
+
 ## SoundPlayerComponent
 
-`<SoundPlayerComponent />` is higher level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) you need in order to design an audio player. When using it just choose what kind of data you're consuming (via `resolveUrl` or `streamUrl`) and will be [`Audio`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) element global or created per each player (via `clientId` or `soundCloudAudio` instance passed).
+`<SoundPlayerComponent />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose:
+
+- what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
+- will [`Audio element`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) be present globally or created per each player (via `clientId` or `soundCloudAudio` instance passed).
 
 _If you're wondering "Why not mixin?!", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
@@ -119,6 +190,8 @@ All of these self-descriptive state properties are passed into `<SoundPlayerComp
 - `duration` _(Number)_ - audio duration in seconds
 - `currentTime` _(Number)_ - audio current time in seconds
 - `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
+
+As you can see it's really easy to create your own components from scratch and wrap them with `SoundPlayerComponent` which will provide all the necessary data to them.
 
 ```javascript
 import React from 'react';
