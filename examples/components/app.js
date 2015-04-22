@@ -1,3 +1,4 @@
+import 'babel/polyfill';
 import React from 'react';
 import hljs from 'highlight.js';
 import {
@@ -8,7 +9,7 @@ import {
     Timer,
     Cover
 } from '../../components';
-import { SoundPlayerComponent } from '../../addons';
+import { SoundPlayerComponent, MultiplePlayerContainer } from '../../addons';
 import { BasicSoundPlayer } from '../../players';
 
 // dummy data
@@ -25,38 +26,6 @@ const clientId = '08f79801a998c381762ec5b15e4914d5';
 const seekingIcon = (
     <img src="../assets/preloader.svg" className="sb-soundplayer-play-icon" />
 );
-
-class CustomPlayer extends React.Component {
-    play() {
-        let { soundCloudAudio, playing } = this.props;
-        if (playing) {
-            soundCloudAudio.pause();
-        } else {
-            soundCloudAudio.play();
-        }
-    }
-
-    render() {
-        let { track, playing } = this.props;
-
-        if (!track) {
-            return <div>Loading...</div>;
-        }
-
-        return (
-            <div className="mt3 mb3 border p2 rounded b2">
-                <h2 className="m0">{track.title}</h2>
-                <h3 className="mt0">{track.user.username}</h3>
-                <button
-                    className="button button-small bg-teal"
-                    onClick={this.play.bind(this)}
-                >
-                    {playing ? 'Pause' : 'Play'}
-                </button>
-            </div>
-        );
-    }
-}
 
 class PureComponents extends React.Component {
     constructor() {
@@ -168,8 +137,41 @@ class PureComponents extends React.Component {
     }
 }
 
+class CustomPlayer extends React.Component {
+    play() {
+        let { soundCloudAudio, playing } = this.props;
+        if (playing) {
+            soundCloudAudio.pause();
+        } else {
+            soundCloudAudio.play();
+        }
+    }
+
+    render() {
+        let { track, playing } = this.props;
+
+        if (!track) {
+            return <div>Loading...</div>;
+        }
+
+        return (
+            <div className="mt3 mb3 border p2 rounded b2">
+                <h2 className="m0">{track.title}</h2>
+                <h3 className="mt0">by {track.user.username}</h3>
+                <button
+                    className="button button-small bg-teal"
+                    onClick={this.play.bind(this)}
+                >
+                    {playing ? 'Pause' : 'Play'}
+                </button>
+            </div>
+        );
+    }
+}
+
 class ContainerComponents extends React.Component {
     render() {
+        let { onStartTrack } = this.props;
         return (
             <div>
                 <h1 className="h1 h1-responsive caps mt3">Container</h1>
@@ -181,21 +183,17 @@ class ContainerComponents extends React.Component {
                 </div>
                 <h3 id="SoundPlayerComponent" className="mb2 h4">
                     <a href="#SoundPlayerComponent" className="black bg-yellow rounded">
-                        <code>{'<SoundPlayerComponent streamUrl={String} resolveUrl={String} clientId={String} soundCloudAudio={SoundCloudAudio} />'}</code>
+                        <code>{'<SoundPlayerComponent streamUrl={String} resolveUrl={String} clientId={String} />'}</code>
                     </a>
                 </h3>
                 <div className="mt1">
-                    <p>In order to use it just choose:</p>
-                    <ul>
-                        <li>what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>)</li>
-                        <li>will Audio element be global or created automagically per each player (via <code className="black bg-darken-1 rounded">clientId</code> or <a href="https://github.com/voronianski/soundcloud-audio.js/tree/master" target="_blank"><strong>SoundCloudAudio</strong></a>
-                    &nbsp;instance passed).</li>
-                    </ul>
+                    <p>In order to use it just choose what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).</p>
                     <p>With this information in mind it's really easy to create your own custom players like on example below:</p>
                 </div>
                 <SoundPlayerComponent
                     clientId={clientId}
                     resolveUrl={stepanIMeduza}
+                    onStartTrack={onStartTrack}
                 >
                     <CustomPlayer />
                 </SoundPlayerComponent>
@@ -254,12 +252,14 @@ React.render(<App />, document.body);`}</code></pre>
 
 class BuiltInPlayers extends React.Component {
     render() {
+        let { onStartTrack } = this.props;
         return (
             <div>
                 <h1 className="h1 h1-responsive caps mt3">Example Players</h1>
                 <BasicSoundPlayer
                     clientId={clientId}
                     resolveUrl={FFS}
+                    onStartTrack={onStartTrack}
                 />
                 <hr className="mt1 mb1 b2 border-orange" />
             </div>
@@ -268,39 +268,31 @@ class BuiltInPlayers extends React.Component {
 }
 
 class App extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            trackPlaying: false
-        };
-    }
-
     componentDidMount() {
         hljs.initHighlighting();
     }
 
     render() {
-        let { trackPlaying } = this.state;
-
         return (
             <div className="container">
-                {/* independent components */}
-                <PureComponents />
+                <MultiplePlayerContainer>
+                    {/* independent components */}
+                    <PureComponents />
 
-                {/* container component */}
-                <ContainerComponents trackPlaying={trackPlaying} />
+                    {/* container component */}
+                    <ContainerComponents />
 
-                {/* players */}
-                <BuiltInPlayers trackPlaying={trackPlaying} />
+                    {/* players */}
+                    <BuiltInPlayers />
 
-                {/* icons */}
-                <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>
-                <hr className="mt1 mb1 b2 border-orange" />
+                    {/* icons */}
+                    <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>
+                    <hr className="mt1 mb1 b2 border-orange" />
 
-                {/* resources */}
-                <h1 className="h1 h1-responsive caps mt3">Useful Resources</h1>
-                <hr className="mt1 mb1 b2 border-orange" />
+                    {/* resources */}
+                    <h1 className="h1 h1-responsive caps mt3">Useful Resources</h1>
+                    <hr className="mt1 mb1 b2 border-orange" />
+                </MultiplePlayerContainer>
             </div>
         );
     }

@@ -80,11 +80,15 @@ class SoundPlayerComponent extends Component {
     }
 
     onAudioStarted() {
+        let { onStartTrack } = this.props;
         this.setState({playing: true});
+        onStartTrack && onStartTrack(this.soundCloudAudio, this.soundCloudAudio.playing);
     }
 
     onAudioEnded() {
+        let { onStopTrack } = this.props;
         this.setState({playing: false});
+        onStopTrack && onStopTrack(this.soundCloudAudio);
     }
 
     getCurrentTime() {
@@ -126,7 +130,9 @@ class SoundPlayerComponent extends Component {
 SoundPlayerComponent.propTypes = {
     streamUrl: PropTypes.string,
     resolveUrl: PropTypes.string,
-    clientId: PropTypes.string.isRequired
+    clientId: PropTypes.string.isRequired,
+    onStartTrack: PropTypes.func,
+    onStopTrack: PropTypes.func
 };
 
 export default SoundPlayerComponent;
