@@ -2,10 +2,10 @@ import React from 'react/addons';
 import SoundCloudAudio from 'soundcloud-audio';
 import assign from 'object-assign';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 let { cloneWithProps } = React.addons;
 
-class SoundPlayerComponent extends React.Component {
+class SoundPlayerComponent extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -19,18 +19,16 @@ class SoundPlayerComponent extends React.Component {
     }
 
     componentDidMount() {
-        let { clientId, resolveUrl, streamUrl, soundCloudAudio } = this.props;
+        let { clientId, resolveUrl, streamUrl } = this.props;
 
-        if (!clientId && !soundCloudAudio) {
+        if (!clientId) {
             throw new Error(
-                `You need to pass either clientId or SoundCloudAudio instance
+                `You need to get clientId from SoundCloud
                 https://github.com/soundblogs/react-soundplayer#usage`
             );
         }
 
-        this.soundCloudAudio = (
-            soundCloudAudio instanceof SoundCloudAudio ? soundCloudAudio : new SoundCloudAudio(clientId)
-        );
+        this.soundCloudAudio = new SoundCloudAudio(clientId);
 
         if (streamUrl) {
             this.soundCloudAudio.preload(streamUrl);
@@ -50,6 +48,23 @@ class SoundPlayerComponent extends React.Component {
         this.soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
         this.soundCloudAudio.on('pause', this.onAudioEnded.bind(this));
         this.soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
+    }
+
+    playPause() {
+        let { playing } = this.state;
+        if (!playing) {
+            this.soundCloudAudio.play();
+        } else {
+            this.soundCloudAudio.pause();
+        }
+    }
+
+    next() {
+
+    }
+
+    prev() {
+
     }
 
     componentWillUnmount() {
@@ -81,7 +96,10 @@ class SoundPlayerComponent extends React.Component {
     }
 
     wrapChild(child) {
-        const newProps = assign({}, { soundCloudAudio: this.soundCloudAudio }, this.state);
+        const newProps = assign({}, {
+            soundCloudAudio: this.soundCloudAudio,
+            onTogglePlay: this.playPause.bind(this)
+        }, this.state);
         return cloneWithProps(child, newProps);
     }
 
@@ -108,8 +126,7 @@ class SoundPlayerComponent extends React.Component {
 SoundPlayerComponent.propTypes = {
     streamUrl: PropTypes.string,
     resolveUrl: PropTypes.string,
-    clientId: PropTypes.string,
-    soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
+    clientId: PropTypes.string.isRequired
 };
 
 export default SoundPlayerComponent;

@@ -1,9 +1,9 @@
 import React from 'react';
 import ClassNames from 'classnames';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class Timer extends React.Component {
+class Timer extends Component {
     prettyTime(time) {
         let hours = Math.floor(time / 3600);
         let mins = '0' + Math.floor((time % 3600) / 60);
@@ -40,11 +40,16 @@ Timer.propTypes = {
     duration: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    ]).isRequired,
+    ]),
     currentTime: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    ]).isRequired
+    ])
+};
+
+Timer.defaultProps = {
+    duration: 0,
+    currentTime: 0
 };
 
 export default Timer;

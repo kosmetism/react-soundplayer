@@ -9,14 +9,19 @@ import {
     Cover
 } from '../../components';
 import { SoundPlayerComponent } from '../../addons';
+import { BasicSoundPlayer } from '../../players';
 
-const clientId = '08f79801a998c381762ec5b15e4914d5';
-const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
+// dummy data
+const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
+const crystalCastles = 'https://soundcloud.com/crystal-castles/frail';
+const FFS = 'https://soundcloud.com/dominorecordco/ffs-johnny-delusional';
 const data = {
     image: 'https://d1v2xm8p2pd3wl.cloudfront.net/tracks/1a87a43ec633f01a917d23fc5e026bf9/640x400.jpg',
     artist: 'franiefroufrou',
     track: 'Exploding Whale by Sufjan Stevens'
 };
+
+const clientId = '08f79801a998c381762ec5b15e4914d5';
 const seekingIcon = (
     <img src="../assets/preloader.svg" className="sb-soundplayer-play-icon" />
 );
@@ -53,7 +58,7 @@ class CustomPlayer extends React.Component {
     }
 }
 
-class App extends React.Component {
+class PureComponents extends React.Component {
     constructor() {
         super();
 
@@ -62,12 +67,8 @@ class App extends React.Component {
             playing: false,
             currentTime: 0,
             progressVal: 0,
-            duration: 300
+            duration: 300,
         };
-    }
-
-    componentDidMount() {
-        hljs.initHighlighting();
     }
 
     handleClick() {
@@ -95,8 +96,7 @@ class App extends React.Component {
         let { playing, seeking, duration, currentTime, progressVal } = this.state;
 
         return (
-            <div className="container">
-                {/* independent components */}
+            <div>
                 <h1 className="h1 h1-responsive caps mt3">Pure Components</h1>
                 <hr className="mt1 mb1 b2 border-orange" />
 
@@ -163,12 +163,15 @@ class App extends React.Component {
                     artistName={data.artist}
                     backgroundUrl={data.image}
                 />
+            </div>
+        );
+    }
+}
 
-                {/* players */}
-                <h1 className="h1 h1-responsive caps mt3">Built-in Players</h1>
-                <hr className="mt1 mb1 b2 border-orange" />
-
-                {/* container component */}
+class ContainerComponents extends React.Component {
+    render() {
+        return (
+            <div>
                 <h1 className="h1 h1-responsive caps mt3">Container</h1>
                 <hr className="mt1 mb1 b2 border-orange" />
 
@@ -192,7 +195,7 @@ class App extends React.Component {
                 </div>
                 <SoundPlayerComponent
                     clientId={clientId}
-                    resolveUrl={resolveUrl}
+                    resolveUrl={stepanIMeduza}
                 >
                     <CustomPlayer />
                 </SoundPlayerComponent>
@@ -244,6 +247,52 @@ class App extends React.Component {
 
 React.render(<App />, document.body);`}</code></pre>
                 </div>
+            </div>
+        );
+    }
+}
+
+class BuiltInPlayers extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1 className="h1 h1-responsive caps mt3">Example Players</h1>
+                <BasicSoundPlayer
+                    clientId={clientId}
+                    resolveUrl={FFS}
+                />
+                <hr className="mt1 mb1 b2 border-orange" />
+            </div>
+        );
+    }
+}
+
+class App extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            trackPlaying: false
+        };
+    }
+
+    componentDidMount() {
+        hljs.initHighlighting();
+    }
+
+    render() {
+        let { trackPlaying } = this.state;
+
+        return (
+            <div className="container">
+                {/* independent components */}
+                <PureComponents />
+
+                {/* container component */}
+                <ContainerComponents trackPlaying={trackPlaying} />
+
+                {/* players */}
+                <BuiltInPlayers trackPlaying={trackPlaying} />
 
                 {/* icons */}
                 <h1 className="h1 h1-responsive caps mt3">Icon Components</h1>

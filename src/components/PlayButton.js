@@ -1,11 +1,10 @@
 import React from 'react';
 import ClassNames from 'classnames';
-import SoundCloudAudio from 'soundcloud-audio';
 import { PlayIconSVG, PauseIconSVG } from './Icons';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class PlayButton extends React.Component {
+class PlayButton extends Component {
     shouldComponentUpdate(nextProps) {
         let { playing, seeking } = this.props;
         return (
@@ -14,15 +13,8 @@ class PlayButton extends React.Component {
     }
 
     handleClick(e) {
-        let { playing, soundCloudAudio, onTogglePlay } = this.props;
-
-        if (!playing) {
-            soundCloudAudio && soundCloudAudio.play();
-        } else {
-            soundCloudAudio && soundCloudAudio.pause();
-        }
-
-        onTogglePlay && onTogglePlay.call(this, e);
+        let { onTogglePlay } = this.props;
+        onTogglePlay && onTogglePlay(e);
     }
 
     render() {
@@ -52,8 +44,7 @@ PlayButton.propTypes = {
     seeking: PropTypes.bool,
     playing: PropTypes.bool,
     onTogglePlay: PropTypes.func,
-    seekingIcon: PropTypes.node,
-    soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
+    seekingIcon: PropTypes.node
 };
 
 PlayButton.defaultProps = {

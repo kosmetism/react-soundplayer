@@ -6,9 +6,12 @@
 
 ![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-screen.png)
 
+## Usage
+
 ```
 npm install react-soundplayer --save
 ```
+
 
 # API
 
@@ -29,10 +32,6 @@ Plays/pauses audio in the player.
         ReactElement 
         /*optional icon that will be showed when track is seeking new position to play*/
     }
-    soundCloudAudio={
-        instanceof SoundCloudAudio 
-        /*if passed automagically handles play and pause*/
-    }
     onTogglePlay={Function} 
 />
 ```
@@ -43,11 +42,7 @@ Goes to the next track in the playlist.
 
 ```javascript
 <NextButton 
-    className={String} 
-    soundCloudAudio={
-        instanceof SoundCloudAudio 
-        /*if passed automagically calls its' `next()` method on click*/
-    }
+    className={String}
     onNextClick={Function}
 />
 ```
@@ -58,18 +53,14 @@ Returns back to the previous track in the playlist.
 
 ```javascript
 <PrevButton 
-    className={String} 
-    soundCloudAudio={
-        instanceof SoundCloudAudio 
-        /*if passed automagically calls its' `previous()` method on click*/
-    }
+    className={String}
     onPrevClick={Function}
 />
 ```
 
 ### Timer
 
-Shows current time of the track and its' duration in `mm:ss/mm:ss` format.
+Shows current time of the track and its' duration in `(hh:)mm:ss/(hh:)mm:ss` format.
 
 ```javascript
 <Timer 
@@ -111,12 +102,9 @@ As you see each component contains a set of self-descriptive properties. One of 
 
 ## SoundPlayerComponent
 
-`<SoundPlayerComponent />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose:
+`<SoundPlayerComponent />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
 
-- what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
-- will [`Audio element`](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) be present globally or created per each player (via `clientId` or `soundCloudAudio` instance passed).
-
-_If you're wondering "Why not mixin?!", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
+_If you're wondering "Why not mixin?", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
 ### Props
 
@@ -166,49 +154,20 @@ class AppPlayer extends React.Component {
 React.render(<AppPlayer />, document.body);
 ```
 
-##### `soundCloudAudio` 
-
-_(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_ - with this prop you can benefit of global audio object:
-
-```javascript
-import React from 'react';
-import SoundCloudAudio from 'soundcloud-audio';
-import { SoundPlayerComponent } from 'react-soundplayer/addons';
-
-const clientId = 'YOUR CLIENT ID';
-const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
-
-let soundCloudAudio = new SoundCloudAudio(clientId);
-
-class AppPlayer extends React.Component {
-    render() {
-        <div>
-            <SoundPlayerComponent streamUrl={streamUrl} soundCloudAudio={soundCloudAudio}>
-                {/* your custom player components */}
-            </SoundPlayerComponent>
-        </div>
-    }
-}
-
-React.render(<AppPlayer />, document.body);
-```
-
 ### State
 
 All of these self-descriptive state properties are passed into `<SoundPlayerComponent />` children components as `props`:
 
 - `playing` _(Boolean)_ - `true` if audio is playing currently
 - `seeking` _(Boolean)_ - `true` if audio is seeking for position
-- `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url was pointing to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks
+- `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url was pointing to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks (**will be available only while using [`resolveUrl` prop](https://github.com/soundblogs/react-soundplayer#resolveurl)**)
 - `duration` _(Number)_ - audio duration in seconds
 - `currentTime` _(Number)_ - audio current time in seconds
-- `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
 
 As you can see it's really easy to create your own components from scratch and wrap them with `SoundPlayerComponent` which will provide all the necessary data to them.
 
 ```javascript
 import React from 'react';
-import SoundCloudAudio from 'soundcloud-audio';
 import { SoundPlayerComponent } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
