@@ -240,10 +240,10 @@ Please keep in mind that SoundCloud provides an option for users to prevent stre
 
 ## References
 
-- [BASSCSS Toolkit]()
-- [SoundCloudAudio]()
-- :sunglasses: [Plangular]()
-- :heart: [SoundCloud API]()
+- simply the best CSS modular toolkit on the web - [BASSCSS](http://www.basscss.com/)
+- easy management of HTML5 Audio API by [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js/)
+- inspired by [Plangular](http://jxnblk.com/plangular/)
+- We all :heart: [SoundCloud API](https://developers.soundcloud.com/docs/api/reference)
 
 ---
 
