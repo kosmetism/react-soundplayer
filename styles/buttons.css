@@ -3,7 +3,6 @@
     background-color: transparent;
     color: #FC561E;
     font-size: 1em;
-    line-height: 0;
     padding: 16px;
     padding: 1rem;
     margin: 0;
@@ -18,12 +17,6 @@
             transition: transform, box-shadow, .05s ease;
     box-sizing: border-box;
     -webkit-appearance: none;
-}
-.sb-soundplayer-play-icon {
-    width: 1em;
-    height: 1em;
-    position: relative;
-    vertical-align: middle;
 }
 .sb-soundplayer-play-btn:hover {
     -webkit-transform: scale(1.0625);

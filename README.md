@@ -240,6 +240,11 @@ Please keep in mind that SoundCloud provides an option for users to prevent stre
 
 ## References
 
+- [BASSCSS Toolkit]()
+- [SoundCloudAudio]()
+- :sunglasses: [Plangular]()
+- :heart: [SoundCloud API]()
+
 ---
 
 **MIT Licensed**

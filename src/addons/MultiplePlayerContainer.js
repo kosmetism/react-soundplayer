@@ -1,8 +1,6 @@
 import React from 'react/addons';
 import assign from 'object-assign';
 
-import SoundPlayerComponent from './SoundPlayerComponent';
-
 let { Component } = React;
 let { cloneWithProps } = React.addons;
 
@@ -54,8 +52,9 @@ class MultiplePlayerContainer extends Component {
     }
 
     wrapChild(child) {
-        console.log(child instanceof SoundPlayerComponent);
-        const newProps = assign({}, { onStartTrack: this.handleStartPlay }, this.state);
+        const newProps = assign({}, {
+            onStartTrack: this.handleStartPlay
+        }, this.state);
         return cloneWithProps(child, newProps);
     }
 

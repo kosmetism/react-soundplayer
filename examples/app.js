@@ -1,6 +1,8 @@
 import 'babel/polyfill';
 import React from 'react';
 import hljs from 'highlight.js';
+
+// built-in components
 import {
     PlayButton,
     NextButton,
@@ -8,13 +10,15 @@ import {
     Progress,
     Timer,
     Cover
-} from '../../components';
-import { SoundPlayerComponent, MultiplePlayerContainer } from '../../addons';
-import { BasicSoundPlayer } from '../../players';
+} from '../components';
+import { SoundPlayerComponent, MultiplePlayerContainer } from '../addons';
+
+// example players
+import BasicSoundPlayer from './players/BasicSoundPlayer';
 
 // dummy data
 const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
-const crystalCastles = 'https://soundcloud.com/crystal-castles/frail';
+const shura = 'https://soundcloud.com/shura/shura-indecision-12-edit-1';
 const FFS = 'https://soundcloud.com/dominorecordco/ffs-johnny-delusional';
 const data = {
     image: 'https://d1v2xm8p2pd3wl.cloudfront.net/tracks/1a87a43ec633f01a917d23fc5e026bf9/640x400.jpg',
@@ -24,7 +28,7 @@ const data = {
 
 const clientId = '08f79801a998c381762ec5b15e4914d5';
 const seekingIcon = (
-    <img src="../assets/preloader.svg" className="sb-soundplayer-play-icon" />
+    <img src="./assets/preloader.svg" className="sb-soundplayer-play-icon" />
 );
 
 class PureComponents extends React.Component {
@@ -34,8 +38,8 @@ class PureComponents extends React.Component {
         this.state = {
             seeking: false,
             playing: false,
-            currentTime: 0,
-            progressVal: 0,
+            currentTime: 24,
+            progressVal: 8,
             duration: 300,
         };
     }
@@ -81,7 +85,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <PlayButton
-                    className="button button-transparent button-grow"
+                    className="button button-big button-transparent button-grow orange rounded"
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
@@ -93,14 +97,14 @@ class PureComponents extends React.Component {
                         <code>{'<NextButton className={String} />'}</code>
                     </a>
                 </h3>
-                <NextButton className="button button-transparent button-grow" />
+                <NextButton className="button button-big button-transparent button-grow orange rounded" />
 
                 <h3 id="PrevButton" className="mb2 h4">
                     <a href="#PrevButton" className="black bg-yellow rounded">
                         <code>{'<PrevButton className={String} />'}</code>
                     </a>
                 </h3>
-                <PrevButton className="button button-transparent button-grow" />
+                <PrevButton className="button button-big  button-transparent button-grow orange rounded" />
 
                 <h3 id="Progress" className="mb2 h4">
                     <a href="#Progress" className="black bg-yellow rounded">
@@ -236,7 +240,7 @@ class CustomPlayer extends React.Component {
 class App extends React.Component {
     render() {
         return (
-            <SoundPlayerComponent resolveUrl={streamUrl} clientId={client}>
+            <SoundPlayerComponent resolveUrl={streamUrl} clientId={clientId}>
                 <CustomPlayer />
             </SoundPlayerComponent>
         );
@@ -258,7 +262,7 @@ class BuiltInPlayers extends React.Component {
                 <h1 className="h1 h1-responsive caps mt3">Example Players</h1>
                 <BasicSoundPlayer
                     clientId={clientId}
-                    resolveUrl={FFS}
+                    resolveUrl={shura}
                     onStartTrack={onStartTrack}
                 />
                 <hr className="mt1 mb1 b2 border-orange" />

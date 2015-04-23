@@ -1,17 +1,17 @@
 @import 'basscss';
 @import 'highlight.js/styles/github.css';
-@import '../../styles/buttons.css';
-@import '../../styles/progress.css';
-@import '../../styles/cover.css';
+@import '../styles/icons.css';
+@import '../styles/progress.css';
+@import '../styles/cover.css';
 
 .b2 {
     border-width: 2px;
-}
-.bg-yellow {
-    background-color: rgba(255, 220, 0, 0.27);
 }
 
 :root {
     --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --container-width: 800px;
+    --yellow: rgba(255, 220, 0, 0.27);
+    --orange: #FC561E;
+    --button-line-height: 1;
 }
