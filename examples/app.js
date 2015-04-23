@@ -292,8 +292,9 @@ class App extends React.Component {
                 <header className="center px3 py4 white mb4">
                     <img src="./assets/soundcloud.png" width="90" className="mt2" />
                     <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
-                    <p className="h3 mt1">Create custom SoundCloud players with React.js</p>
-                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline button-big mb4 b2">View on Github</a>
+                    <p className="h3 mt1 mb2">Create custom SoundCloud players with React.js</p>
+                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline button-big mb3 mt2 mr2 b2">View on Github</a>
+                    <a href="#Examples" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
                 </header>
                 <div className="container">
                     <MultiplePlayerContainer>
