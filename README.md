@@ -243,7 +243,8 @@ Please keep in mind that SoundCloud provides an option for users to prevent stre
 - simply the best CSS modular toolkit on the web - [BASSCSS](http://www.basscss.com/)
 - easy management of HTML5 Audio API by [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js/)
 - inspired by [Plangular](http://jxnblk.com/plangular/)
-- We all :heart: [SoundCloud API](https://developers.soundcloud.com/docs/api/reference)
+- we all :heart: [SoundCloud API](https://developers.soundcloud.com/docs/api/reference)!
+- follow updates on [twitter](https://twitter.com/voronianski)
 
 ---
 
