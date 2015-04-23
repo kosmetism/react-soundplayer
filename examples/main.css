@@ -9,7 +9,15 @@
 }
 
 header {
-    background-image: linear-gradient(45deg, var(--teal), rgba(0, 255, 127,.5))
+    background-image: linear-gradient(45deg, var(--teal), rgba(0, 255, 127,.7));
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.social-buttons {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 }
 
 :root {
