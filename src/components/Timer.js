@@ -4,7 +4,7 @@ import ClassNames from 'classnames';
 let { PropTypes, Component } = React;
 
 class Timer extends Component {
-    prettyTime(time) {
+    static prettyTime(time) {
         let hours = Math.floor(time / 3600);
         let mins = '0' + Math.floor((time % 3600) / 60);
         let secs = '0' + Math.floor((time % 60));
@@ -29,7 +29,7 @@ class Timer extends Component {
 
         return (
             <div className={classNames}>
-                {this.prettyTime(currentTime)} / {this.prettyTime(duration)}
+                {Timer.prettyTime(currentTime)} / {Timer.prettyTime(duration)}
             </div>
         );
     }

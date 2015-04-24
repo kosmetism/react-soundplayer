@@ -1,7 +1,7 @@
 .sb-soundplayer-progress-container {
     background-color: var(--sb-progress-bg-color);
     width: 100%;
-    height: 10px;
+    height: var(--sb-progress-height);
     cursor: pointer;
 }
 
@@ -14,4 +14,5 @@
 :root {
     --sb-progress-color: #FC561E;
     --sb-progress-bg-color: #DDD;
+    --sb-progress-height: 10px;
 }

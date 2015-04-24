@@ -1,8 +1,8 @@
 @import 'basscss';
 @import 'highlight.js/styles/github.css';
-@import '../styles/icons.css';
-@import '../styles/progress.css';
-@import '../styles/cover.css';
+@import '../cssnext/icons.css';
+@import '../cssnext/progress.css';
+@import '../cssnext/cover.css';
 
 .b2 {
     border-width: 2px;
@@ -20,10 +20,17 @@ header {
     left: 1rem;
 }
 
+.semibold {
+    font-weight: 600;
+}
+
 :root {
     --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --container-width: 820px;
     --yellow: rgba(255, 220, 0, 0.45);
     --orange: #FC561E;
     --button-line-height: 1;
+    --sb-progress-height: 8px;
+    --button-big-padding-x: 1.25rem;
+    --button-big-padding-y: 1.25rem;
 }

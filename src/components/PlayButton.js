@@ -13,7 +13,14 @@ class PlayButton extends Component {
     }
 
     handleClick(e) {
-        let { onTogglePlay } = this.props;
+        let { playing, soundCloudAudio, onTogglePlay } = this.props;
+
+        if (!playing) {
+            soundCloudAudio && soundCloudAudio.play();
+        } else {
+            soundCloudAudio && soundCloudAudio.pause();
+        }
+
         onTogglePlay && onTogglePlay(e);
     }
 

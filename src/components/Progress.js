@@ -5,17 +5,18 @@ let { PropTypes } = React;
 
 class Progress extends React.Component {
     handleSeekTrack(e) {
-        let { seekTrack } = this.props;
-        if (seekTrack) {
-            let xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
-            seekTrack.call(this, xPos, e);
+        let { onSeekTrack, soundCloudAudio } = this.props;
+        const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
+
+        if (soundCloudAudio && !isNaN(soundCloudAudio.audio.duration)) {
+            soundCloudAudio.audio.currentTime = (xPos * soundCloudAudio.audio.duration);
         }
+
+        onSeekTrack && onSeekTrack.call(this, xPos, e);
     }
 
     render() {
-        let { value, className } = this.props;
-
-        value = parseInt(value, 10);
+        let { value, className, innerClassName } = this.props;
 
         if (value < 0) {
             value = 0;
@@ -26,10 +27,11 @@ class Progress extends React.Component {
 
         let style = {width: `${value}%`};
         let classNames = ClassNames('sb-soundplayer-progress-container', className);
+        let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
 
         return (
             <div className={classNames} onClick={this.handleSeekTrack.bind(this)}>
-                <div className="sb-soundplayer-progress-inner" style={style} />
+                <div className={innerClassNames} style={style} />
             </div>
         );
     }
@@ -37,11 +39,9 @@ class Progress extends React.Component {
 
 Progress.propTypes = {
     className: PropTypes.string,
-    value: PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.number
-    ]),
-    seekTrack: PropTypes.func
+    innerClassName: React.PropTypes.string,
+    value: React.PropTypes.number,
+    onSeekTrack: PropTypes.func
 };
 
 Progress.defaultProps = {

@@ -15,11 +15,16 @@ import { SoundPlayerComponent, MultiplePlayerContainer } from '../addons';
 
 // example players
 import BasicSoundPlayer from './players/BasicSoundPlayer';
+import ProgressSoundPlayer from './players/ProgressSoundPlayer';
+import PlaylistSoundPlayer from './players/PlaylistSoundPlayer';
 
 // dummy data
 const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
 const shura = 'https://soundcloud.com/shura/shura-indecision-12-edit-1';
 const FFS = 'https://soundcloud.com/dominorecordco/ffs-johnny-delusional';
+const crystalCastles = 'https://soundcloud.com/crystal-castles/frail';
+const sayLouLou = 'https://soundcloud.com/sayloulou/nothing-but-a-heartbeat';
+const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
     image: 'https://d1v2xm8p2pd3wl.cloudfront.net/tracks/1a87a43ec633f01a917d23fc5e026bf9/640x400.jpg',
     artist: 'franiefroufrou',
@@ -274,6 +279,16 @@ class BuiltInPlayers extends React.Component {
                 <BasicSoundPlayer
                     clientId={clientId}
                     resolveUrl={shura}
+                    onStartTrack={onStartTrack}
+                />
+                <ProgressSoundPlayer
+                    clientId={clientId}
+                    resolveUrl={sayLouLou}
+                    onStartTrack={onStartTrack}
+                />
+                <PlaylistSoundPlayer
+                    clientId={clientId}
+                    resolveUrl={pcMusic}
                     onStartTrack={onStartTrack}
                 />
             </div>

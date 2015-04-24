@@ -9,6 +9,14 @@ class SoundPlayerComponent extends Component {
     constructor(props, context) {
         super(props, context);
 
+        if (!props.clientId) {
+            throw new Error(
+                `You need to get clientId from SoundCloud
+                https://github.com/soundblogs/react-soundplayer#usage`
+            );
+        }
+        this.soundCloudAudio = new SoundCloudAudio(props.clientId);
+
         this.state = {
             duration: 0,
             currentTime: 0,
@@ -19,16 +27,7 @@ class SoundPlayerComponent extends Component {
     }
 
     componentDidMount() {
-        let { clientId, resolveUrl, streamUrl } = this.props;
-
-        if (!clientId) {
-            throw new Error(
-                `You need to get clientId from SoundCloud
-                https://github.com/soundblogs/react-soundplayer#usage`
-            );
-        }
-
-        this.soundCloudAudio = new SoundCloudAudio(clientId);
+        let { resolveUrl, streamUrl } = this.props;
 
         if (streamUrl) {
             this.soundCloudAudio.preload(streamUrl);
@@ -48,23 +47,6 @@ class SoundPlayerComponent extends Component {
         this.soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
         this.soundCloudAudio.on('pause', this.onAudioEnded.bind(this));
         this.soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
-    }
-
-    playPause() {
-        let { playing } = this.state;
-        if (!playing) {
-            this.soundCloudAudio.play();
-        } else {
-            this.soundCloudAudio.pause();
-        }
-    }
-
-    next() {
-
-    }
-
-    prev() {
-
     }
 
     componentWillUnmount() {
@@ -100,10 +82,7 @@ class SoundPlayerComponent extends Component {
     }
 
     wrapChild(child) {
-        const newProps = assign({}, {
-            soundCloudAudio: this.soundCloudAudio,
-            onTogglePlay: this.playPause.bind(this)
-        }, this.state);
+        const newProps = assign({}, { soundCloudAudio: this.soundCloudAudio }, this.state);
         return cloneWithProps(child, newProps);
     }
 
