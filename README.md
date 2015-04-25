@@ -244,7 +244,7 @@ Please keep in mind that SoundCloud provides an option for users to prevent stre
 - easy management of HTML5 Audio API by [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js/)
 - inspired by [Plangular](http://jxnblk.com/plangular/)
 - we all :heart: [SoundCloud API](https://developers.soundcloud.com/docs/api/reference)!
-- follow updates on [twitter](https://twitter.com/voronianski)
+- follow updates on [Twitter](https://twitter.com/voronianski)
 
 ---
 

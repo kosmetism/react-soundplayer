@@ -17,12 +17,12 @@ import { SoundPlayerComponent, MultiplePlayerContainer } from '../addons';
 import BasicSoundPlayer from './players/BasicSoundPlayer';
 import ProgressSoundPlayer from './players/ProgressSoundPlayer';
 import PlaylistSoundPlayer from './players/PlaylistSoundPlayer';
+import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 
 // dummy data
 const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
 const shura = 'https://soundcloud.com/shura/shura-indecision-12-edit-1';
-const FFS = 'https://soundcloud.com/dominorecordco/ffs-johnny-delusional';
-const crystalCastles = 'https://soundcloud.com/crystal-castles/frail';
+const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
 const sayLouLou = 'https://soundcloud.com/sayloulou/nothing-but-a-heartbeat';
 const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
@@ -271,7 +271,6 @@ React.render(<App />, document.body);`}</code></pre>
 
 class BuiltInPlayers extends React.Component {
     render() {
-        let { onStartTrack } = this.props;
         return (
             <div>
                 <h2 className="caps mt3">Example Players</h2>
@@ -279,17 +278,22 @@ class BuiltInPlayers extends React.Component {
                 <BasicSoundPlayer
                     clientId={clientId}
                     resolveUrl={shura}
-                    onStartTrack={onStartTrack}
+                    {...this.props}
                 />
                 <ProgressSoundPlayer
                     clientId={clientId}
                     resolveUrl={sayLouLou}
-                    onStartTrack={onStartTrack}
+                    {...this.props}
                 />
                 <PlaylistSoundPlayer
                     clientId={clientId}
                     resolveUrl={pcMusic}
-                    onStartTrack={onStartTrack}
+                    {...this.props}
+                />
+                <BackgroundSoundPlayer
+                    clientId={clientId}
+                    resolveUrl={glassCandy}
+                    {...this.props}
                 />
             </div>
         );
@@ -313,7 +317,7 @@ class App extends React.Component {
                 </header>
                 <div className="container">
                     <MultiplePlayerContainer>
-                        {/* icons */}
+                        {/* getting started */}
                         <h2 className="caps mt3">Getting Started</h2>
                         <hr className="mt1 mb1 b2 border-orange" />
 

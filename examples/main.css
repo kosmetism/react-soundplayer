@@ -1,8 +1,8 @@
-@import 'basscss';
-@import 'highlight.js/styles/github.css';
 @import '../cssnext/icons.css';
 @import '../cssnext/progress.css';
 @import '../cssnext/cover.css';
+@import 'highlight.js/styles/github.css';
+@import 'basscss';
 
 .b2 {
     border-width: 2px;
@@ -22,6 +22,10 @@ header {
 
 .semibold {
     font-weight: 600;
+}
+
+.muted {
+    opacity: .3;
 }
 
 :root {
