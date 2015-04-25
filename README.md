@@ -4,7 +4,11 @@
 
 > Create highly-customizable SoundCloud players with React.
 
-![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-screen.png)
+[![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-example.png)](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
+
+## [Demo](http://labs.voronianski.com/react-soundplayer)
+
+<!-- ![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-screen.png) -->
 
 ## Usage
 
@@ -13,9 +17,6 @@ npm install react-soundplayer --save
 ```
 
 
-## Examples
-
-[![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-example.png)](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
 # API
 
