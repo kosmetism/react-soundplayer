@@ -13,6 +13,10 @@ npm install react-soundplayer --save
 ```
 
 
+## Examples
+
+[![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-example.png)](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
+
 # API
 
 ## Pure Components
@@ -160,7 +164,7 @@ class AppPlayer extends React.Component {
 React.render(<AppPlayer />, document.body);
 ```
 
-### State
+### Children Props
 
 All of these self-descriptive state properties are passed into `<SoundPlayerComponent />` children components as `props`:
 

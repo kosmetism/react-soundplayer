@@ -1,7 +1,9 @@
 import React from 'react';
 
+const { Component } = React;
+
 // SoundCloud Logo
-class SoundCloudLogoSVG extends React.Component {
+class SoundCloudLogoSVG extends Component {
     shouldComponentUpdate() {
         return false;
     }
@@ -20,7 +22,7 @@ class SoundCloudLogoSVG extends React.Component {
 }
 
 // Player Button Icons
-class ButtonIconSVG extends React.Component {
+class ButtonIconSVG extends Component {
     render() {
         return (
             <svg
@@ -36,7 +38,7 @@ class ButtonIconSVG extends React.Component {
 }
 
 // |> Play
-class PlayIconSVG extends React.Component {
+class PlayIconSVG extends Component {
     shouldComponentUpdate() {
         return false;
     }
@@ -51,7 +53,7 @@ class PlayIconSVG extends React.Component {
 }
 
 // || Pause
-class PauseIconSVG extends React.Component {
+class PauseIconSVG extends Component {
     shouldComponentUpdate() {
         return false;
     }
@@ -66,7 +68,7 @@ class PauseIconSVG extends React.Component {
 }
 
 // |>| Next
-class NextIconSVG extends React.Component {
+class NextIconSVG extends Component {
     shouldComponentUpdate() {
         return false;
     }
@@ -81,7 +83,7 @@ class NextIconSVG extends React.Component {
 }
 
 // |<| Prev
-class PrevIconSVG extends React.Component {
+class PrevIconSVG extends Component {
     shouldComponentUpdate() {
         return false;
     }

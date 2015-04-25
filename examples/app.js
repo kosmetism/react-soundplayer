@@ -153,6 +153,10 @@ class PureComponents extends React.Component {
                         <code>{'<Progress />'}</code>
                     </a>
                 </h3>
+                <div className="mb2">
+                    Component that replaces native <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress" target="_blank"><code>{'<progress>'}</code> DOM element</a>.
+                    If <code className="black bg-darken-1 rounded">soundCloudAudio</code> prop is passed it automagically updates track audio time due to clicked progress position.
+                </div>
                 <Progress
                     className="mb2"
                     value={progressVal}
@@ -163,6 +167,7 @@ class PureComponents extends React.Component {
     innerClassName={String}
     value={Number}
     onSeekTrack={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
                 <hr />
@@ -172,6 +177,9 @@ class PureComponents extends React.Component {
                         <code>{'<Timer />'}</code>
                     </a>
                 </h3>
+                <div className="mb2">
+                    {`Shows current time of the track and its' duration in`} <code className="black bg-darken-1 rounded">(hh:)mm:ss/(hh:)mm:ss</code> format.
+                </div>
                 <Timer
                     className="mb2"
                     duration={duration}
@@ -190,6 +198,7 @@ class PureComponents extends React.Component {
                         <code>{'<Cover />'}</code>
                     </a>
                 </h3>
+                <div className="mb2">Nice looking cover box inspired by original SoundCloud players.</div>
                 <Cover
                     className="mb2"
                     trackName={data.track}

@@ -3,9 +3,9 @@ import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { NextIconSVG } from './Icons';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class NextButton extends React.Component {
+class NextButton extends Component {
     shouldComponentUpdate() {
         return false;
     }

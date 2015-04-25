@@ -3,9 +3,9 @@ import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { PrevIconSVG } from './Icons';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class PrevButton extends React.Component {
+class PrevButton extends Component {
     shouldComponentUpdate() {
         return false;
     }

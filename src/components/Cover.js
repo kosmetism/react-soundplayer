@@ -2,9 +2,9 @@ import React from 'react/addons';
 import ClassNames from 'classnames';
 import { SoundCloudLogoSVG } from './Icons';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class Cover extends React.Component {
+class Cover extends Component {
     render() {
         let { backgroundUrl, trackName, artistName, className, children } = this.props;
         let classNames = ClassNames('sb-soundplayer-cover', className);

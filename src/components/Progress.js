@@ -1,9 +1,10 @@
 import React from 'react';
+import SoundCloudAudio from 'soundcloud-audio';
 import ClassNames from 'classnames';
 
-let { PropTypes } = React;
+let { PropTypes, Component } = React;
 
-class Progress extends React.Component {
+class Progress extends Component {
     handleSeekTrack(e) {
         let { onSeekTrack, soundCloudAudio } = this.props;
         const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
@@ -41,7 +42,8 @@ Progress.propTypes = {
     className: PropTypes.string,
     innerClassName: React.PropTypes.string,
     value: React.PropTypes.number,
-    onSeekTrack: PropTypes.func
+    onSeekTrack: PropTypes.func,
+    soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
 
 Progress.defaultProps = {
