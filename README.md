@@ -99,7 +99,7 @@ _Important note:_ All buttons accept `soundCloudAudio` prop which when passed wi
 
 ### Progress
 
-Component that replaces native [`<progress>` DOM element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+Component that replaces native [`<progress>` DOM element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress).  If `soundCloudAudio` prop is passed it automagically updates track audio time due to clicked progress position.
 
 ```javascript
 <Progress 
