@@ -21,7 +21,7 @@ With **ReactSoundPlayer** creation of SoundCloud players becomes as easy as poin
 
 ### PlayButton
 
-Plays/pauses audio in the player. 
+Play or pause track. 
 
 ```javascript
 <PlayButton 
@@ -32,43 +32,36 @@ Plays/pauses audio in the player.
         ReactElement 
         /*optional icon that will be showed when track is seeking new position to play*/
     }
-    onTogglePlay={Function} 
+    onTogglePlay={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
 />
 ```
 
 ### NextButton
 
-Goes to the next track in the playlist.
+Switch to the next track in a playlist.
 
 ```javascript
 <NextButton 
     className={String}
     onNextClick={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
 />
 ```
 
 ### PrevButton
 
-Returns back to the previous track in the playlist.
+Return to the previous track in the playlist.
 
 ```javascript
-<PrevButton 
+<PrevButton
     className={String}
     onPrevClick={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
 />
 ```
 
-### Timer
-
-Shows current time of the track and its' duration in `(hh:)mm:ss/(hh:)mm:ss` format.
-
-```javascript
-<Timer 
-    className={String} 
-    duration={Number}
-    currentTime={Number}
-/>
-```
+_Important note:_ All buttons accept `soundCloudAudio` prop which when passed will add actions to buttons automagically (e.g. play/pause, go to prev/next track), callback function used in `onTogglePlay`, `onNextClick` and `onPrevClick` will still be called after.
 
 ### Progress
 
@@ -77,11 +70,24 @@ Component that replaces native [`<progress>` DOM element](https://developer.mozi
 ```javascript
 <Progress 
     className={String}
+    innerClassName={String}
     value={Number}
-    seekTrack={
+    onSeekTrack={
         Function 
         /*receives `x` position as first argument and `event` as second*/
     } 
+/>
+```
+
+### Timer
+
+Shows current time of the track and its' duration in `(hh:)mm:ss/(hh:)mm:ss` format.
+
+```javascript
+<Timer
+    className={String} 
+    duration={Number}
+    currentTime={Number}
 />
 ```
 
@@ -90,7 +96,7 @@ Component that replaces native [`<progress>` DOM element](https://developer.mozi
 Nice looking cover box inspired by original SoundCloud players.
 
 ```javascript
-<Cover 
+<Cover
     className={String}
     trackName={String}
     artistName={String}

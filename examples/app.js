@@ -75,14 +75,15 @@ class PureComponents extends React.Component {
 
         return (
             <div>
-                <h2 className="caps mt3">Pure Components</h2>
+                <h2 id="PureComponents" className="caps mt3">
+                    <a href="#PureComponents" className="black">Pure Components</a>
+                </h2>
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3 mb3">
                     <strong>ReactSoundPlayer</strong> is bundled with several player related pure components inside.
-                    All of them can be styled and customized as you wish, allowing you to create a player of your dream.
                     Each component accepts <code className="black bg-darken-1 rounded">className</code> prop as regular DOM elements do which makes it simple to use different styles.
-                    Here is the list of all available so-called "dumb" components that accept data and callbacks only as props:
+                    Here is the list of all available so-called "dumb" components that accept data and callbacks with self-descriptive props:
                 </div>
 
                 <h3 id="PlayButton" className="mb2 h4">
@@ -90,9 +91,9 @@ class PureComponents extends React.Component {
                         <code>{'<PlayButton />'}</code>
                     </a>
                 </h3>
-                <div className="mb2">Plays or pauses audio in the player.</div>
+                <div className="mb2">Play or pause track.</div>
                 <PlayButton
-                    className="button button-big button-transparent button-grow orange rounded mb2"
+                    className="button button-big button-outline button-grow orange rounded mb2"
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
@@ -104,22 +105,48 @@ class PureComponents extends React.Component {
     seeking={Boolean}
     seekingIcon={ReactElement}
     onTogglePlay={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
+                <hr />
 
                 <h3 id="NextButton" className="mb2 h4">
                     <a href="#NextButton" className="black bg-yellow rounded">
                         <code>{'<NextButton />'}</code>
                     </a>
                 </h3>
-                <NextButton className="button button-big button-transparent button-grow orange rounded" />
+                <div className="mb2">Switch to the next track in a playlist.</div>
+                <NextButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <pre><code className="html">{`<NextButton
+    className={String}
+    onNextClick={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
+/>
+`}</code></pre>
+                <hr />
 
                 <h3 id="PrevButton" className="mb2 h4">
                     <a href="#PrevButton" className="black bg-yellow rounded">
                         <code>{'<PrevButton />'}</code>
                     </a>
                 </h3>
-                <PrevButton className="button button-big  button-transparent button-grow orange rounded" />
+                <div className="mb2">Return to the previous track in a playlist.</div>
+                <PrevButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <pre><code className="html">{`<PrevButton
+    className={String}
+    onPrevClick={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
+/>
+`}</code></pre>
+                <hr />
+                <div className="mt2">
+                    <strong><i>Important note:</i></strong> All buttons accept <code className="black bg-darken-1 rounded">soundCloudAudio</code> prop which
+                    when passed will add actions to buttons automagically (e.g. play or pause, go to prev or next track),
+                    {' callback function used in '}<code className="black bg-darken-1 rounded">onTogglePlay</code>,
+                     <code className="black bg-darken-1 rounded">onNextClick</code> and
+                     <code className="black bg-darken-1 rounded">onPrevClick</code> will still be called after.
+                </div>
+                <hr />
 
                 <h3 id="Progress" className="mb2 h4">
                     <a href="#Progress" className="black bg-yellow rounded">
@@ -127,9 +154,18 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <Progress
+                    className="mb2"
                     value={progressVal}
-                    seekTrack={this.seekTrack.bind(this)}
+                    onSeekTrack={this.seekTrack.bind(this)}
                 />
+                <pre><code className="html">{`<Progress
+    className={String}
+    innerClassName={String}
+    value={Number}
+    onSeekTrack={Function}
+/>
+`}</code></pre>
+                <hr />
 
                 <h3 id="Timer" className="mb2 h4">
                     <a href="#Timer" className="black bg-yellow rounded">
@@ -137,9 +173,17 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <Timer
+                    className="mb2"
                     duration={duration}
                     currentTime={currentTime}
                 />
+                <pre><code className="html">{`<Timer
+    className={String}
+    duration={Number}
+    currentTime={Number}
+/>
+`}</code></pre>
+                <hr />
 
                 <h3 id="Cover" className="mb2 h4">
                     <a href="#Cover" className="black bg-yellow rounded">
@@ -147,10 +191,18 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <Cover
+                    className="mb2"
                     trackName={data.track}
                     artistName={data.artist}
                     backgroundUrl={data.image}
                 />
+                <pre><code className="html">{`<Cover
+    className={String}
+    trackName={String}
+    artistName={String}
+    backgroundUrl={String}
+/>
+`}</code></pre>
             </div>
         );
     }
@@ -193,7 +245,9 @@ class ContainerComponents extends React.Component {
         let { onStartTrack } = this.props;
         return (
             <div>
-                <h2 className="mt3 caps">Containers</h2>
+                <h2 id="Containers" className="mt3 caps">
+                    <a href="#Containers" className="black">Higher-order Containers</a>
+                </h2>
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3">
@@ -273,7 +327,9 @@ class BuiltInPlayers extends React.Component {
     render() {
         return (
             <div>
-                <h2 className="caps mt3">Example Players</h2>
+                <h2 id="ExamplePlayers" className="caps mt3">
+                    <a href="#ExamplePlayers" className="black">Example Players</a>
+                </h2>
                 <hr className="mt1 mb1 b2 border-orange" />
                 <BasicSoundPlayer
                     clientId={clientId}
@@ -313,12 +369,14 @@ class App extends React.Component {
                     <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
                     <p className="h3 mt1 mb2">Create custom SoundCloud players with React.js</p>
                     <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline button-big mb3 mt2 mr2 b2">View on Github</a>
-                    <a href="#Examples" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
+                    <a href="#ExamplePlayers" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
                 </header>
                 <div className="container">
                     <MultiplePlayerContainer>
                         {/* getting started */}
-                        <h2 className="caps mt3">Getting Started</h2>
+                        <h2 id="GettingStarted" className="caps mt3">
+                            <a href="#GettingStarted" className="black">Getting Started</a>
+                        </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
 
                         {/* independent components */}
@@ -331,11 +389,15 @@ class App extends React.Component {
                         <BuiltInPlayers />
 
                         {/* icons */}
-                        <h2 className="caps mt3">Icon Components</h2>
+                        <h2 id="IconComponents" className="caps mt3">
+                            <a href="#IconComponents" className="black">Icon Components</a>
+                        </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
 
                         {/* resources */}
-                        <h2 className="caps mt3">Useful Resources</h2>
+                        <h2 id="UsefulResources" className="caps mt3">
+                            <a href="#UsefulResources" className="black">Useful Resources</a>
+                        </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
                     </MultiplePlayerContainer>
                 </div>
