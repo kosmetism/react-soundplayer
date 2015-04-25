@@ -16,23 +16,21 @@
 npm install react-soundplayer --save
 ```
 
-From that moment you are ready to use _ReactSoundPlayer_ inside your React views. 
-
 _ReactSoundPlayer_ is shiped with **components** and **addons** bundles inside.
 
 Plain-old ES5:
 
 ```javascript
-// require components
+// require components and addons
 var SoundPlayerComponents = require('react-soundplayer/components');
+var SoundPlayerAddons = require('react-soundplayer/addons');
+
 var PlayButton = SoundPlayerComponents.PlayButton;
 var Progress = SoundPlayerComponents.Progress;
 
 // icons are components too!
 var SoundCloudLogoSVG = SoundPlayerComponents.Icons.SoundCloudLogoSVG
 
-// addons
-var SoundPlayerAddons = require('react-soundplayer/addons');
 var SoundPlayerContainer = SoundPlayerAddons.SoundPlayerContainer;
 
 ...
