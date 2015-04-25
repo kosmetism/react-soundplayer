@@ -11,7 +11,7 @@ import {
     Timer,
     Cover
 } from '../components';
-import { SoundPlayerComponent, MultiplePlayerContainer } from '../addons';
+import { SoundPlayerContainer, MultiplePlayerContainer } from '../addons';
 
 // example players
 import BasicSoundPlayer from './players/BasicSoundPlayer';
@@ -263,22 +263,22 @@ class ContainerComponents extends React.Component {
                     In the heart of <strong>ReactSoundPlayer</strong> is container that incapsulates
                     interaction with browser's Audio object and passes all necessary state data as properties inside children.
                 </div>
-                <h3 id="SoundPlayerComponent" className="mb2 h4">
-                    <a href="#SoundPlayerComponent" className="black bg-yellow rounded">
-                        <code>{'<SoundPlayerComponent streamUrl={String} resolveUrl={String} clientId={String} />'}</code>
+                <h3 id="SoundPlayerContainer" className="mb2 h4">
+                    <a href="#SoundPlayerContainer" className="black bg-yellow rounded">
+                        <code>{'<SoundPlayerContainer />'}</code>
                     </a>
                 </h3>
                 <div className="mt1">
                     <p>In order to use it just choose what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).</p>
                     <p>With this information in mind it's really easy to create your own custom players like on example below:</p>
                 </div>
-                <SoundPlayerComponent
+                <SoundPlayerContainer
                     clientId={clientId}
                     resolveUrl={stepanIMeduza}
                     onStartTrack={onStartTrack}
                 >
                     <CustomPlayer />
-                </SoundPlayerComponent>
+                </SoundPlayerContainer>
                 <div className="mt2">
                     <pre><code className="javascript">{`import React from 'react';
 import { SoundPlayerComponent } from 'react-soundplayer/addons';

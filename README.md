@@ -16,7 +16,38 @@
 npm install react-soundplayer --save
 ```
 
+From that moment you are ready to use _ReactSoundPlayer_ inside your React views. 
 
+_ReactSoundPlayer_ is shiped with **components** and **addons** bundles inside.
+
+Plain-old ES5:
+
+```javascript
+// require components
+var SoundPlayerComponents = require('react-soundplayer/components');
+var PlayButton = SoundPlayerComponents.PlayButton;
+var Progress = SoundPlayerComponents.Progress;
+
+// icons are components too!
+var SoundCloudLogoSVG = SoundPlayerComponents.Icons.SoundCloudLogoSVG
+
+// addons
+var SoundPlayerAddons = require('react-soundplayer/addons');
+var SoundPlayerContainer = SoundPlayerAddons.SoundPlayerContainer;
+
+...
+```
+
+ES6 syntax:
+
+```javascript
+import { PlayButton, Progress, Icons } from 'react-soundplayer/components';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
+
+const { SoundCloudLogoSVG } = Icons;
+
+...
+```
 
 # API
 
@@ -111,9 +142,9 @@ Nice looking cover box inspired by original SoundCloud players.
 
 As you see each component contains a set of self-descriptive properties. One of them is `className` which allows you to setup custom classnames as on regular DOM elements and style components as you wish.
 
-## SoundPlayerComponent
+## SoundPlayerContainer
 
-`<SoundPlayerComponent />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
+`<SoundPlayerContainer />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
 
 _If you're wondering "Why not mixin?", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
@@ -147,7 +178,7 @@ _(String)_ - your SoundCloud app's client ID, get at https://developers.soundclo
 
 ```javascript
 import React from 'react';
-import { SoundPlayerComponent } from 'react-soundplayer/addons';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
 const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
@@ -155,9 +186,9 @@ const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
 class AppPlayer extends React.Component {
     render() {
         <div>
-            <SoundPlayerComponent streamUrl={streamUrl} clientId={client}>
+            <SoundPlayerContainer streamUrl={streamUrl} clientId={client}>
                 {/* your custom player components */}
-            </SoundPlayerComponent>
+            </SoundPlayerContainer>
         </div>
     }
 }
@@ -167,7 +198,7 @@ React.render(<AppPlayer />, document.body);
 
 ### Children Props
 
-All of these self-descriptive state properties are passed into `<SoundPlayerComponent />` children components as `props`:
+All of these self-descriptive state properties are passed into `<SoundPlayerContainer />` children components as `props`:
 
 - `playing` _(Boolean)_ - `true` if audio is playing currently
 - `seeking` _(Boolean)_ - `true` if audio is seeking for position
@@ -175,11 +206,11 @@ All of these self-descriptive state properties are passed into `<SoundPlayerComp
 - `duration` _(Number)_ - audio duration in seconds
 - `currentTime` _(Number)_ - audio current time in seconds
 
-As you can see it's really easy to create your own components from scratch and wrap them with `SoundPlayerComponent` which will provide all the necessary data to them.
+As you can see it's really easy to create your own components from scratch and wrap them with `SoundPlayerContainer` which will provide all the necessary data to them.
 
 ```javascript
 import React from 'react';
-import { SoundPlayerComponent } from 'react-soundplayer/addons';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
@@ -230,10 +261,10 @@ class PlayPause extends React.Component {
 class CustomPlayer extends React.Component {
     render() {
         return (
-            <SoundPlayerComponent resolveUrl={resolveUrl} clientId={clientId}>
+            <SoundPlayerContainer resolveUrl={resolveUrl} clientId={clientId}>
                 <TrackInfo />
                 <PlayPause />
-            </SoundPlayerComponent>
+            </SoundPlayerContainer>
         );
     }
 }

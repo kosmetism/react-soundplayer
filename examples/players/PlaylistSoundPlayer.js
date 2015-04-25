@@ -1,6 +1,6 @@
 import React from 'react';
 import ClassNames from 'classnames';
-import { SoundPlayerComponent } from '../../addons';
+import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, PrevButton, NextButton, Progress, Timer } from '../../components';
 
 const { PropTypes, Component } = React;
@@ -112,9 +112,9 @@ class Player extends Component {
 class PlaylistSoundPlayer extends Component {
     render() {
         return (
-            <SoundPlayerComponent {...this.props}>
+            <SoundPlayerContainer {...this.props}>
                 <Player />
-            </SoundPlayerComponent>
+            </SoundPlayerContainer>
         );
     }
 }

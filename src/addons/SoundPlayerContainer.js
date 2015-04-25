@@ -5,7 +5,7 @@ import assign from 'object-assign';
 let { PropTypes, Component } = React;
 let { cloneWithProps } = React.addons;
 
-class SoundPlayerComponent extends Component {
+class SoundPlayerContainer extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -106,7 +106,7 @@ class SoundPlayerComponent extends Component {
     }
 }
 
-SoundPlayerComponent.propTypes = {
+SoundPlayerContainer.propTypes = {
     streamUrl: PropTypes.string,
     resolveUrl: PropTypes.string,
     clientId: PropTypes.string.isRequired,
@@ -114,4 +114,4 @@ SoundPlayerComponent.propTypes = {
     onStopTrack: PropTypes.func
 };
 
-export default SoundPlayerComponent;
+export default SoundPlayerContainer;

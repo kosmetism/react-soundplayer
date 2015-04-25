@@ -1,2 +1,2 @@
-export SoundPlayerComponent from './SoundPlayerComponent';
+export SoundPlayerContainer from './SoundPlayerContainer';
 export MultiplePlayerContainer from './MultiplePlayerContainer';
