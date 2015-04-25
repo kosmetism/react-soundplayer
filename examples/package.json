@@ -4,8 +4,9 @@
     "start": "../node_modules/watchify/bin/cmd.js . -o bundle.js -v -d",
     "build-css": "cssnext main.css styles.css -c",
     "build-js": "browserify app.js > bundle.js",
+    "build-js-prod": "browserify app.js | uglifyjs -cm > bundle.min.js",
     "build": "npm run build-css && npm run build-js",
-    "build-prod": "NODE_ENV=production npm run build"
+    "build-prod": "NODE_ENV=production npm run build-css && npm run build-js-prod"
   },
   "browserify": {
     "transform": [
@@ -13,9 +14,13 @@
         "babelify",
         {
           "stage": 0
-        }
+        },
+        "envify"
       ]
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^2.4.20"
+  }
 }

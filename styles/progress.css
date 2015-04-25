@@ -2,6 +2,7 @@
     background-color: #DDD;
     width: 100%;
     height: 10px;
+    overflow: hidden;
     cursor: pointer;
 }
 
