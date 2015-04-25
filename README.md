@@ -16,7 +16,7 @@
 npm install react-soundplayer --save
 ```
 
-_ReactSoundPlayer_ is shiped with **components** and **addons** bundles inside.
+_ReactSoundPlayer_ is shiped with **[components](https://github.com/soundblogs/react-soundplayer#pure-components)** and **[addons](https://github.com/soundblogs/react-soundplayer#soundplayercontainer)** bundles inside.
 
 Plain-old ES5:
 
