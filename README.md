@@ -6,7 +6,7 @@
 
 [![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-example.png)](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
-## [Demo](http://labs.voronianski.com/react-soundplayer)
+### [Demo](http://labs.voronianski.com/react-soundplayer)
 
 <!-- ![](https://dl.dropboxusercontent.com/u/100463011/react-soundplayer-screen.png) -->
 
