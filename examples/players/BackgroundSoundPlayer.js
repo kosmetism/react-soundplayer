@@ -3,7 +3,7 @@ import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, Progress } from '../../components';
 
 const { PropTypes, Component } = React;
-const nasaBg = 'http://peek.space/art/peek-space-img-12/preview.jpg';
+const nasaBg = './assets/player-bg.jpg';
 
 class Player extends Component {
     render() {

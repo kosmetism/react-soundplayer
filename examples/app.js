@@ -260,18 +260,31 @@ class ContainerComponents extends React.Component {
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3">
-                    In the heart of <strong>ReactSoundPlayer</strong> is container that incapsulates
+                    In the heart of <strong>ReactSoundPlayer</strong> there is a container that incapsulates
                     interaction with browser's Audio object and passes all necessary state data as properties inside children.
                 </div>
-                <h3 id="SoundPlayerContainer" className="mb2 h4">
+                <h3 id="SoundPlayerContainer" className="mb2 mt3 h4">
                     <a href="#SoundPlayerContainer" className="black bg-yellow rounded">
                         <code>{'<SoundPlayerContainer />'}</code>
                     </a>
                 </h3>
-                <div className="mt1">
-                    <p>In order to use it just choose what kind of data you're consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).</p>
-                    <p>With this information in mind it's really easy to create your own custom players like on example below:</p>
+                <div className="mt1 mb2">
+                    In order to use it just choose what kind of data you are consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).
                 </div>
+                <pre><code className="javascript">{`render() {
+    return (
+        <SoundPlayerContainer
+            clientId={String}
+            resolveUrl={String}
+            streamUrl={String}
+            onStartTrack={Function}
+            onStopTrack={Function}
+        >
+        {/*Children get props full of useful data!*/}
+        </SoundPlayerContainer>
+    );
+}`}</code></pre>
+                <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
                 <SoundPlayerContainer
                     clientId={clientId}
                     resolveUrl={stepanIMeduza}
@@ -281,7 +294,7 @@ class ContainerComponents extends React.Component {
                 </SoundPlayerContainer>
                 <div className="mt2">
                     <pre><code className="javascript">{`import React from 'react';
-import { SoundPlayerComponent } from 'react-soundplayer/addons';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
 const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
@@ -318,9 +331,9 @@ class CustomPlayer extends React.Component {
 class App extends React.Component {
     render() {
         return (
-            <SoundPlayerComponent resolveUrl={streamUrl} clientId={clientId}>
+            <SoundPlayerContainer resolveUrl={streamUrl} clientId={clientId}>
                 <CustomPlayer />
-            </SoundPlayerComponent>
+            </SoundPlayerContainer>
         );
     }
 }
@@ -340,6 +353,10 @@ class BuiltInPlayers extends React.Component {
                     <a href="#ExamplePlayers" className="black">Example Players</a>
                 </h2>
                 <hr className="mt1 mb1 b2 border-orange" />
+                <div className="mt3">
+                    These beautiful players are built using <a href="http://labs.voronianski.com/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.com/react-soundplayer#SoundPlayerContainer">SoundPlayerContainer</a>.
+                    What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {`It's easy to create your own!`}
+                </div>
                 <BasicSoundPlayer
                     clientId={clientId}
                     resolveUrl={shura}
@@ -387,6 +404,17 @@ class App extends React.Component {
                             <a href="#GettingStarted" className="black">Getting Started</a>
                         </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
+                        <pre className="mt3 mb2"><code className="bash">{`npm install react-soundplayer --save`}</code></pre>
+                        <div className="mb2">
+                            ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
+                        </div>
+                        <pre><code className="javascript">{`// all examples use ES6 syntax
+import { PlayButton, Progress, Icons } from 'react-soundplayer/components';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
+
+const { SoundCloudLogoSVG } = Icons;
+
+// ...`}</code></pre>
 
                         {/* independent components */}
                         <PureComponents />
@@ -402,12 +430,44 @@ class App extends React.Component {
                             <a href="#IconComponents" className="black">Icon Components</a>
                         </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
+                        <div className="mt3 mb2">
+                            Icons that are used inside buttons and SoundCloud logo which is used on cover can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
+                        </div>
+                        <pre><code className="javascript">{`import { Icons } from 'react-soundplayer';
+
+// the list of available icons:
+const {
+    SoundCloudLogoSVG,
+    PlayIconSVG,
+    PauseIconSVG,
+    NextIconSVG,
+    PrevIconSVG
+} = Icons;
+`}</code></pre>
+
+                        {/* troubleshooting */}
+                        <h2 id="Troubleshooting" className="caps mt3">
+                            <a href="#Troubleshooting" className="black">Troubleshooting</a>
+                        </h2>
+                        <hr className="mt1 mb1 b2 border-orange" />
+                        <div className="mt3">
+                            Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.
+                            {`If your sound isn't playing check the `}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
+                            If it is set to <code className="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
+                        </div>
 
                         {/* resources */}
                         <h2 id="UsefulResources" className="caps mt3">
                             <a href="#UsefulResources" className="black">Useful Resources</a>
                         </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
+                        <ul className="mt3 mb4">
+                            <li>simply the best CSS modular toolkit on the web - <a href="http://www.basscss.com"><strong>BASSCSS</strong></a></li>
+                            <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
+                            <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
+                            <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
+                            <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
+                        </ul>
                     </MultiplePlayerContainer>
                 </div>
             </div>

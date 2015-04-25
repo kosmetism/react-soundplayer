@@ -4,7 +4,8 @@
     "start": "../node_modules/watchify/bin/cmd.js . -o bundle.js -v -d",
     "build-css": "cssnext main.css styles.css -c",
     "build-js": "browserify app.js > bundle.js",
-    "build": "npm run build-css && npm run build-js"
+    "build": "npm run build-css && npm run build-js",
+    "build-prod": "NODE_ENV=production npm run build"
   },
   "browserify": {
     "transform": [

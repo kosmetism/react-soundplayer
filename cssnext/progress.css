@@ -2,6 +2,7 @@
     background-color: var(--sb-progress-bg-color);
     width: 100%;
     height: var(--sb-progress-height);
+    overflow: hidden;
     cursor: pointer;
 }
 

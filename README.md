@@ -16,9 +16,9 @@
 npm install react-soundplayer --save
 ```
 
-_ReactSoundPlayer_ is bundled with **[components](https://github.com/soundblogs/react-soundplayer#pure-components)** and **[addons](https://github.com/soundblogs/react-soundplayer#soundplayercontainer)** inside.
+ReactSoundPlayer is bundled with **[components](https://github.com/soundblogs/react-soundplayer#pure-components)** and **[addons](https://github.com/soundblogs/react-soundplayer#soundplayercontainer)** inside. You can require them in..
 
-Plain-old ES5:
+..plain-old ES5:
 
 ```javascript
 // require components and addons
@@ -33,10 +33,10 @@ var SoundCloudLogoSVG = SoundPlayerComponents.Icons.SoundCloudLogoSVG
 
 var SoundPlayerContainer = SoundPlayerAddons.SoundPlayerContainer;
 
-...
+// ...
 ```
 
-ES6 syntax:
+..or ES6 syntax:
 
 ```javascript
 import { PlayButton, Progress, Icons } from 'react-soundplayer/components';
@@ -44,7 +44,7 @@ import { SoundPlayerContainer } from 'react-soundplayer/addons';
 
 const { SoundCloudLogoSVG } = Icons;
 
-...
+// ...
 ```
 
 # API
