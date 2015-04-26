@@ -435,7 +435,7 @@ const { SoundCloudLogoSVG } = Icons;
                         <div className="mt3 mb2">
                             Icons that are used inside buttons and SoundCloud logo which is used on cover can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
                         </div>
-                        <pre><code className="javascript">{`import { Icons } from 'react-soundplayer';
+                        <pre><code className="javascript">{`import { Icons } from 'react-soundplayer/components';
 
 // the list of available icons:
 const {
