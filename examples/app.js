@@ -81,8 +81,7 @@ class PureComponents extends React.Component {
                 <hr className="mt1 mb1 b2 border-orange" />
 
                 <div className="mt3 mb3">
-                    <strong>ReactSoundPlayer</strong> is bundled with several player related pure components inside.
-                    Each component accepts <code className="black bg-darken-1 rounded">className</code> prop as regular DOM elements do which makes it simple to use different styles.
+                    Each component accepts <code className="black bg-darken-1 rounded">className</code> prop as regular DOM elements which makes it simple to use different styles with them.
                     Here is the list of all available so-called "dumb" components that accept data and callbacks with self-descriptive props:
                 </div>
 
