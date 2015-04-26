@@ -1,6 +1,8 @@
 # <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;react-soundplayer
 
-![](http://img.shields.io/badge/Status-Work%20In%20Progress-brightgreen.svg?style=flat)
+[![npm version](https://badge.fury.io/js/react-soundplayer.svg)](http://badge.fury.io/js/react-soundplayer)
+[![Dependency Status](https://david-dm.org/voronianski/react-soundplayer.svg)](https://david-dm.org/voronianski/react-soundplayer)
+[![Download Count](https://img.shields.io/npm/dm/react-soundplayer.svg?style=flat)](https://www.npmjs.com/package/react-soundplayer)
 
 > Create highly-customizable SoundCloud players with React.
 
