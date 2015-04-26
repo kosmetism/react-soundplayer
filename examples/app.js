@@ -414,6 +414,9 @@ import { SoundPlayerContainer } from 'react-soundplayer/addons';
 const { SoundCloudLogoSVG } = Icons;
 
 // ...`}</code></pre>
+                        <div className="mt2 mb2">
+                            ReactSoundPlayer depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> 0.13.x (or higher) and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
+                        </div>
 
                         {/* independent components */}
                         <PureComponents />
