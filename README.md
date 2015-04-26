@@ -49,7 +49,7 @@ const { SoundCloudLogoSVG } = Icons;
 // ...
 ```
 
-ReactSoundPlayer depends on React.js 0.13.x (or higher) and SoundCloudAudio for managing HTML5 Audio.
+ReactSoundPlayer depends on [React.js](http://facebook.github.io/react/index.html) 0.13.x (or higher) and [SoundCloudAudio](http://facebook.github.io/react/index.html) for managing HTML5 Audio.
 
 # API
 
