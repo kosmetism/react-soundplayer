@@ -274,6 +274,23 @@ class CustomPlayer extends React.Component {
 React.render(<CustomPlayer />, document.body);
 ```
 
+## Icon Components
+
+Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure [**SVG**](http://caniuse.com/#search=svg).
+
+```javascript
+`import { Icons } from 'react-soundplayer/components';
+
+// the list of available icons:
+const {
+    SoundCloudLogoSVG,
+    PlayIconSVG,
+    PauseIconSVG,
+    NextIconSVG,
+    PrevIconSVG
+} = Icons;
+```
+
 ## SoundCloud API
 
 If you're curious what data you can use inside player just take a look into official SoundCloud Developers docs for [tracks](https://developers.soundcloud.com/docs/api/reference#tracks).

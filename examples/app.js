@@ -2,7 +2,7 @@ import 'babel/polyfill';
 import React from 'react';
 import hljs from 'highlight.js';
 
-// built-in components
+// built-in components..
 import {
     PlayButton,
     NextButton,
@@ -11,7 +11,12 @@ import {
     Timer,
     Cover
 } from '../components';
-import { SoundPlayerContainer, MultiplePlayerContainer } from '../addons';
+
+// ..and addons
+import {
+    SoundPlayerContainer,
+    MultiplePlayerContainer
+} from '../addons';
 
 // example players
 import BasicSoundPlayer from './players/BasicSoundPlayer';
@@ -415,7 +420,7 @@ const { SoundCloudLogoSVG } = Icons;
 
 // ...`}</code></pre>
                         <div className="mt2 mb2">
-                            ReactSoundPlayer depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> 0.13.x (or higher) and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
+                            Module depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> 0.13.x (or higher) and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
                         </div>
 
                         {/* independent components */}
@@ -433,7 +438,7 @@ const { SoundCloudLogoSVG } = Icons;
                         </h2>
                         <hr className="mt1 mb1 b2 border-orange" />
                         <div className="mt3 mb2">
-                            Icons that are used inside buttons and SoundCloud logo which is used on cover can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
+                            Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
                         </div>
                         <pre><code className="javascript">{`import { Icons } from 'react-soundplayer/components';
 
