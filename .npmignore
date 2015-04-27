@@ -1,3 +1,6 @@
 src
 example
 examples
+.cssnext
+.editorconfig
+CONTRIBUTING.md
