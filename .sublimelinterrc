@@ -1,0 +1,7 @@
+{
+    "linters": {
+        "eslint": {
+           "excludes": ["lib/**/*.js"]
+        }
+    }
+}
