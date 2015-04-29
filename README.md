@@ -49,7 +49,7 @@ const { SoundCloudLogoSVG } = Icons;
 // ...
 ```
 
-ReactSoundPlayer depends on [React.js](http://facebook.github.io/react/index.html) 0.13.x (or higher) and [SoundCloudAudio](http://facebook.github.io/react/index.html) for managing HTML5 Audio.
+ReactSoundPlayer depends on [React.js](http://facebook.github.io/react/index.html) 0.13.x (or higher) and [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) for managing HTML5 Audio.
 
 # API
 
@@ -142,11 +142,13 @@ Nice looking cover box inspired by original SoundCloud players.
 />
 ```
 
-As you see each component contains a set of self-descriptive properties. One of them is `className` which allows you to setup custom classnames as on regular DOM elements and style components as you wish.
+As you see each component contains a set of self-descriptive properties. One of them is `className` which allows you to setup custom class names as on regular DOM elements and style components as you wish.
 
 ## SoundPlayerContainer
 
-`<SoundPlayerContainer />` is high level container that propagates its' children with all necessary [data](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player. When using it, just choose what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
+`<SoundPlayerContainer />` is higher level container that propagates its' children with all necessary [props](https://github.com/soundblogs/react-soundplayer#state) which you might need in order to design an audio player.
+
+When using it, just choose what kind of SoundCloud data you're consuming (via `resolveUrl` or `streamUrl`)
 
 _If you're wondering "Why not mixin?", please read ["Why Component Is Better Than Mixin"](https://github.com/acdlite/flummox/blob/master/docs/docs/guides/why-flux-component-is-better-than-flux-mixin.md) by [@acdlite](https://github.com/acdlite)._
 
@@ -166,7 +168,7 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 
 ##### `streamUrl`
 
-_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example url: 
+_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example: 
 
 ```javascript
 "https://api.soundcloud.com/tracks/200494743/stream"
@@ -174,7 +176,7 @@ _(String)_ - pass here pure stream url as it's returned by [SoundCloud API](http
 
 ##### `clientId`
 
-_(String)_ - your SoundCloud app's client ID, get at https://developers.soundcloud.com
+_(String)_ - your SoundCloud app's client ID, get it at https://developers.soundcloud.com
 
 [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js) will be created per each component instance:
 
@@ -207,6 +209,7 @@ All of these self-descriptive state properties are passed into `<SoundPlayerCont
 - `track` _(Object)_ or `tracks` _(Array)_ - data object or array of such objects depends whether the url was pointing to track or playlist, see - https://developers.soundcloud.com/docs/api/reference#tracks (**will be available only while using [`resolveUrl` prop](https://github.com/soundblogs/react-soundplayer#resolveurl)**)
 - `duration` _(Number)_ - audio duration in seconds
 - `currentTime` _(Number)_ - audio current time in seconds
+- `soundCloudAudio` _(instance of [SoundCloudAudio](https://github.com/voronianski/soundcloud-audio.js))_
 
 As you can see it's really easy to create your own components from scratch and wrap them with `SoundPlayerContainer` which will provide all the necessary data to them.
 
