@@ -279,7 +279,7 @@ React.render(<CustomPlayer />, document.body);
 Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure [**SVG**](http://caniuse.com/#search=svg).
 
 ```javascript
-`import { Icons } from 'react-soundplayer/components';
+import { Icons } from 'react-soundplayer/components';
 
 // the list of available icons:
 const {
