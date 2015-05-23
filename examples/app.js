@@ -50,7 +50,7 @@ class PureComponents extends React.Component {
             playing: false,
             currentTime: 24,
             progressVal: 8,
-            duration: 300,
+            duration: 300
         };
     }
 
@@ -68,7 +68,7 @@ class PureComponents extends React.Component {
 
     }
 
-    seekTrack(xPos, xPosRound, e) {
+    seekTrack(xPos) {
         this.setState({
             currentTime: Math.round(xPos * this.state.duration),
             progressVal: Math.round(xPos * 100)

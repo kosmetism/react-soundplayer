@@ -23,7 +23,7 @@ class Player extends Component {
                     <Progress
                         className="flex-auto bg-darken-3 rounded"
                         innerClassName="rounded-left bg-white"
-                        value={currentTime/duration * 100 || 0}
+                        value={currentTime / duration * 100 || 0}
                         {...this.props}
                     />
                 </div>

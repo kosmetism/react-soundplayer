@@ -9,6 +9,7 @@ class Progress extends Component {
         let { onSeekTrack, soundCloudAudio } = this.props;
         const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
 
+
         if (soundCloudAudio && !isNaN(soundCloudAudio.audio.duration)) {
             soundCloudAudio.audio.currentTime = (xPos * soundCloudAudio.audio.duration);
         }
@@ -22,6 +23,7 @@ class Progress extends Component {
         if (value < 0) {
             value = 0;
         }
+
         if (value > 100) {
             value = 100;
         }
