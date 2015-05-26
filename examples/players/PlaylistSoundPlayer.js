@@ -8,6 +8,7 @@ const { PropTypes, Component } = React;
 class Player extends Component {
     constructor() {
         super();
+
         this.state = {
             activeIndex: 0
         };
@@ -42,6 +43,7 @@ class Player extends Component {
 
     renderTrackList() {
         let { playlist } = this.props;
+
         if (!playlist) {
             return <div>Loading...</div>;
         }
@@ -58,7 +60,7 @@ class Player extends Component {
                     onClick={this.playTrackAtIndex.bind(this, i)}
                 >
                     <span className="flex-auto semibold">{track.user.username} - {track.title}</span>
-                    <span className="h6 regular">{Timer.prettyTime(track.duration/1000)}</span>
+                    <span className="h6 regular">{Timer.prettyTime(track.duration / 1000)}</span>
                 </button>
             );
         });
@@ -98,7 +100,7 @@ class Player extends Component {
                         <Progress
                             className="mt1 mb1 rounded"
                             innerClassName="rounded-left"
-                            value={currentTime/duration * 100 || 0}
+                            value={currentTime / duration * 100 || 0}
                             {...this.props}
                         />
                     </div>
