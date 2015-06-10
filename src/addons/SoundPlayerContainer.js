@@ -15,7 +15,11 @@ class SoundPlayerContainer extends Component {
                 https://github.com/soundblogs/react-soundplayer#usage`
             );
         }
-        this.soundCloudAudio = new SoundCloudAudio(props.clientId);
+        // Dont create a SoundCloudAudio instance
+        // if there is no `window`
+        if ('undefined' !== typeof window) {
+            this.soundCloudAudio = new SoundCloudAudio(props.clientId);
+        }
 
         this.state = {
             duration: 0,
