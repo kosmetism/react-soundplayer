@@ -15,6 +15,7 @@ class SoundPlayerContainer extends Component {
                 https://github.com/soundblogs/react-soundplayer#usage`
             );
         }
+
         // Dont create a SoundCloudAudio instance
         // if there is no `window`
         if ('undefined' !== typeof window) {
