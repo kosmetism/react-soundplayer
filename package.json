@@ -1,6 +1,6 @@
 {
   "name": "react-soundplayer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Create custom SoundCloud players with React",
   "main": "index.js",
   "directories": {
@@ -12,12 +12,20 @@
     "build": "npm run build-js && npm run build-css",
     "prepublish": "npm run build"
   },
+  "keywords": [
+    "react",
+    "component",
+    "react-component"
+    "soundcloud",
+    "html5",
+    "audio"
+  ],
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^3.0.0",
-    "react": "^0.13.1",
+    "react": "^0.13.3",
     "soundcloud-audio": "^0.1.4"
   },
   "devDependencies": {
