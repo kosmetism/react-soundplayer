@@ -27,7 +27,6 @@
 }
 .sb-soundplayer-cover .sb-soundplayer-info-box {
     display: inline-block;
-    background-color: #000000;
     background-color: rgba(0, 0, 0, .8);
     padding: 5px 10px;
     margin-bottom: 5px;
@@ -41,7 +40,6 @@
     font-size: 18px;
 }
 .sb-soundplayer-cover-logo {
-    color: #FFFFFF;
     color: rgba(255,255,255,.9);
     width: 100px;
     height: 14px;

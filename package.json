@@ -1,6 +1,6 @@
 {
   "name": "react-soundplayer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Create custom SoundCloud players with React",
   "main": "index.js",
   "directories": {
