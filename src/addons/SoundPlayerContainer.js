@@ -32,7 +32,7 @@ class SoundPlayerContainer extends Component {
     }
 
     componentDidMount() {
-        let { resolveUrl, streamUrl } = this.props;
+        const { resolveUrl, streamUrl } = this.props;
 
         if (streamUrl) {
             this.soundCloudAudio.preload(streamUrl);
@@ -54,6 +54,31 @@ class SoundPlayerContainer extends Component {
         this.soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
     }
 
+    componentWillReceiveProps(nextProps) {
+        const { streamUrl, resolveUrl } = this.props;
+        const playedBefore = this.state.playing;
+
+        function restartIfPlayed () {
+            if (playedBefore) {
+                this.soundCloudAudio.play();
+            }
+        }
+
+        if (streamUrl !== nextProps.streamUrl) {
+            this.soundCloudAudio.stop();
+            this.soundCloudAudio.preload(nextProps.streamUrl);
+            restartIfPlayed();
+        } else if (resolveUrl !== nextProps.resolveUrl) {
+            this.soundCloudAudio.stop();
+            this.soundCloudAudio.resolve(nextProps.resolveUrl, (data) => {
+                this.setState({
+                    [data.tracks ? 'playlist' : 'track']: data
+                });
+                restartIfPlayed.call(this);
+            });
+        }
+    }
+
     componentWillUnmount() {
         this.soundCloudAudio.unbindAll();
     }
@@ -67,14 +92,16 @@ class SoundPlayerContainer extends Component {
     }
 
     onAudioStarted() {
-        let { onStartTrack } = this.props;
+        const { onStartTrack } = this.props;
         this.setState({playing: true});
+
         onStartTrack && onStartTrack(this.soundCloudAudio, this.soundCloudAudio.playing);
     }
 
     onAudioEnded() {
-        let { onStopTrack } = this.props;
+        const { onStopTrack } = this.props;
         this.setState({playing: false});
+
         onStopTrack && onStopTrack(this.soundCloudAudio);
     }
 
@@ -92,14 +119,14 @@ class SoundPlayerContainer extends Component {
     }
 
     render() {
-        let { children } = this.props;
+        const { children } = this.props;
 
         if (!children) {
             return null;
         }
 
         if (!Array.isArray(children)) {
-            let child = children;
+            const child = children;
             return this.wrapChild(child);
         } else {
             return (
