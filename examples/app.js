@@ -14,8 +14,7 @@ import {
 
 // ..and addons
 import {
-    SoundPlayerContainer,
-    MultiplePlayerContainer
+    SoundPlayerContainer
 } from '../addons';
 
 // example players
@@ -402,80 +401,78 @@ class App extends React.Component {
                     <a href="#ExamplePlayers" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
                 </header>
                 <div className="container">
-                    <MultiplePlayerContainer>
-                        {/* getting started */}
-                        <h2 id="GettingStarted" className="caps mt3">
-                            <a href="#GettingStarted" className="black">Getting Started</a>
-                        </h2>
-                        <hr className="mt1 mb1 b2 border-orange" />
-                        <pre className="mt3 mb2"><code className="bash">{`npm install react-soundplayer --save`}</code></pre>
-                        <div className="mb2">
-                            ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
-                        </div>
-                        <pre><code className="javascript">{`// all examples use ES6 syntax
+                    {/* getting started */}
+                    <h2 id="GettingStarted" className="caps mt3">
+                        <a href="#GettingStarted" className="black">Getting Started</a>
+                    </h2>
+                    <hr className="mt1 mb1 b2 border-orange" />
+                    <pre className="mt3 mb2"><code className="bash">{`npm install react-soundplayer --save`}</code></pre>
+                    <div className="mb2">
+                        ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
+                    </div>
+                    <pre><code className="javascript">{`// all examples use ES6 syntax
 import { PlayButton, Progress, Icons } from 'react-soundplayer/components';
 import { SoundPlayerContainer } from 'react-soundplayer/addons';
 
 const { SoundCloudLogoSVG } = Icons;
 
 // ...`}</code></pre>
-                        <div className="mt2 mb2">
-                            Module depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> 0.13.x (or higher) and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
-                        </div>
+                    <div className="mt2 mb2">
+                        Module depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> 0.13.x (or higher) and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
+                    </div>
 
-                        {/* independent components */}
-                        <PureComponents />
+                    {/* independent components */}
+                    <PureComponents />
 
-                        {/* container component */}
-                        <ContainerComponents />
+                    {/* container component */}
+                    <ContainerComponents />
 
-                        {/* players */}
-                        <BuiltInPlayers />
+                    {/* players */}
+                    <BuiltInPlayers />
 
-                        {/* icons */}
-                        <h2 id="IconComponents" className="caps mt3">
-                            <a href="#IconComponents" className="black">Icon Components</a>
-                        </h2>
-                        <hr className="mt1 mb1 b2 border-orange" />
-                        <div className="mt3 mb2">
-                            Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
-                        </div>
-                        <pre><code className="javascript">{`import { Icons } from 'react-soundplayer/components';
+                    {/* icons */}
+                    <h2 id="IconComponents" className="caps mt3">
+                        <a href="#IconComponents" className="black">Icon Components</a>
+                    </h2>
+                    <hr className="mt1 mb1 b2 border-orange" />
+                    <div className="mt3 mb2">
+                        Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
+                    </div>
+                    <pre><code className="javascript">{`import { Icons } from 'react-soundplayer/components';
 
 // the list of available icons:
 const {
-    SoundCloudLogoSVG,
-    PlayIconSVG,
-    PauseIconSVG,
-    NextIconSVG,
-    PrevIconSVG
+SoundCloudLogoSVG,
+PlayIconSVG,
+PauseIconSVG,
+NextIconSVG,
+PrevIconSVG
 } = Icons;
 `}</code></pre>
 
-                        {/* troubleshooting */}
-                        <h2 id="Troubleshooting" className="caps mt3">
-                            <a href="#Troubleshooting" className="black">Troubleshooting</a>
-                        </h2>
-                        <hr className="mt1 mb1 b2 border-orange" />
-                        <div className="mt3">
-                            Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.
-                            {`If your sound isn't playing check the `}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
-                            If it is set to <code className="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
-                        </div>
+                    {/* troubleshooting */}
+                    <h2 id="Troubleshooting" className="caps mt3">
+                        <a href="#Troubleshooting" className="black">Troubleshooting</a>
+                    </h2>
+                    <hr className="mt1 mb1 b2 border-orange" />
+                    <div className="mt3">
+                        Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.
+                        {`If your sound isn't playing check the `}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
+                        If it is set to <code className="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
+                    </div>
 
-                        {/* resources */}
-                        <h2 id="UsefulResources" className="caps mt3">
-                            <a href="#UsefulResources" className="black">Useful Resources</a>
-                        </h2>
-                        <hr className="mt1 mb1 b2 border-orange" />
-                        <ul className="mt3 mb4">
-                            <li>simply the best CSS modular toolkit on the web - <a href="http://www.basscss.com"><strong>BASSCSS</strong></a></li>
-                            <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
-                            <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
-                            <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
-                            <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
-                        </ul>
-                    </MultiplePlayerContainer>
+                    {/* resources */}
+                    <h2 id="UsefulResources" className="caps mt3">
+                        <a href="#UsefulResources" className="black">Useful Resources</a>
+                    </h2>
+                    <hr className="mt1 mb1 b2 border-orange" />
+                    <ul className="mt3 mb4">
+                        <li>simply the best CSS modular toolkit on the web - <a href="http://www.basscss.com"><strong>BASSCSS</strong></a></li>
+                        <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
+                        <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
+                        <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
+                        <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
+                    </ul>
                 </div>
             </div>
         );

@@ -2,6 +2,8 @@ import React from 'react/addons';
 import SoundCloudAudio from 'soundcloud-audio';
 import assign from 'object-assign';
 
+import { stopAllOther, addToPlayedStore } from '../utils/audioStore.js';
+
 let { PropTypes, Component } = React;
 let { cloneWithProps } = React.addons;
 
@@ -16,7 +18,7 @@ class SoundPlayerContainer extends Component {
             );
         }
 
-        // Dont create a SoundCloudAudio instance
+        // Don't create a SoundCloudAudio instance
         // if there is no `window`
         if ('undefined' !== typeof window) {
             this.soundCloudAudio = new SoundCloudAudio(props.clientId);
@@ -32,12 +34,13 @@ class SoundPlayerContainer extends Component {
     }
 
     componentDidMount() {
+        const { soundCloudAudio } = this;
         const { resolveUrl, streamUrl } = this.props;
 
         if (streamUrl) {
-            this.soundCloudAudio.preload(streamUrl);
+            soundCloudAudio.preload(streamUrl);
         } else if (resolveUrl) {
-            this.soundCloudAudio.resolve(resolveUrl, (data) => {
+            soundCloudAudio.resolve(resolveUrl, (data) => {
                 this.setState({
                     [data.tracks ? 'playlist' : 'track']: data
                 });
@@ -45,36 +48,37 @@ class SoundPlayerContainer extends Component {
         }
 
         // https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events
-        this.soundCloudAudio.on('playing', this.onAudioStarted.bind(this));
-        this.soundCloudAudio.on('timeupdate', this.getCurrentTime.bind(this));
-        this.soundCloudAudio.on('loadedmetadata', this.getDuration.bind(this));
-        this.soundCloudAudio.on('seeking', this.onSeekingTrack.bind(this));
-        this.soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
-        this.soundCloudAudio.on('pause', this.onAudioEnded.bind(this));
-        this.soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
+        soundCloudAudio.on('playing', this.onAudioStarted.bind(this));
+        soundCloudAudio.on('timeupdate', this.getCurrentTime.bind(this));
+        soundCloudAudio.on('loadedmetadata', this.getDuration.bind(this));
+        soundCloudAudio.on('seeking', this.onSeekingTrack.bind(this));
+        soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
+        soundCloudAudio.on('pause', this.onAudioEnded.bind(this));
+        soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
     }
 
     componentWillReceiveProps(nextProps) {
+        const { soundCloudAudio } = this;
         const { streamUrl, resolveUrl } = this.props;
         const playedBefore = this.state.playing;
 
         function restartIfPlayed () {
             if (playedBefore) {
-                this.soundCloudAudio.play();
+                soundCloudAudio.play();
             }
         }
 
         if (streamUrl !== nextProps.streamUrl) {
-            this.soundCloudAudio.stop();
-            this.soundCloudAudio.preload(nextProps.streamUrl);
+            soundCloudAudio.stop();
+            soundCloudAudio.preload(nextProps.streamUrl);
             restartIfPlayed();
         } else if (resolveUrl !== nextProps.resolveUrl) {
-            this.soundCloudAudio.stop();
-            this.soundCloudAudio.resolve(nextProps.resolveUrl, (data) => {
+            soundCloudAudio.stop();
+            soundCloudAudio.resolve(nextProps.resolveUrl, (data) => {
                 this.setState({
                     [data.tracks ? 'playlist' : 'track']: data
                 });
-                restartIfPlayed.call(this);
+                restartIfPlayed();
             });
         }
     }
@@ -92,10 +96,15 @@ class SoundPlayerContainer extends Component {
     }
 
     onAudioStarted() {
+        const { soundCloudAudio } = this;
         const { onStartTrack } = this.props;
+
         this.setState({playing: true});
 
-        onStartTrack && onStartTrack(this.soundCloudAudio, this.soundCloudAudio.playing);
+        stopAllOther(soundCloudAudio.playing);
+        addToPlayedStore(soundCloudAudio);
+
+        onStartTrack && onStartTrack(soundCloudAudio, soundCloudAudio.playing);
     }
 
     onAudioEnded() {
