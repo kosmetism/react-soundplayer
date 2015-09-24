@@ -23,7 +23,7 @@ class Player extends Component {
     nextIndex() {
         let { activeIndex } = this.state;
         let { playlist } = this.props;
-        if (activeIndex >= playlist.tracks.length-1) {
+        if (activeIndex >= playlist.tracks.length - 1) {
             return;
         }
         if (activeIndex || activeIndex === 0) {
