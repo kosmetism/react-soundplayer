@@ -33,12 +33,6 @@ class SoundPlayerContainer extends Component {
         this.wrapChild = this.wrapChild.bind(this);
     }
 
-    getChildContext() {
-        return {
-            soundCloudAudio: this.soundCloudAudio
-        };
-    }
-
     componentDidMount() {
         const { soundCloudAudio } = this;
         const { resolveUrl, streamUrl } = this.props;
