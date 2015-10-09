@@ -53,7 +53,7 @@ class SoundPlayerContainer extends Component {
         soundCloudAudio.on('loadedmetadata', this.getDuration.bind(this));
         soundCloudAudio.on('seeking', this.onSeekingTrack.bind(this));
         soundCloudAudio.on('seeked', this.onSeekedTrack.bind(this));
-        soundCloudAudio.on('pause', this.onAudioPause.bind(this));
+        soundCloudAudio.on('pause', this.onAudioPaused.bind(this));
         soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
     }
 
@@ -107,8 +107,11 @@ class SoundPlayerContainer extends Component {
         onStartTrack && onStartTrack(soundCloudAudio, soundCloudAudio.playing);
     }
 
-    onAudioPause() {
+    onAudioPaused() {
+        const { onPauseTrack } = this.props;
         this.setState({playing: false});
+
+        onPauseTrack && onPauseTrack(this.soundCloudAudio);
     }
 
     onAudioEnded() {
@@ -156,7 +159,8 @@ SoundPlayerContainer.propTypes = {
     resolveUrl: PropTypes.string,
     clientId: PropTypes.string.isRequired,
     onStartTrack: PropTypes.func,
-    onStopTrack: PropTypes.func
+    onStopTrack: PropTypes.func,
+    onPauseTrack: PropTypes.func
 };
 
 export default SoundPlayerContainer;
