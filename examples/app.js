@@ -1,5 +1,6 @@
 import 'babel/polyfill';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import hljs from 'highlight.js';
 
 // built-in components..
@@ -479,4 +480,4 @@ PrevIconSVG
     }
 }
 
-React.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

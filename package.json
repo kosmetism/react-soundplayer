@@ -1,6 +1,6 @@
 {
   "name": "react-soundplayer",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Create custom SoundCloud players with React",
   "main": "index.js",
   "directories": {
@@ -25,8 +25,12 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^4.0.1",
-    "react": "^0.13.3",
     "soundcloud-audio": "^0.1.6"
+  },
+  "peerDependencies": {
+    "react": "^0.14.x",
+    "react-dom": "^0.14.x",
+    "react-addons-clone-with-props": "^0.14.x"
   },
   "devDependencies": {
     "babel": "^5.1.2",

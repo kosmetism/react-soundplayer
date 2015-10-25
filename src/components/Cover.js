@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import ClassNames from 'classnames';
 import { SoundCloudLogoSVG } from './Icons';
 
@@ -20,7 +20,7 @@ class Cover extends Component {
                 <div>
                     <span className="sb-soundplayer-artist sb-soundplayer-info-box">by {artistName}</span>
                 </div>
-                {React.Children.map(children, React.addons.cloneWithProps)}
+                {React.Children.map(children, React.cloneElement)}
             </div>
         );
     }

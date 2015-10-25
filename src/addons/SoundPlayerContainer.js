@@ -1,11 +1,10 @@
-import React from 'react/addons';
+import React from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
 import assign from 'object-assign';
 
 import { stopAllOther, addToPlayedStore } from '../utils/audioStore.js';
 
 let { PropTypes, Component } = React;
-let { cloneWithProps } = React.addons;
 
 class SoundPlayerContainer extends Component {
     constructor(props, context) {
@@ -131,7 +130,7 @@ class SoundPlayerContainer extends Component {
 
     wrapChild(child) {
         const newProps = assign({}, { soundCloudAudio: this.soundCloudAudio }, this.state);
-        return cloneWithProps(child, newProps);
+        return React.cloneElement(child, newProps);
     }
 
     render() {
