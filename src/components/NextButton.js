@@ -14,7 +14,7 @@ class NextButton extends Component {
         let { soundCloudAudio, onNextClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.next();
-        onNextClick && onNextClick.call(this);
+        onNextClick && onNextClick(e);
     }
 
     render() {
@@ -23,7 +23,7 @@ class NextButton extends Component {
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
                 <NextIconSVG />
             </button>
         );

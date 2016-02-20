@@ -40,7 +40,7 @@ class PlayButton extends Component {
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
                 {iconNode}
             </button>
         );

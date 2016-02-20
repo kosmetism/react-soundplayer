@@ -10,11 +10,11 @@ class PrevButton extends Component {
         return false;
     }
 
-    handleClick() {
+    handleClick(e) {
         let { soundCloudAudio, onPrevClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.previous();
-        onPrevClick && onPrevClick.call(this);
+        onPrevClick && onPrevClick(e);
     }
 
     render() {
@@ -23,7 +23,7 @@ class PrevButton extends Component {
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
                 <PrevIconSVG />
             </button>
         );
