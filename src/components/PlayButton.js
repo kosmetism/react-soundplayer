@@ -26,7 +26,7 @@ class PlayButton extends Component {
     }
 
     render() {
-        let { playing, seekingIcon, seeking, className } = this.props;
+        let { playing, seekingIcon, seeking, className, styles } = this.props;
 
         let iconNode;
         if (seeking && seekingIcon) {
@@ -40,7 +40,7 @@ class PlayButton extends Component {
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} style={styles} onClick={this.handleClick.bind(this)}>
                 {iconNode}
             </button>
         );
@@ -49,6 +49,7 @@ class PlayButton extends Component {
 
 PlayButton.propTypes = {
     className: PropTypes.string,
+    styles: PropTypes.object,
     seeking: PropTypes.bool,
     playing: PropTypes.bool,
     onTogglePlay: PropTypes.func,

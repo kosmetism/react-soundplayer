@@ -18,12 +18,11 @@ class NextButton extends Component {
     }
 
     render() {
-        let { className } = this.props;
-
+        let { className, styles } = this.props;
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} style={styles} onClick={this.handleClick.bind(this)}>
                 <NextIconSVG />
             </button>
         );
@@ -32,6 +31,7 @@ class NextButton extends Component {
 
 NextButton.propTypes = {
     className: PropTypes.string,
+    styles: React.PropTypes.object,
     onNextClick: PropTypes.func,
     soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
