@@ -18,12 +18,12 @@ class PrevButton extends Component {
     }
 
     render() {
-        let { className } = this.props;
+        let { className, style } = this.props;
 
         let classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button type="button" className={classNames} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} style={style} onClick={this.handleClick.bind(this)}>
                 <PrevIconSVG />
             </button>
         );
