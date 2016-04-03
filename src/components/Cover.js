@@ -6,11 +6,11 @@ let { PropTypes, Component } = React;
 
 class Cover extends Component {
     render() {
-        let { backgroundUrl, trackName, artistName, className, styles, children } = this.props;
+        let { backgroundUrl, trackName, artistName, className, style, children } = this.props;
         let classNames = ClassNames('sb-soundplayer-cover', className);
 
         return (
-            <div style={{backgroundImage: `url(${backgroundUrl})`}} className={classNames} style={styles}>
+            <div className={classNames} style={Object.assign(style, {backgroundImage: `url(${backgroundUrl})`})}>
                 <div>
                     <SoundCloudLogoSVG />
                 </div>
@@ -28,7 +28,6 @@ class Cover extends Component {
 
 Cover.propTypes = {
     className: PropTypes.string,
-    styles: PropTypes.object,
     backgroundUrl: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,
     artistName: PropTypes.string.isRequired

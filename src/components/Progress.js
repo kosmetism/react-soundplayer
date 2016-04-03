@@ -18,7 +18,7 @@ class Progress extends Component {
     }
 
     render() {
-        let { value, className, styles, innerClassName, innerStyles } = this.props;
+        let { value, className, innerClassName, style, innerStyle } = this.props;
 
         if (value < 0) {
             value = 0;
@@ -30,12 +30,11 @@ class Progress extends Component {
 
         let classNames = ClassNames('sb-soundplayer-progress-container', className);
         let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
-        let innerStyle = {width: `${value}%`};
-        innerStyles = Object.assign(innerStyle, innerStyles);
+        innerStyle = Object.assign(innerStyle, {width: `${value}%`});
 
         return (
-            <div className={classNames} style={styles} onClick={this.handleSeekTrack.bind(this)}>
-                <div className={innerClassNames} style={innerStyles} />
+            <div className={classNames} style={style} onClick={this.handleSeekTrack.bind(this)}>
+                <div className={innerClassNames} style={innerStyle} />
             </div>
         );
     }
@@ -43,9 +42,8 @@ class Progress extends Component {
 
 Progress.propTypes = {
     className: PropTypes.string,
-    styles: PropTypes.object,
     innerClassName: React.PropTypes.string,
-    innerStyles: PropTypes.object,
+    innerStyle: PropTypes.object,
     value: React.PropTypes.number,
     onSeekTrack: PropTypes.func,
     soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)

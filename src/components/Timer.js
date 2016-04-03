@@ -24,11 +24,11 @@ class Timer extends Component {
     }
 
     render() {
-        let { duration, currentTime, className, styles } = this.props;
+        let { duration, currentTime, className, style } = this.props;
         let classNames = ClassNames('sb-soundplayer-timer', className);
 
         return (
-            <div className={classNames} style={styles}>
+            <div className={classNames} style={style}>
                 {Timer.prettyTime(currentTime)} / {Timer.prettyTime(duration)}
             </div>
         );
@@ -37,7 +37,6 @@ class Timer extends Component {
 
 Timer.propTypes = {
     className: PropTypes.string,
-    styles: PropTypes.object,
     duration: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
