@@ -31,7 +31,7 @@ class Progress extends Component {
         let classNames = ClassNames('sb-soundplayer-progress-container', className);
         let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
         
-        if(innerStyle) {
+        if (innerStyle) {
             innerStyle = Object.assign(innerStyle, {width: `${value}%`});
         }
 
