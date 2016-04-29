@@ -24,8 +24,12 @@ class Timer extends Component {
     }
 
     render() {
-        let { duration, currentTime, className, style } = this.props;
+        let { duration, currentTime, className, style, soundCloudAudio } = this.props;
         let classNames = ClassNames('sb-soundplayer-timer', className);
+        
+        if (!duration && soundCloudAudio.duration) {
+            duration = soundCloudAudio.duration
+        }
 
         return (
             <div className={classNames} style={style}>
