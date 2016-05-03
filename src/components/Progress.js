@@ -18,7 +18,11 @@ class Progress extends Component {
     }
 
     render() {
-        let { value, className, innerClassName, style, innerStyle } = this.props;
+        let { value, className, innerClassName, style, innerStyle, currentTime, duration } = this.props;
+
+        if (!value && currentTime && duration) {
+            value = currentTime / duration * 100 || 0;
+        }
 
         if (value < 0) {
             value = 0;
@@ -31,9 +35,11 @@ class Progress extends Component {
         let classNames = ClassNames('sb-soundplayer-progress-container', className);
         let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
         
-        if (innerStyle) {
-            innerStyle = Object.assign(innerStyle, {width: `${value}%`});
+        if (!innerStyle) {
+            innerStyle = {};
         }
+
+        innerStyle = Object.assign(innerStyle, {width: `${value}%`});
 
         return (
             <div className={classNames} style={style} onClick={this.handleSeekTrack.bind(this)}>
