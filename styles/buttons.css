@@ -20,12 +20,10 @@
 }
 .sb-soundplayer-play-btn:hover {
     -webkit-transform: scale(1.0625);
-        -ms-transform: scale(1.0625);
             transform: scale(1.0625);
 }
 .sb-soundplayer-play-btn:focus {
     -webkit-transform: scale(.9375);
-        -ms-transform: scale(.9375);
             transform: scale(.9375);
 }
 .sb-soundplayer-play-btn:active {
