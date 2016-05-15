@@ -17,7 +17,7 @@ class PlayButton extends Component {
         let { playing, soundCloudAudio, onTogglePlay } = this.props;
 
         if (!playing) {
-            soundCloudAudio && soundCloudAudio.play();
+            soundCloudAudio && soundCloudAudio.play({ playlistIndex: soundCloudAudio._playlistIndex });
         } else {
             soundCloudAudio && soundCloudAudio.pause();
         }
