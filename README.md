@@ -190,7 +190,7 @@ const streamUrl = 'https://api.soundcloud.com/tracks/200494743/stream';
 class AppPlayer extends React.Component {
     render() {
         <div>
-            <SoundPlayerContainer streamUrl={streamUrl} clientId={client}>
+            <SoundPlayerContainer streamUrl={streamUrl} clientId={clientId}>
                 {/* your custom player components */}
             </SoundPlayerContainer>
         </div>
