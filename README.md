@@ -199,6 +199,8 @@ class AppPlayer extends React.Component {
 
 React.render(<AppPlayer />, document.body);
 ```
+##### `instance`
+_(object)_ - Use instead of `clientId` to pass in a pre-existing instance of `soundCloudAudio` for `SoundPlayerContainer` to wrap.
 
 ### Children Props
 
