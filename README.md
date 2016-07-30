@@ -59,15 +59,15 @@ With **ReactSoundPlayer** creation of SoundCloud players becomes as easy as poin
 
 ### PlayButton
 
-Play or pause track. 
+Play or pause track.
 
 ```javascript
-<PlayButton 
+<PlayButton
     className={String}
     playing={Boolean}
     seeking={Boolean}
     seekingIcon={
-        ReactElement 
+        ReactElement
         /*optional icon that will be showed when track is seeking new position to play*/
     }
     onTogglePlay={Function}
@@ -80,7 +80,7 @@ Play or pause track.
 Switch to the next track in a playlist.
 
 ```javascript
-<NextButton 
+<NextButton
     className={String}
     onNextClick={Function}
     soundCloudAudio={instanceof SoundCloudAudio}
@@ -106,14 +106,14 @@ _Important note:_ All buttons accept `soundCloudAudio` prop which when passed wi
 Component that replaces native [`<progress>` DOM element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress).  If `soundCloudAudio` prop is passed it automagically updates track audio time due to clicked progress position.
 
 ```javascript
-<Progress 
+<Progress
     className={String}
     innerClassName={String}
     value={Number}
     onSeekTrack={
-        Function 
+        Function
         /*receives `x` position as first argument and `event` as second*/
-    } 
+    }
 />
 ```
 
@@ -123,7 +123,7 @@ Shows current time of the track and its' duration in `(hh:)mm:ss/(hh:)mm:ss` for
 
 ```javascript
 <Timer
-    className={String} 
+    className={String}
     duration={Number}
     currentTime={Number}
 />
@@ -168,7 +168,7 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 
 ##### `streamUrl`
 
-_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example: 
+_(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example:
 
 ```javascript
 "https://api.soundcloud.com/tracks/200494743/stream"
@@ -199,7 +199,7 @@ class AppPlayer extends React.Component {
 
 React.render(<AppPlayer />, document.body);
 ```
-##### `instance`
+##### `soundCloudAudio`
 _(object)_ - Use instead of `clientId` to pass in a pre-existing instance of `soundCloudAudio` for `SoundPlayerContainer` to wrap.
 
 ### Children Props
@@ -225,7 +225,7 @@ const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasn
 class TrackInfo extends React.Component {
     render() {
         let { track } = this.props;
-        
+
         if (!track) {
             return <div>Loading...</div>;
         }
@@ -252,7 +252,7 @@ class PlayPause extends React.Component {
     render() {
         let { playing } = this.props;
         let text = playing ? 'Pause' : 'Play';
-        
+
         if (!track) {
             return <div>Loading...</div>;
         }
