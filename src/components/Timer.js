@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
-
-let { PropTypes, Component } = React;
 
 class Timer extends Component {
     static prettyTime(time) {
@@ -26,7 +24,7 @@ class Timer extends Component {
     render() {
         let { duration, currentTime, className, style, soundCloudAudio } = this.props;
         let classNames = ClassNames('sb-soundplayer-timer', className);
-        
+
         if (!duration && soundCloudAudio.duration) {
             duration = soundCloudAudio.duration
         }

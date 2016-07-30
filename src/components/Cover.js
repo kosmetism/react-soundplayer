@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import { SoundCloudLogoSVG } from './Icons';
-
-let { PropTypes, Component } = React;
 
 class Cover extends Component {
     render() {

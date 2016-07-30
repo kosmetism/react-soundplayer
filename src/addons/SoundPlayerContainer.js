@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
 import assign from 'object-assign';
 
 import { stopAllOther, addToPlayedStore } from '../utils/audioStore.js';
-
-let { PropTypes, Component } = React;
 
 class SoundPlayerContainer extends Component {
     constructor(props, context) {

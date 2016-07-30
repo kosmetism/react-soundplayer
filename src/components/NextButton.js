@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { NextIconSVG } from './Icons';
-
-let { PropTypes, Component } = React;
 
 class NextButton extends Component {
     shouldComponentUpdate() {
