@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, PrevButton, NextButton, Progress, Timer } from '../../components';
-
-const { PropTypes, Component } = React;
 
 class Player extends Component {
     constructor() {

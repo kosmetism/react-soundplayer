@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
 import ClassNames from 'classnames';
-
-let { PropTypes, Component } = React;
 
 class Progress extends Component {
     handleSeekTrack(e) {
@@ -34,7 +32,7 @@ class Progress extends Component {
 
         let classNames = ClassNames('sb-soundplayer-progress-container', className);
         let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
-        
+
         if (!innerStyle) {
             innerStyle = {};
         }

@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, Timer } from '../../components';
-
-const { PropTypes, Component } = React;
 
 class Player extends Component {
     render() {

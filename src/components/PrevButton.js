@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { PrevIconSVG } from './Icons';
-
-let { PropTypes, Component } = React;
 
 class PrevButton extends Component {
     shouldComponentUpdate() {
