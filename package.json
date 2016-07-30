@@ -6,6 +6,10 @@
   "directories": {
     "example": "examples"
   },
+  "repository": {
+   "type": "git",
+   "url": "git://github.com/soundblogs/react-soundplayer.git"
+  },
   "scripts": {
     "build-js": "rm -rf ./lib && babel src -d lib --stage 0",
     "build-css": "rm -rf ./styles && mkdir styles && node .cssnext",
