@@ -6,7 +6,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var cssnext = require('cssnext');
+var cssnext = require('postcss-cssnext');
 
 var inputFolderName = 'cssnext/';
 var outputFolderName = 'styles/';

@@ -36,9 +36,9 @@
     "babelify": "^6.0.2",
     "basscss": "^6.0.0",
     "browserify": "^9.0.8",
-    "cssnext": "^1.2.3",
     "envify": "^3.4.0",
     "highlight.js": "^8.5.0",
+    "postcss-cssnext": "^2.7.0",
     "watchify": "^2.4.0"
   }
 }
