@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { PlayIconSVG, PauseIconSVG } from './Icons';
-
-let { PropTypes, Component } = React;
 
 class PlayButton extends Component {
     shouldComponentUpdate(nextProps) {

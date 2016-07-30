@@ -1,6 +1,4 @@
-import React from 'react';
-
-const { Component } = React;
+import React, { Component } from 'react';
 
 // SoundCloud Logo
 class SoundCloudLogoSVG extends Component {

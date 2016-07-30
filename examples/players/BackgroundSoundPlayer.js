@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, Progress } from '../../components';
 
-const { PropTypes, Component } = React;
 const nasaBg = './assets/player-bg.jpg';
 
 class Player extends Component {
