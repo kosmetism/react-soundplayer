@@ -8,9 +8,10 @@ class SoundPlayerContainer extends Component {
     constructor(props, context) {
         super(props, context);
 
-        if (!props.clientId) {
+        if (!props.clientId && !props.soundCloudAudio) {
             throw new Error(
-                `You need to get clientId from SoundCloud
+                `You need to get a clientId from SoundCloud,
+                or pass in an instance of SoundCloudAudio.
                 https://github.com/soundblogs/react-soundplayer#usage`
             );
         }
@@ -18,7 +19,11 @@ class SoundPlayerContainer extends Component {
         // Don't create a SoundCloudAudio instance
         // if there is no `window`
         if ('undefined' !== typeof window) {
-            this.soundCloudAudio = new SoundCloudAudio(props.clientId);
+            if (props.soundCloudAudio) {
+                this.soundCloudAudio = props.soundCloudAudio;
+            } else {
+                this.soundCloudAudio = new SoundCloudAudio(props.clientId);
+            }
         }
 
         this.state = {
