@@ -76,7 +76,7 @@ class Player extends Component {
                 <div className="p2">
                     <div className="flex flex-center">
                         <h2 className="h4 flex-auto nowrap m0 semibold">{playlist ? playlist.user.username : ''}</h2>
-                        <Timer className="h6 mr1 regular" duration={duration || 0} currentTime={currentTime} />
+                        <Timer className="h6 mr1 regular" duration={duration || 0} currentTime={currentTime} {...this.props} />
                     </div>
                     <h2 className="h2 nowrap caps mt0 mb2 semibold">{playlist ? playlist.title : ''}</h2>
 

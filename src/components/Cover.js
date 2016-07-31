@@ -30,5 +30,8 @@ Cover.propTypes = {
     trackName: PropTypes.string.isRequired,
     artistName: PropTypes.string.isRequired
 };
+Cover.defaultProps = {
+    style: {}
+};
 
 export default Cover;
