@@ -34,7 +34,7 @@
   "devDependencies": {
     "babel": "^5.1.2",
     "babelify": "^6.0.2",
-    "basscss": "^6.0.0",
+    "basscss": "^8.0.1",
     "browserify": "^9.0.8",
     "envify": "^3.4.0",
     "highlight.js": "^8.5.0",

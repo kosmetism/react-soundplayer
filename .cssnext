@@ -6,7 +6,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var cssnext = require('postcss-cssnext');
+var postcss = require('postcss');
 
 var inputFolderName = 'cssnext/';
 var outputFolderName = 'styles/';
@@ -20,8 +20,11 @@ fs.readdir(cssnextPath, function (err, files) {
     files.forEach(function (file) {
         console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
         var input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
-        var output = cssnext(input);
-        fs.writeFileSync(path.join(__dirname, outputFolderName+file), output);
+        postcss([require('postcss-cssnext')])
+        .process(input)
+        .then(function (result) {
+            fs.writeFileSync(path.join(__dirname, outputFolderName+file), result.css);
+        });
     });
     console.log(' ');
 });

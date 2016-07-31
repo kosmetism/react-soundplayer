@@ -1,0 +1,6 @@
+{
+    "use": ["postcss-import", "postcss-cssnext"],
+    "input": "main.css",
+    "output": "styles.css",
+    "local-plugins": true
+}
