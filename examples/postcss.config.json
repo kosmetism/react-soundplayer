@@ -1,6 +1,6 @@
 {
-    "use": ["postcss-import", "postcss-cssnext"],
+    "use": ["postcss-import", "postcss-cssnext", "cssnano"],
     "input": "main.css",
     "output": "styles.css",
-    "local-plugins": true
+    "cssnano": {"autoprefixer": false}
 }
