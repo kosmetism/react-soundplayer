@@ -159,7 +159,8 @@ class SoundPlayerContainer extends Component {
 SoundPlayerContainer.propTypes = {
     streamUrl: PropTypes.string,
     resolveUrl: PropTypes.string,
-    clientId: PropTypes.string.isRequired,
+    clientId: PropTypes.string,
+    soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio),
     onStartTrack: PropTypes.func,
     onStopTrack: PropTypes.func,
     onPauseTrack: PropTypes.func
