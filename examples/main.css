@@ -2,14 +2,30 @@
 @import '../cssnext/progress.css';
 @import '../cssnext/cover.css';
 @import 'highlight.js/styles/github.css';
+
+@import 'basscss-basic';
+
+@import 'basscss-addons/modules/btn';
+@import 'basscss-addons/modules/btn-primary';
+@import 'basscss-addons/modules/btn-outline';
+
+ /* deprecated from basscss, but used for :hover states in this project */
+@import './basscss-btn-transparent.css';
+
 @import 'basscss';
+
+@import 'basscss-addons/modules/colors';
+@import 'basscss-addons/modules/background-colors';
+@import 'basscss-addons/modules/darken';
+
+@import 'basscss-base-typography';
 
 .b2 {
     border-width: 2px;
 }
 
 header {
-    background-image: linear-gradient(45deg, var(--teal), rgba(0, 255, 127,.7));
+    background-image: linear-gradient(45deg, teal, rgba(0, 255, 127,.7));
     border-bottom: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
 }
@@ -31,14 +47,15 @@ h2 a:hover {
 .muted {
     opacity: .3;
 }
+.border {
+    border-color: rgba(0, 0, 0, .125);
+}
+
 
 :root {
     --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --container-width: 820px;
     --yellow: rgba(255, 220, 0, 0.45);
     --orange: #FC561E;
     --button-line-height: 1;
     --sb-progress-height: 8px;
-    --button-big-padding-x: 1.25rem;
-    --button-big-padding-y: 1.25rem;
 }

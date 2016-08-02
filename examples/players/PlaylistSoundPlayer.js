@@ -47,7 +47,7 @@ class Player extends Component {
         }
 
         let tracks = playlist.tracks.map((track, i) => {
-            let classNames = ClassNames('flex flex-center full-width left-align button button-transparent', {
+            let classNames = ClassNames('flex items-center col-12 left-align btn btn-transparent', {
                 'is-active': this.state.activeIndex === i
             });
 
@@ -74,24 +74,24 @@ class Player extends Component {
         return (
             <div className="bg-darken-1 red mt1 mb3 rounded">
                 <div className="p2">
-                    <div className="flex flex-center">
+                    <div className="flex items-center">
                         <h2 className="h4 flex-auto nowrap m0 semibold">{playlist ? playlist.user.username : ''}</h2>
                         <Timer className="h6 mr1 regular" duration={duration || 0} currentTime={currentTime} />
                     </div>
                     <h2 className="h2 nowrap caps mt0 mb2 semibold">{playlist ? playlist.title : ''}</h2>
 
-                    <div className="flex flex-center">
+                    <div className="flex items-center">
                         <PrevButton
-                            className="flex-none h3 button button-narrow button-transparent button-grow rounded"
+                            className="flex-none h3 btn btn-transparent btn-grow rounded"
                             onPrevClick={this.prevIndex.bind(this)}
                             {...this.props}
                         />
                         <PlayButton
-                            className="flex-none h2 button button-transparent button-grow rounded"
+                            className="flex-none h2 btn btn-transparent btn-grow rounded"
                             {...this.props}
                         />
                         <NextButton
-                            className="flex-none h3 button mr2 button-narrow button-transparent button-grow rounded"
+                            className="flex-none h3 btn mr2 btn-transparent btn-grow rounded"
                             onNextClick={this.nextIndex.bind(this)}
                             {...this.props}
                         />

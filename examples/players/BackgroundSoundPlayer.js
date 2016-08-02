@@ -14,9 +14,9 @@ class Player extends Component {
                     <h3 className="h4 nowrap caps mb0">{track ? track.user.username : ''}</h3>
                     <h2 className="h0 nowrap caps m0">{track ? track.title : ''}</h2>
                 </div>
-                <div className="flex flex-center px2 relative z1">
+                <div className="flex items-center px2 relative z1">
                     <PlayButton
-                        className="flex-none h2 mr2 button button-transparent button-grow rounded"
+                        className="flex-none h2 mr2 btn btn-transparent btn-grow rounded"
                         {...this.props}
                     />
                     <Progress

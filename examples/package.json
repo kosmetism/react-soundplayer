@@ -2,7 +2,7 @@
   "main": "app.js",
   "scripts": {
     "start": "../node_modules/watchify/bin/cmd.js . -o bundle.js -v -d",
-    "build-css": "../node_modules/cssnext/dist/bin.js main.css styles.css -c",
+    "build-css": "./node_modules/postcss-cli/bin/postcss -c './postcss.config.json'",
     "build-js": "../node_modules/browserify/bin/cmd.js app.js > bundle.js",
     "build-js-prod": "../node_modules/browserify/bin/cmd.js app.js | uglifyjs -cm > bundle.min.js",
     "build": "npm run build-css && npm run build-js",
@@ -21,6 +21,15 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "basscss": "^8.0.2",
+    "basscss-addons": "^1.0.0",
+    "basscss-base-typography": "^2.0.3",
+    "basscss-basic": "^1.0.0",
+    "cssnano": "^3.7.3",
+    "highlight.js": "^9.5.0",
+    "postcss-cli": "^2.5.2",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
     "uglify-js": "^2.4.20"
   }
 }

@@ -1,0 +1,55 @@
+/* Basscss Button Transparent */
+/* This module has been deprecated in favor of basscss-btn */
+
+.btn-transparent {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  border: var(--border-width) solid transparent;
+}
+
+.btn-transparent::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -var(--border-width);
+  right: -var(--border-width);
+  bottom: -var(--border-width);
+  left: -var(--border-width);
+  border: var(--border-width) solid transparent;
+  background-color: currentcolor;
+  opacity: 0;
+}
+
+.btn-transparent:hover {
+  box-shadow: none;
+}
+
+.btn-transparent:hover::before,
+.btn-transparent:focus::before {
+  opacity: .09375;
+}
+
+.btn-transparent:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px;
+}
+
+.btn-transparent:active,
+.btn-transparent.is-active {
+  box-shadow: none;
+}
+
+.btn-transparent:active::before,
+.btn-transparent.is-active::before {
+  opacity: .0625;
+}
+
+.btn-transparent:disabled,
+.btn-transparent.is-disabled {
+  opacity: .5;
+}

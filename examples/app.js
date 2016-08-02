@@ -97,7 +97,7 @@ class PureComponents extends React.Component {
                 </h3>
                 <div className="mb2">Play or pause track.</div>
                 <PlayButton
-                    className="button button-big button-outline button-grow orange rounded mb2"
+                    className="btn btn-outline btn-grow orange rounded mb2"
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
@@ -120,7 +120,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <div className="mb2">Switch to the next track in a playlist.</div>
-                <NextButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <NextButton className="btn btn-outline btn-grow orange rounded mb2" />
                 <pre><code className="html">{`<NextButton
     className={String}
     onNextClick={Function}
@@ -135,7 +135,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <div className="mb2">Return to the previous track in a playlist.</div>
-                <PrevButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <PrevButton className="btn btn-outline btn-grow orange rounded mb2" />
                 <pre><code className="html">{`<PrevButton
     className={String}
     onPrevClick={Function}
@@ -243,7 +243,7 @@ class CustomPlayer extends React.Component {
                 <h2 className="m0">{track.title}</h2>
                 <h3 className="mt0">by {track.user.username}</h3>
                 <button
-                    className="button button-small bg-teal"
+                    className="btn btn-primary bg-teal"
                     onClick={this.play.bind(this)}
                 >
                     {playing ? 'Pause' : 'Play'}
@@ -398,10 +398,10 @@ class App extends React.Component {
                     <img src="./assets/soundcloud.png" width="90" className="mt2" />
                     <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
                     <p className="h3 mt1 mb2">Create custom SoundCloud players with React.js</p>
-                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline button-big mb3 mt2 mr2 b2">View on Github</a>
-                    <a href="#ExamplePlayers" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
+                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 btn btn-outline mb3 mt2 mr2 b2">View on Github</a>
+                    <a href="#ExamplePlayers" className="h4 btn bg-orange btn-primary mb3 mt2 b2">Check Examples</a>
                 </header>
-                <div className="container">
+                <div className="mx-auto max-width-3">
                     {/* getting started */}
                     <h2 id="GettingStarted" className="caps mt3">
                         <a href="#GettingStarted" className="black">Getting Started</a>
