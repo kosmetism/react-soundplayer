@@ -1,29 +1,30 @@
 {
   "main": "app.js",
   "scripts": {
-    "start": "../node_modules/watchify/bin/cmd.js . -o bundle.js -v -d",
+    "start": "watchify . -o bundle.js -v -d",
     "build-css": "../node_modules/cssnext/dist/bin.js main.css styles.css -c",
-    "build-js": "../node_modules/browserify/bin/cmd.js app.js > bundle.js",
-    "build-js-prod": "../node_modules/browserify/bin/cmd.js app.js | uglifyjs -cm > bundle.min.js",
-    "build": "npm run build-css && npm run build-js",
+    "build-js": "browserify . -o bundle.js",
+    "build-js-prod": "browserify app.js | uglifyjs -cm > bundle.min.js",
+    "build-dev": "npm run build-css && npm run build-js",
     "build-prod": "NODE_ENV=production npm run build-css && npm run build-js-prod"
   },
   "browserify": {
     "transform": [
-      [
-        "babelify",
-        {
-          "stage": 0
-        },
-        "envify"
-      ]
+      "babelify",
+      "envify"
     ]
   },
   "dependencies": {
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "babel-polyfill": "^6.13.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
   },
   "devDependencies": {
-    "uglify-js": "^2.4.20"
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "envify": "^3.4.1",
+    "highlight.js": "^8.5.0",
+    "uglify-js": "^2.7.0",
+    "watchify": "^3.7.0"
   }
 }
