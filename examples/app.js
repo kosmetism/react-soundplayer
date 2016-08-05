@@ -26,12 +26,12 @@ import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 
 // dummy data
 const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
-const shura = 'https://soundcloud.com/shura/shura-indecision-12-edit-1';
+const pedro = 'https://soundcloud.com/oscar-b-lewis/pedro-fm-theme';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
 const sayLouLou = 'https://soundcloud.com/sayloulou/nothing-but-a-heartbeat';
 const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
-    image: 'https://d1v2xm8p2pd3wl.cloudfront.net/tracks/1a87a43ec633f01a917d23fc5e026bf9/640x400.jpg',
+    image: 'https://i1.sndcdn.com/artworks-000113169457-9bvvb7-t500x500.jpg',
     artist: 'franiefroufrou',
     track: 'Exploding Whale by Sufjan Stevens'
 };
@@ -363,7 +363,7 @@ class BuiltInPlayers extends React.Component {
                 </div>
                 <BasicSoundPlayer
                     clientId={clientId}
-                    resolveUrl={shura}
+                    resolveUrl={pedro}
                     {...this.props}
                 />
                 <ProgressSoundPlayer

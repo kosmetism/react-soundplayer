@@ -7,8 +7,8 @@
     "example": "examples"
   },
   "repository": {
-   "type": "git",
-   "url": "git://github.com/soundblogs/react-soundplayer.git"
+    "type": "git",
+    "url": "git://github.com/soundblogs/react-soundplayer.git"
   },
   "scripts": {
     "build-js": "rm -rf ./lib && babel src -d lib --stage 0",
@@ -29,11 +29,8 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^4.0.1",
-    "soundcloud-audio": "^1.0.3"
-  },
-  "peerDependencies": {
-    "react": "^0.14.x",
-    "react-dom": "^0.14.x"
+    "soundcloud-audio": "^1.0.3",
+    "react": "^0.14.x"
   },
   "devDependencies": {
     "babel": "^5.1.2",
@@ -43,6 +40,6 @@
     "cssnext": "^1.2.3",
     "envify": "^3.4.0",
     "highlight.js": "^8.5.0",
-    "watchify": "^2.4.0"
+    "watchify": "^3.7.0"
   }
 }

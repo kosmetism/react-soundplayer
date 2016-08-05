@@ -8,7 +8,7 @@ class NextButton extends Component {
         return false;
     }
 
-    handleClick() {
+    handleClick(e) {
         let { soundCloudAudio, onNextClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.next();
