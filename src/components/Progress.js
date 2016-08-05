@@ -49,9 +49,9 @@ class Progress extends Component {
 
 Progress.propTypes = {
     className: PropTypes.string,
-    innerClassName: React.PropTypes.string,
+    innerClassName: PropTypes.string,
     innerStyle: PropTypes.object,
-    value: React.PropTypes.number,
+    value: PropTypes.number,
     onSeekTrack: PropTypes.func,
     soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
 };
