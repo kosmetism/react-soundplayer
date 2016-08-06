@@ -47,7 +47,7 @@ class Player extends Component {
         }
 
         let tracks = playlist.tracks.map((track, i) => {
-            let classNames = ClassNames('flex flex-center full-width left-align button button-transparent', {
+            let classNames = ClassNames('flex flex-center col-12 left-align btn button-transparent', {
                 'is-active': this.state.activeIndex === i
             });
 
@@ -82,16 +82,16 @@ class Player extends Component {
 
                     <div className="flex flex-center">
                         <PrevButton
-                            className="flex-none h3 button button-narrow button-transparent button-grow rounded"
+                            className="flex-none h3 btn button-transparent rounded"
                             onPrevClick={this.prevIndex.bind(this)}
                             {...this.props}
                         />
                         <PlayButton
-                            className="flex-none h2 button button-transparent button-grow rounded"
+                            className="flex-none h2 btn button-transparent rounded"
                             {...this.props}
                         />
                         <NextButton
-                            className="flex-none h3 button mr2 button-narrow button-transparent button-grow rounded"
+                            className="flex-none h3 btn mr2 button-transparent rounded"
                             onNextClick={this.nextIndex.bind(this)}
                             {...this.props}
                         />

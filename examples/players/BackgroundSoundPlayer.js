@@ -16,7 +16,7 @@ class Player extends Component {
                 </div>
                 <div className="flex flex-center px2 relative z1">
                     <PlayButton
-                        className="flex-none h2 mr2 button button-transparent button-grow rounded"
+                        className="flex-none h2 mr2 btn button-transparent rounded"
                         {...this.props}
                     />
                     <Progress

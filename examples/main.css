@@ -3,6 +3,7 @@
 @import '../cssnext/cover.css';
 @import 'highlight.js/styles/github.css';
 @import 'basscss';
+@import 'basscss-button-transparent';
 
 .b2 {
     border-width: 2px;
