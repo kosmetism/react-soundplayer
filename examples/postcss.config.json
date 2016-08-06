@@ -1,0 +1,6 @@
+{
+    "use": ["postcss-import", "postcss-cssnext", "cssnano"],
+    "input": "main.css",
+    "output": "styles.css",
+    "cssnano": {"autoprefixer": false}
+}
