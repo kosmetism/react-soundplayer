@@ -14,8 +14,9 @@
     "build-js": "rm -rf ./lib && babel src -d lib",
     "build-css": "rm -rf ./styles && mkdir styles && node .cssnext",
     "build": "npm run build-js && npm run build-css",
+    "lint": "eslint ./src --fix",
     "prepublish": "npm run build",
-    "lint": "eslint ./src --fix"
+    "prepush": "npm run lint"
   },
   "keywords": [
     "react",
@@ -46,6 +47,7 @@
     "eslint-import-resolver-node": "^0.2.2",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
-    "eslint-plugin-react": "^6.0.0"
+    "eslint-plugin-react": "^6.0.0",
+    "husky": "^0.11.6"
   }
 }
