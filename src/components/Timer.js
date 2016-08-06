@@ -13,12 +13,10 @@ class Timer extends Component {
         if (!isNaN(secs)) {
             if (hours) {
                 return `${hours}:${mins}:${secs}`;
-            } else {
-                return `${mins}:${secs}`;
             }
-        } else {
-            return '00:00';
+            return `${mins}:${secs}`;
         }
+        return '00:00';
     }
 
     render() {
@@ -26,7 +24,7 @@ class Timer extends Component {
         let classNames = ClassNames('sb-soundplayer-timer', className);
 
         if (!duration && soundCloudAudio.duration) {
-            duration = soundCloudAudio.duration
+            duration = soundCloudAudio.duration;
         }
 
         return (

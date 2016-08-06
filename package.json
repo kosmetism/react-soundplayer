@@ -14,7 +14,8 @@
     "build-js": "rm -rf ./lib && babel src -d lib",
     "build-css": "rm -rf ./styles && mkdir styles && node .cssnext",
     "build": "npm run build-js && npm run build-css",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "lint": "eslint ./src --fix"
   },
   "keywords": [
     "react",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
+    "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.13.1",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -41,6 +43,7 @@
     "cssnext": "^1.2.3",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^10.0.0",
+    "eslint-import-resolver-node": "^0.2.2",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0"

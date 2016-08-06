@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // SoundCloud Logo
 export const SoundCloudLogoSVG = () => (
@@ -26,21 +26,21 @@ export const ButtonIconSVG = (props) => (
 // |> Play
 export const PlayIconSVG = () => (
     <ButtonIconSVG>
-        <path d="M0 0 L32 16 L0 32 z"></path>
+        <path d="M0 0 L32 16 L0 32 z" />
     </ButtonIconSVG>
 );
 
 // || Pause
 export const PauseIconSVG = () => (
     <ButtonIconSVG>
-        <path d="M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z"></path>
+        <path d="M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z" />
     </ButtonIconSVG>
 );
 
 // |>| Next
 export const NextIconSVG = () => (
     <ButtonIconSVG>
-        <path d="M4 4 L24 14 V4 H28 V28 H24 V18 L4 28 z "></path>
+        <path d="M4 4 L24 14 V4 H28 V28 H24 V18 L4 28 z " />
     </ButtonIconSVG>
 );
 
@@ -48,6 +48,6 @@ export const NextIconSVG = () => (
 // |<| Prev
 export const PrevIconSVG = () => (
     <ButtonIconSVG>
-        <path d="M4 4 H8 V14 L28 4 V28 L8 18 V28 H4 z "></path>
+        <path d="M4 4 H8 V14 L28 4 V28 L8 18 V28 H4 z " />
     </ButtonIconSVG>
 );

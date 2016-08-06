@@ -19,7 +19,7 @@ class Progress extends Component {
         let { value, className, innerClassName, style, innerStyle, currentTime, duration } = this.props;
 
         if (!value && currentTime && duration) {
-            value = currentTime / duration * 100 || 0;
+            value = (currentTime / duration) * 100 || 0;
         }
 
         if (value < 0) {
