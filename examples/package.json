@@ -1,12 +1,12 @@
-{
+  {
   "main": "app.js",
   "scripts": {
     "start": "watchify . -o bundle.js -v -d",
     "build-css": "../node_modules/cssnext/dist/bin.js main.css styles.css -c",
     "build-js": "browserify . -o bundle.js",
-    "build-js-prod": "browserify app.js | uglifyjs -cm > bundle.min.js",
+    "build-js-prod": "NODE_ENV=production browserify app.js | uglifyjs -cm > bundle.min.js",
     "build-dev": "npm run build-css && npm run build-js",
-    "build-prod": "NODE_ENV=production npm run build-css && npm run build-js-prod"
+    "build-prod": "npm run build-css && npm run build-js-prod"
   },
   "browserify": {
     "transform": [
@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.13.0",
+    "basscss": "^6.1.6",
+    "highlight.js": "^8.5.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
   },
@@ -23,7 +25,6 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "envify": "^3.4.1",
-    "highlight.js": "^8.5.0",
     "uglify-js": "^2.7.0",
     "watchify": "^3.7.0"
   }

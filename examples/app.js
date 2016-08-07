@@ -65,7 +65,6 @@ class PureComponents extends React.Component {
         } else {
             this.setState({playing: !!!this.state.playing});
         }
-
     }
 
     seekTrack(xPos) {
@@ -97,7 +96,7 @@ class PureComponents extends React.Component {
                 </h3>
                 <div className="mb2">Play or pause track.</div>
                 <PlayButton
-                    className="button button-big button-outline button-grow orange rounded mb2"
+                    className="button btn-big button-outline button-grow orange rounded mb2"
                     playing={playing}
                     seeking={seeking}
                     seekingIcon={seekingIcon}
@@ -120,7 +119,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <div className="mb2">Switch to the next track in a playlist.</div>
-                <NextButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <NextButton className="button btn-big button-outline button-grow orange rounded mb2" />
                 <pre><code className="html">{`<NextButton
     className={String}
     onNextClick={Function}
@@ -135,7 +134,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <div className="mb2">Return to the previous track in a playlist.</div>
-                <PrevButton className="button button-big button-outline button-grow orange rounded mb2" />
+                <PrevButton className="button btn-big button-outline button-grow orange rounded mb2" />
                 <pre><code className="html">{`<PrevButton
     className={String}
     onPrevClick={Function}
@@ -182,7 +181,7 @@ class PureComponents extends React.Component {
                     </a>
                 </h3>
                 <div className="mb2">
-                    {`Shows current time of the track and its' duration in`} <code className="black bg-darken-1 rounded">(hh:)mm:ss/(hh:)mm:ss</code> format.
+                    {'Shows current time of the track and its\' duration in'} <code className="black bg-darken-1 rounded">(hh:)mm:ss/(hh:)mm:ss</code> format.
                 </div>
                 <Timer
                     className="mb2"
@@ -359,7 +358,7 @@ class BuiltInPlayers extends React.Component {
                 <hr className="mt1 mb1 b2 border-orange" />
                 <div className="mt3">
                     These beautiful players are built using <a href="http://labs.voronianski.com/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.com/react-soundplayer#SoundPlayerContainer">SoundPlayerContainer</a>.
-                    What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {`It's easy to create your own!`}
+                    What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {'It\'s easy to create your own!'}
                 </div>
                 <BasicSoundPlayer
                     clientId={clientId}
@@ -398,8 +397,8 @@ class App extends React.Component {
                     <img src="./assets/soundcloud.png" width="90" className="mt2" />
                     <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
                     <p className="h3 mt1 mb2">Create custom SoundCloud players with React.js</p>
-                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline button-big mb3 mt2 mr2 b2">View on Github</a>
-                    <a href="#ExamplePlayers" className="h4 button bg-orange button-big mb3 mt2 b2">Check Examples</a>
+                    <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline btn-big mb3 mt2 mr2 b2">View on Github</a>
+                    <a href="#ExamplePlayers" className="h4 button bg-orange btn-big mb3 mt2 b2">Check Examples</a>
                 </header>
                 <div className="container">
                     {/* getting started */}
@@ -407,7 +406,7 @@ class App extends React.Component {
                         <a href="#GettingStarted" className="black">Getting Started</a>
                     </h2>
                     <hr className="mt1 mb1 b2 border-orange" />
-                    <pre className="mt3 mb2"><code className="bash">{`npm install react-soundplayer --save`}</code></pre>
+                    <pre className="mt3 mb2"><code className="bash">{'npm install react-soundplayer --save'}</code></pre>
                     <div className="mb2">
                         ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
                     </div>
@@ -458,7 +457,7 @@ PrevIconSVG
                     <hr className="mt1 mb1 b2 border-orange" />
                     <div className="mt3">
                         Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.
-                        {`If your sound isn't playing check the `}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
+                        {'If your sound isn\'t playing check the '}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
                         If it is set to <code className="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
                     </div>
 
