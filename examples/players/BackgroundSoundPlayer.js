@@ -1,12 +1,13 @@
 import React, { PropTypes, Component } from 'react';
-import { SoundPlayerContainer } from '../../addons';
+import { withSoundCloudAudio } from '../../addons';
 import { PlayButton, Progress } from '../../components';
 
 const nasaBg = './assets/player-bg.jpg';
 
-class Player extends Component {
+class BackgroundSoundPlayer extends Component {
     render() {
-        let { track, duration, currentTime } = this.props;
+        const { track, duration, currentTime } = this.props;
+
         return (
             <div className="py2 white bg-cover bg-top rounded relative" style={{backgroundImage: `url(${nasaBg})`}}>
                 <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
@@ -22,21 +23,11 @@ class Player extends Component {
                     <Progress
                         className="flex-auto bg-darken-3 rounded"
                         innerClassName="rounded-left bg-white"
-                        value={currentTime / duration * 100 || 0}
+                        value={(currentTime / duration) * 100 || 0}
                         {...this.props}
                     />
                 </div>
             </div>
-        );
-    }
-}
-
-class BackgroundSoundPlayer extends Component {
-    render() {
-        return (
-            <SoundPlayerContainer {...this.props}>
-                <Player />
-            </SoundPlayerContainer>
         );
     }
 }
@@ -46,4 +37,4 @@ BackgroundSoundPlayer.propTypes = {
     clientId: PropTypes.string.isRequired
 };
 
-export default BackgroundSoundPlayer;
+export default withSoundCloudAudio(BackgroundSoundPlayer);

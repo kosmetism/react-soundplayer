@@ -9,18 +9,18 @@ class NextButton extends Component {
     }
 
     handleClick(e) {
-        let { soundCloudAudio, onNextClick } = this.props;
+        const { soundCloudAudio, onNextClick } = this.props;
 
         soundCloudAudio && soundCloudAudio.next();
         onNextClick && onNextClick(e);
     }
 
     render() {
-        let { className, style } = this.props;
-        let classNames = ClassNames('sb-soundplayer-play-btn', className);
+        const { className, style } = this.props;
+        const classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button type="button" className={classNames} style={style} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} style={style} onClick={::this.handleClick}>
                 <NextIconSVG />
             </button>
         );

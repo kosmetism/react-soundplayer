@@ -98,7 +98,7 @@ class Player extends Component {
                         <Progress
                             className="mt1 mb1 rounded"
                             innerClassName="rounded-left"
-                            value={currentTime / duration * 100 || 0}
+                            value={(currentTime / duration) * 100 || 0}
                             {...this.props}
                         />
                     </div>

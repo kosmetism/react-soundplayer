@@ -4,7 +4,7 @@ import ClassNames from 'classnames';
 
 class Progress extends Component {
     handleSeekTrack(e) {
-        let { onSeekTrack, soundCloudAudio } = this.props;
+        const { onSeekTrack, soundCloudAudio } = this.props;
         const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
 
 
@@ -16,7 +16,8 @@ class Progress extends Component {
     }
 
     render() {
-        let { value, className, innerClassName, style, innerStyle, currentTime, duration } = this.props;
+        const { className, innerClassName, style, currentTime, duration } = this.props;
+        let { value, innerStyle } = this.props;
 
         if (!value && currentTime && duration) {
             value = (currentTime / duration) * 100 || 0;
@@ -30,8 +31,8 @@ class Progress extends Component {
             value = 100;
         }
 
-        let classNames = ClassNames('sb-soundplayer-progress-container', className);
-        let innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
+        const classNames = ClassNames('sb-soundplayer-progress-container', className);
+        const innerClassNames = ClassNames('sb-soundplayer-progress-inner', innerClassName);
 
         if (!innerStyle) {
             innerStyle = {};
@@ -40,7 +41,7 @@ class Progress extends Component {
         innerStyle = Object.assign(innerStyle, {width: `${value}%`});
 
         return (
-            <div className={classNames} style={style} onClick={this.handleSeekTrack.bind(this)}>
+            <div className={classNames} style={style} onClick={::this.handleSeekTrack}>
                 <div className={innerClassNames} style={innerStyle} />
             </div>
         );

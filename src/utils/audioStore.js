@@ -1,5 +1,5 @@
 // handling multiple audio on the page helpers
-let _playedAudios = [];
+const _playedAudios = [];
 
 function each (arr, cb) {
     if (arr) {

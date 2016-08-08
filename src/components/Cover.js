@@ -4,8 +4,8 @@ import { SoundCloudLogoSVG } from './Icons';
 
 class Cover extends Component {
     render() {
-        let { backgroundUrl, trackName, artistName, className, style, children } = this.props;
-        let classNames = ClassNames('sb-soundplayer-cover', className);
+        const { backgroundUrl, trackName, artistName, className, style, children } = this.props;
+        const classNames = ClassNames('sb-soundplayer-cover', className);
 
         return (
             <div className={classNames} style={Object.assign(style, {backgroundImage: `url(${backgroundUrl})`})}>

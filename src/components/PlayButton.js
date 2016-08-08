@@ -5,14 +5,14 @@ import { PlayIconSVG, PauseIconSVG } from './Icons';
 
 class PlayButton extends Component {
     shouldComponentUpdate(nextProps) {
-        let { playing, seeking } = this.props;
+        const { playing, seeking } = this.props;
         return (
             playing !== nextProps.playing || seeking !== nextProps.seeking
         );
     }
 
     handleClick(e) {
-        let { playing, soundCloudAudio, onTogglePlay } = this.props;
+        const { playing, soundCloudAudio, onTogglePlay } = this.props;
 
         if (!playing) {
             soundCloudAudio && soundCloudAudio.play({ playlistIndex: soundCloudAudio._playlistIndex });
@@ -24,7 +24,7 @@ class PlayButton extends Component {
     }
 
     render() {
-        let { playing, seekingIcon, seeking, className, style } = this.props;
+        const { playing, seekingIcon, seeking, className, style } = this.props;
 
         let iconNode;
         if (seeking && seekingIcon) {
@@ -35,10 +35,10 @@ class PlayButton extends Component {
             iconNode = <PlayIconSVG />;
         }
 
-        let classNames = ClassNames('sb-soundplayer-play-btn', className);
+        const classNames = ClassNames('sb-soundplayer-play-btn', className);
 
         return (
-            <button type="button" className={classNames} style={style} onClick={this.handleClick.bind(this)}>
+            <button type="button" className={classNames} style={style} onClick={::this.handleClick}>
                 {iconNode}
             </button>
         );
