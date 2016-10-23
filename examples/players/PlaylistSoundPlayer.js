@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import ClassNames from 'classnames';
 import { SoundPlayerContainer } from '../../addons';
-import { PlayButton, PrevButton, NextButton, Progress, Timer } from '../../components';
+import { PlayButton, PrevButton, NextButton, Progress, Timer, VolumeControl } from '../../components';
 
 class Player extends Component {
     constructor() {
@@ -91,8 +91,13 @@ class Player extends Component {
                             {...this.props}
                         />
                         <NextButton
-                            className="flex-none h3 button mr2 button-narrow button-transparent button-grow rounded"
+                            className="flex-none h3 button button-narrow button-transparent button-grow rounded"
                             onNextClick={this.nextIndex.bind(this)}
+                            {...this.props}
+                        />
+                        <VolumeControl
+                            className='flex flex-center mr2'
+                            buttonClassName="flex-none h4 button button-transparent button-grow rounded"
                             {...this.props}
                         />
                         <Progress

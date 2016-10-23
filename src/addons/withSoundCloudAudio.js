@@ -34,7 +34,9 @@ export default function withSoundCloudAudio (WrappedComponent) {
                 duration: 0,
                 currentTime: 0,
                 seeking: false,
-                playing: false
+                playing: false,
+                volume: 1,
+                isMuted: false
             };
         }
 
@@ -78,6 +80,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
             soundCloudAudio.on('seeked', ::this.onSeekedTrack);
             soundCloudAudio.on('pause', ::this.onAudioPaused);
             soundCloudAudio.on('ended', ::this.onAudioEnded);
+            soundCloudAudio.on('volumechange', ::this.onVolumeChange);
         }
 
         onSeekingTrack() {
@@ -114,6 +117,12 @@ export default function withSoundCloudAudio (WrappedComponent) {
             this.setState({playing: false});
 
             onStopTrack && onStopTrack(this.soundCloudAudio);
+        }
+        onVolumeChange() {
+            this.setState({
+                volume: this.soundCloudAudio.audio.volume,
+                isMuted: this.soundCloudAudio.audio.muted
+            });
         }
 
         getCurrentTime() {

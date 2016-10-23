@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { withSoundCloudAudio } from '../../addons';
-import { PlayButton, Progress } from '../../components';
+import { PlayButton, Progress, VolumeControl } from '../../components';
 
 const nasaBg = './assets/player-bg.jpg';
 
@@ -18,6 +18,11 @@ class BackgroundSoundPlayer extends Component {
                 <div className="flex flex-center px2 relative z1">
                     <PlayButton
                         className="flex-none h2 mr2 button button-transparent button-grow rounded"
+                        {...this.props}
+                    />
+                    <VolumeControl
+                        className='mr2 flex flex-center'
+                        buttonClassName="flex-none h2 button button-transparent button-grow rounded"
                         {...this.props}
                     />
                     <Progress
