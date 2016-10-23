@@ -101,6 +101,22 @@ Return to the previous track in the playlist.
 
 _Important note:_ All buttons accept `soundCloudAudio` prop which when passed will add actions to buttons automagically (e.g. play/pause, go to prev/next track), callback function used in `onTogglePlay`, `onNextClick` and `onPrevClick` will still be called after.
 
+### VolumeControl
+
+Adjust volume or mute sound output.
+
+```javascript
+<VolumeControl
+    className={String}
+    buttonClassName={String}
+    rangeClassName={String}
+    volume={Number}
+    onVolumeChange={Function}
+    onToggleMute={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
+/>
+```
+
 ### Progress
 
 Component that replaces native [`<progress>` DOM element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress).  If `soundCloudAudio` prop is passed it automagically updates track audio time due to clicked progress position.
