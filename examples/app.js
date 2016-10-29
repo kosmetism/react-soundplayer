@@ -10,7 +10,8 @@ import {
     PrevButton,
     Progress,
     Timer,
-    Cover
+    Cover,
+    VolumeControl
 } from '../components';
 
 // ..and addons
@@ -50,7 +51,9 @@ class PureComponents extends React.Component {
             playing: false,
             currentTime: 24,
             progressVal: 8,
-            duration: 300
+            duration: 300,
+            volume: 0.75,
+            isMuted: false
         };
     }
 
@@ -65,6 +68,13 @@ class PureComponents extends React.Component {
         } else {
             this.setState({playing: !!!this.state.playing});
         }
+    }
+
+    handleVolumeChange(volume) {
+        this.setState({volume})
+    }
+    handleMuteToggle(isMuted) {
+        this.setState({isMuted})
     }
 
     seekTrack(xPos) {
@@ -149,6 +159,32 @@ class PureComponents extends React.Component {
                      <code className="black bg-darken-1 rounded">onNextClick</code> and
                      <code className="black bg-darken-1 rounded">onPrevClick</code> will still be called after.
                 </div>
+                <hr />
+
+                <h3 id="VolumeControl" className="mb2 h4">
+                    <a href="#VolumeControl" className="black bg-yellow rounded">
+                        <code>{'<VolumeControl />'}</code>
+                    </a>
+                </h3>
+                <div className="mb2">Adjust volume or mute sound output.</div>
+                <VolumeControl
+                    volume={this.state.volume}
+                    isMuted={this.state.isMuted}
+                    onVolumeChange={this.handleVolumeChange.bind(this)}
+                    onToggleMute={this.handleMuteToggle.bind(this)}
+                    className='mb2 flex flex-center'
+                    buttonClassName="flex-none h2 button button-transparent button-grow rounded"
+                />
+                <pre><code className="html">{`<VolumeControl
+    className={String}
+    buttonClassName={String}
+    rangeClassName={String}
+    volume={Number}
+    onVolumeChange={Function}
+    onToggleMute={Function}
+    soundCloudAudio={instanceof SoundCloudAudio}
+/>
+`}</code></pre>
                 <hr />
 
                 <h3 id="Progress" className="mb2 h4">
@@ -442,11 +478,11 @@ const { SoundCloudLogoSVG } = Icons;
 
 // the list of available icons:
 const {
-SoundCloudLogoSVG,
-PlayIconSVG,
-PauseIconSVG,
-NextIconSVG,
-PrevIconSVG
+    SoundCloudLogoSVG,
+    PlayIconSVG,
+    PauseIconSVG,
+    NextIconSVG,
+    PrevIconSVG
 } = Icons;
 `}</code></pre>
 

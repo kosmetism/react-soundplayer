@@ -4,13 +4,15 @@
 // Remove this when issue will be resolved:
 // https://github.com/cssnext/cssnext/issues/93
 
-var fs = require('fs');
-var path = require('path');
-var cssnext = require('cssnext');
+const fs = require('fs');
+const path = require('path');
+const postcss = require('postcss');
+const postcssCssnext = require('postcss-cssnext');
+const postcssImport = require('postcss-import');
 
-var inputFolderName = 'cssnext/';
-var outputFolderName = 'styles/';
-var cssnextPath = path.join(__dirname, inputFolderName);
+const inputFolderName = 'cssnext/';
+const outputFolderName = 'styles/';
+const cssnextPath = path.join(__dirname, inputFolderName);
 
 fs.readdir(cssnextPath, function (err, files) {
     if (err) {
@@ -19,9 +21,14 @@ fs.readdir(cssnextPath, function (err, files) {
 
     files.forEach(function (file) {
         console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
-        var input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
-        var output = cssnext(input);
-        fs.writeFileSync(path.join(__dirname, outputFolderName+file), output);
+
+        const input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
+
+        postcss([postcssImport, postcssCssnext])
+            .process(input)
+            .then(function (result) {
+                fs.writeFileSync(path.join(__dirname, outputFolderName+file), result.css);
+            });
     });
     console.log(' ');
 });

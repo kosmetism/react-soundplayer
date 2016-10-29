@@ -1,3 +1,4 @@
+export VolumeControl from './VolumeControl';
 export PlayButton from './PlayButton';
 export NextButton from './NextButton';
 export PrevButton from './PrevButton';

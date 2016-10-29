@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { SoundPlayerContainer } from '../../addons';
-import { PlayButton, Progress } from '../../components';
+import { PlayButton, Progress, VolumeControl } from '../../components';
 
 class Player extends Component {
     render() {
@@ -12,12 +12,19 @@ class Player extends Component {
                 <div className="flex-auto">
                     <h2 className="h4 nowrap m0">{track ? track.user.username : ''}</h2>
                     <h2 className="h4 nowrap caps m0">{track ? track.title : ''}</h2>
-                    <Progress
-                        className="mt1 mb1 rounded"
-                        innerClassName="rounded-left"
-                        value={(currentTime / duration) * 100 || 0}
-                        {...this.props}
-                    />
+                    <div className='flex flex-center'>
+                        <VolumeControl
+                            className='mr2 flex flex-center'
+                            buttonClassName="flex-none h4 button white btn-small button-outline button-grow bg-orange circle"
+                            {...this.props}
+                        />
+                        <Progress
+                            className="mt1 mb1 rounded"
+                            innerClassName="rounded-left"
+                            value={(currentTime / duration) * 100 || 0}
+                            {...this.props}
+                        />
+                    </div>
                 </div>
             </div>
         );
