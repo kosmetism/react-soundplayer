@@ -1,8 +1,10 @@
-  {
+{
   "main": "app.js",
   "scripts": {
     "start": "watchify . -o bundle.js -v -d",
-    "build-css": "../node_modules/cssnext/dist/bin.js main.css styles.css -c",
+    "postcss": "postcss --use postcss-import --use postcss-cssnext -o ./styles.css ./main.css",
+    "cssnano": "cssnano < ./styles.css > ./styles.min.css",
+    "build-css": "npm run postcss && npm run cssnano",
     "build-js": "browserify . -o bundle.js",
     "build-js-prod": "NODE_ENV=production browserify app.js | uglifyjs -cm > bundle.min.js",
     "build-dev": "npm run build-css && npm run build-js",
@@ -24,7 +26,12 @@
   "devDependencies": {
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "cssnano-cli": "^1.0.5",
     "envify": "^3.4.1",
+    "postcss": "^5.2.5",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^7.1.3",
     "uglify-js": "^2.7.0",
     "watchify": "^3.7.0"
   }
