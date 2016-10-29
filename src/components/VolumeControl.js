@@ -6,7 +6,7 @@ import { VolumeIconLoudSVG, VolumeIconMuteSVG } from './Icons';
 class VolumeControl extends Component {
     handleVolumeChange(e) {
         const { onVolumeChange, onToggleMute, soundCloudAudio, isMuted } = this.props;
-        const xPos = (e.target.value / 100)
+        const xPos = (e.target.value / 100);
         const mute = (xPos <= 0 && !isMuted);
 
         if (soundCloudAudio && !isNaN(soundCloudAudio.audio.volume)) {
@@ -21,7 +21,7 @@ class VolumeControl extends Component {
     handleMute(e) {
         const { onToggleMute, soundCloudAudio } = this.props;
         if (soundCloudAudio && !isNaN(soundCloudAudio.audio.muted)) {
-            soundCloudAudio.audio.muted = !soundCloudAudio.audio.muted
+            soundCloudAudio.audio.muted = !soundCloudAudio.audio.muted;
         }
         onToggleMute && onToggleMute.call(this, !this.props.isMuted, e);
     }
