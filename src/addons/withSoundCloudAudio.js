@@ -31,7 +31,6 @@ export default function withSoundCloudAudio (WrappedComponent) {
             }
 
             this.state = {
-                ready: !!props.streamUrl,
                 duration: 0,
                 currentTime: 0,
                 seeking: false,
