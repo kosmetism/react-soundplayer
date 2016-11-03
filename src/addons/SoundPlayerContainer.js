@@ -34,7 +34,8 @@ SoundPlayerContainer.propTypes = {
     onStartTrack: PropTypes.func,
     onStopTrack: PropTypes.func,
     onPauseTrack: PropTypes.func,
-    onVolumeChange: PropTypes.func
+    onVolumeChange: PropTypes.func,
+    onReady: PropTypes.func
 };
 
 export default withSoundCloudAudio(SoundPlayerContainer);

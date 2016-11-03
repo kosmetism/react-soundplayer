@@ -182,6 +182,44 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 "https://soundcloud.com/stepan-i-meduza-official/sets/dolgo-obyasnyat-ep"
 ```
 
+##### `onReady`
+
+_(function)_ - if using `resolveUrl`, pass a function to be called when the track or playlist is resolved and ready to be played. Will not be called if you use `streamUrl`. The function is called without any arguments:
+
+```javascript
+import React from 'react';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
+
+const clientId = 'YOUR CLIENT ID';
+const resolveUrl = 'https://soundcloud.com/thrilljockey/future-islands-balance';
+
+class AppPlayer extends React.Component {
+    constructor(){
+        super();
+        this.trackReady = this.trackReady.bind(this);
+    }
+
+    trackReady(){
+        console.log('Track can be played!')
+        // Enable the play button, or start playing programmatically, etc
+    }
+
+    render() {
+        <div>
+            <SoundPlayerContainer
+                clientId={clientId}
+                resolveUrl={resolveUrl}
+                onReady={this.trackReady}
+            >
+                {/* your custom player components */}
+            </SoundPlayerContainer>
+        </div>
+    }
+}
+
+React.render(<AppPlayer />, document.body);
+```
+
 ##### `streamUrl`
 
 _(String)_ - pass here pure stream url as it's returned by [SoundCloud API](https://developers.soundcloud.com/docs/api/reference#tracks), it has higher priority than `resolveUrl`, example:

@@ -53,7 +53,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
 
         requestAudio() {
             const { soundCloudAudio } = this;
-            const { resolveUrl, streamUrl } = this.props;
+            const { resolveUrl, streamUrl, onReady } = this.props;
 
             if (streamUrl) {
                 soundCloudAudio.preload(streamUrl);
@@ -64,7 +64,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
                     }
                     this.setState({
                         [data.tracks ? 'playlist' : 'track']: data
-                    });
+                    }, () => onReady && onReady());
                 });
             }
         }
