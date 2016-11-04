@@ -33,6 +33,16 @@ h2 a:hover {
     opacity: .3;
 }
 
+#BackgroundSoundPlayer .sb-soundplayer-volume-range::-moz-range-thumb {
+    background: white;
+}
+#BackgroundSoundPlayer .sb-soundplayer-volume-range::-webkit-slider-thumb {
+    background: white;
+}
+#BackgroundSoundPlayer .sb-soundplayer-volume-range::-ms-thumb {
+    background: white;
+}
+
 :root {
     --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --container-width: 820px;
