@@ -32,6 +32,7 @@
     "classnames": "^2.1.2",
     "hoist-non-react-statics": "^1.2.0",
     "object-assign": "^4.0.1",
+    "prop-types": "^15.5.10",
     "react": "^15.3.0",
     "soundcloud-audio": "^1.0.4"
   },

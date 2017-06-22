@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
 import SoundCloudAudio from 'soundcloud-audio';
 import { PlayIconSVG, PauseIconSVG } from './Icons';

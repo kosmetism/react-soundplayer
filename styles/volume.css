@@ -9,7 +9,6 @@
 .sb-soundplayer-volume div {
     overflow: hidden;
     width:0;
-    -webkit-transition: width .2s ease-out;
     transition: width .2s ease-out;
     position: relative;
 }
