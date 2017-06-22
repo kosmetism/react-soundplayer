@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
 import { SoundPlayerContainer } from '../../addons';
 import { PlayButton, PrevButton, NextButton, Progress, Timer, VolumeControl } from '../../components';
