@@ -181,7 +181,7 @@ _(String)_ - this could be regular link from SoundCloud web app which points to 
 // playlist
 "https://soundcloud.com/stepan-i-meduza-official/sets/dolgo-obyasnyat-ep"
 ```
-##### `autoplay`
+##### `autoPlay`
 
 _(boolean)_ - if set to  `true` using `streamUrl` will autoplay track when buffered.
 
