@@ -35,6 +35,7 @@ SoundPlayerContainer.propTypes = {
     onStopTrack: PropTypes.func,
     onPauseTrack: PropTypes.func,
     onVolumeChange: PropTypes.func,
+    autoPlay: PropTypes.bool,
     onReady: PropTypes.func
 };
 

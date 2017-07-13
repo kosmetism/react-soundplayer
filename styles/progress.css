@@ -9,6 +9,5 @@
 .sb-soundplayer-progress-inner {
     background-color: #FC561E;
     height: 100%;
-    -webkit-transition: width .2s ease-in;
     transition: width .2s ease-in;
 }
