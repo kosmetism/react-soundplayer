@@ -81,6 +81,13 @@ export default function withSoundCloudAudio (WrappedComponent) {
             soundCloudAudio.on('pause', ::this.onAudioPaused);
             soundCloudAudio.on('ended', ::this.onAudioEnded);
             soundCloudAudio.on('volumechange', ::this.onVolumeChange);
+            if (this.props.autoPlay) {
+                soundCloudAudio.on('canplay', ::this.autoplay);
+            }
+        }
+
+        autoplay() {
+            this.soundCloudAudio.play();
         }
 
         onSeekingTrack() {
