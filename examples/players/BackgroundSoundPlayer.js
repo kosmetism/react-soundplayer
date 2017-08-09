@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withSoundCloudAudio } from '../../addons';
 import { PlayButton, Progress, VolumeControl } from '../../components';
 

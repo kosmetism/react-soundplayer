@@ -13,7 +13,6 @@
     border: 0;
     outline: none;
     cursor: pointer;
-    -webkit-transition: box-shadow, .05s ease, -webkit-transform;
     transition: box-shadow, .05s ease, -webkit-transform;
     transition: transform, box-shadow, .05s ease;
     transition: transform, box-shadow, .05s ease, -webkit-transform;
