@@ -118,6 +118,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
 
       onStopTrack && onStopTrack(this.soundCloudAudio);
     }
+
     onVolumeChange() {
       this.setState({
         volume: this.soundCloudAudio.audio.volume,

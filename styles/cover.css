@@ -14,6 +14,7 @@
 }
 .sb-soundplayer-cover:after {
     content: '';
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .05)), to(rgba(0, 0, 0, .35)));
     background: linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .35));
     position: absolute;
     z-index: 1;
