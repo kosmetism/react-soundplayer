@@ -1,4 +1,4 @@
 module.exports = {
-    components: require('./components'),
-    addons: require('./addons')
+  components: require('./components'),
+  addons: require('./addons')
 };

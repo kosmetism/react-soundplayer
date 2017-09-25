@@ -20,6 +20,4 @@ This module uses latest _ECMAScript_ features with the help of [Babel transpiler
 ##### These tools will help your IDE to remind you with some of the rules listed above:
 
 - [EditorConfig](http://editorconfig.org)
-- [JSHint](http://jshint.com)
-- [JSXHint](https://github.com/STRML/JSXHint)
 - [ESLint](http://eslint.org)

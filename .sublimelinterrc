@@ -1,7 +1,7 @@
 {
-    "linters": {
-        "eslint": {
-           "excludes": ["lib/**/*.js"]
-        }
+  "linters": {
+    "eslint": {
+      "excludes": ["lib/**/*.js"]
     }
+  }
 }

@@ -15,20 +15,20 @@ const outputFolderName = 'styles/';
 const cssnextPath = path.join(__dirname, inputFolderName);
 
 fs.readdir(cssnextPath, function (err, files) {
-    if (err) {
-        throw err;
-    }
+  if (err) {
+    throw err;
+  }
 
-    files.forEach(function (file) {
-        console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
+  files.forEach(function (file) {
+    console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
 
-        const input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
+    const input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
 
-        postcss([postcssImport, postcssCssnext])
-            .process(input)
-            .then(function (result) {
-                fs.writeFileSync(path.join(__dirname, outputFolderName+file), result.css);
-            });
-    });
-    console.log(' ');
+    postcss([postcssImport, postcssCssnext])
+      .process(input)
+      .then(function (result) {
+        fs.writeFileSync(path.join(__dirname, outputFolderName+file), result.css);
+      });
+  });
+  console.log(' ');
 });
