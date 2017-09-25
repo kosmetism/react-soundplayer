@@ -49,7 +49,7 @@ class Player extends Component {
 
         let tracks = playlist.tracks.map((track, i) => {
             let classNames = ClassNames('flex flex-center full-width left-align button button-transparent', {
-                'is-active': this.state.activeIndex === i
+                'is-active': this.props.soundCloudAudio._playlistIndex === i 
             });
 
             return (
