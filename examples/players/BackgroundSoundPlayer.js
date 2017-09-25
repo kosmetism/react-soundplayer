@@ -10,7 +10,7 @@ class BackgroundSoundPlayer extends Component {
         const { track, duration, currentTime } = this.props;
 
         return (
-            <div className="py2 white bg-cover bg-top rounded relative" style={{backgroundImage: `url(${nasaBg})`}}>
+            <div id='BackgroundSoundPlayer' className="py2 white bg-cover bg-top rounded relative" style={{backgroundImage: `url(${nasaBg})`}}>
                 <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
                 <div className="center py4 relative z1">
                     <h3 className="h4 nowrap caps mb0">{track ? track.user.username : ''}</h3>

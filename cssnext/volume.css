@@ -11,6 +11,9 @@
     transition: width .2s ease-out;
     position: relative;
 }
+.sb-soundplayer-volume button {
+    line-height: normal;
+}
 :root {
     --sb-volume-dial-color: #FC561E;
     --sb-volume-track-color: #AAA;
