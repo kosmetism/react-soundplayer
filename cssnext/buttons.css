@@ -1,35 +1,35 @@
 .sb-soundplayer-play-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--sb-play-btn-color);
-    font-size: 1em;
-    padding: 1rem;
-    margin: 0;
-    height: auto;
-    vertical-align: middle;
-    border-radius: 3px;
-    text-decoration: none;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    transition: transform, box-shadow, .05s ease;
-    box-sizing: border-box;
-    -webkit-appearance: none;
+  display: inline-block;
+  background-color: transparent;
+  color: var(--sb-play-btn-color);
+  font-size: 1em;
+  padding: 1rem;
+  margin: 0;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  transition: transform, box-shadow, .05s ease;
+  box-sizing: border-box;
+  -webkit-appearance: none;
 }
 .sb-soundplayer-play-btn:hover {
-    transform: scale(1.0625);
+  transform: scale(1.0625);
 }
 .sb-soundplayer-play-btn:focus {
-    transform: scale(.9375);
+  transform: scale(.9375);
 }
 .sb-soundplayer-play-btn:active {
-    box-shadow: inset 0 0 0 2px var(--sb-play-btn-color);
+  box-shadow: inset 0 0 0 2px var(--sb-play-btn-color);
 }
 .sb-soundplayer-play-btn:hover,
 .sb-soundplayer-play-btn:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 :root {
-    --sb-play-btn-color: #FC561E;
+  --sb-play-btn-color: #FC561E;
 }

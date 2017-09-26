@@ -1,55 +1,55 @@
 .sb-soundplayer-cover {
-    color: #fff;
-    background-image: url(var(--sb-cover-fallback-bg));
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 30px 30px 20px 30px;
-    margin-bottom: 20px;
-    height: 440px;
-    position: relative;
-    overflow: hidden;
-    cursor: default;
-    border-radius: 2px;
+  color: #fff;
+  background-image: url(var(--sb-cover-fallback-bg));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px 20px 30px;
+  margin-bottom: 20px;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  border-radius: 2px;
 }
 .sb-soundplayer-cover:after {
-    content: '';
-    background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.35));
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  content: '';
+  background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.35));
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .sb-soundplayer-cover .sb-soundplayer-info-box {
-    display: inline-block;
-    background-color: var(--sb-cover-info-bg);
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    border-radius: 1px;
+  display: inline-block;
+  background-color: var(--sb-cover-info-bg);
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 1px;
 }
 .sb-soundplayer-cover .sb-soundplayer-track {
-    font-weight: 600;
-    font-size: 24px;
+  font-weight: 600;
+  font-size: 24px;
 }
 .sb-soundplayer-cover .sb-soundplayer-artist {
-    font-size: 18px;
+  font-size: 18px;
 }
 .sb-soundplayer-cover-logo {
-    color: var(--sb-cover-logo-color);
-    width: 100px;
-    height: 14px;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    z-index: 2;
+  color: var(--sb-cover-logo-color);
+  width: 100px;
+  height: 14px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 2;
 }
 
 :root {
-    --sb-cover-fallback-bg: '';
-    --sb-cover-info-bg: rgba(0, 0, 0, .8);
-    --sb-cover-logo-color: rgba(255,255,255,.9);
+  --sb-cover-fallback-bg: '';
+  --sb-cover-info-bg: rgba(0, 0, 0, .8);
+  --sb-cover-logo-color: rgba(255,255,255,.9);
 }

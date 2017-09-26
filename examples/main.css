@@ -6,40 +6,40 @@
 @import 'basscss';
 
 .b2 {
-    border-width: 2px;
+  border-width: 2px;
 }
 
 header {
-    background-image: linear-gradient(45deg, var(--teal), rgba(0, 255, 127,.7));
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+  background-image: linear-gradient(45deg, var(--teal), rgba(0, 255, 127,.7));
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
 }
 
 h2 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .social-buttons {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 .semibold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .muted {
-    opacity: .3;
+  opacity: .3;
 }
 
 :root {
-    --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --container-width: 820px;
-    --yellow: rgba(255, 220, 0, 0.45);
-    --orange: #FC561E;
-    --button-line-height: 1;
-    --sb-progress-height: 8px;
-    --button-big-padding-x: 1.25rem;
-    --button-big-padding-y: 1.25rem;
+  --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --container-width: 820px;
+  --yellow: rgba(255, 220, 0, 0.45);
+  --orange: #FC561E;
+  --button-line-height: 1;
+  --sb-progress-height: 8px;
+  --button-big-padding-x: 1.25rem;
+  --button-big-padding-y: 1.25rem;
 }

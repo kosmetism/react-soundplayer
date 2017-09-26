@@ -1,19 +1,19 @@
 .sb-soundplayer-progress-container {
-    background-color: var(--sb-progress-bg-color);
-    width: 100%;
-    height: var(--sb-progress-height);
-    overflow: hidden;
-    cursor: pointer;
+  background-color: var(--sb-progress-bg-color);
+  width: 100%;
+  height: var(--sb-progress-height);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .sb-soundplayer-progress-inner {
-    background-color: var(--sb-progress-color);
-    height: 100%;
-    transition: width .2s ease-in;
+  background-color: var(--sb-progress-color);
+  height: 100%;
+  transition: width .2s ease-in;
 }
 
 :root {
-    --sb-progress-color: #FC561E;
-    --sb-progress-bg-color: #DDD;
-    --sb-progress-height: 10px;
+  --sb-progress-color: #FC561E;
+  --sb-progress-bg-color: #DDD;
+  --sb-progress-height: 10px;
 }
