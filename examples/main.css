@@ -1,7 +1,7 @@
-@import '../cssnext/icons.css';
-@import '../cssnext/progress.css';
-@import '../cssnext/cover.css';
-@import '../cssnext/volume.css';
+@import '../src/cssnext/icons.css';
+@import '../src/cssnext/progress.css';
+@import '../src/cssnext/cover.css';
+@import '../src/cssnext/volume.css';
 @import 'highlight.js/styles/github.css';
 @import 'basscss';
 

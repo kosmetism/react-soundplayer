@@ -24,6 +24,7 @@ class BackgroundSoundPlayer extends Component {
           <VolumeControl
             className='mr2 flex flex-center'
             buttonClassName="flex-none h2 button button-transparent button-grow rounded"
+            rangeClassName="bg-white"
             {...this.props}
           />
           <Progress

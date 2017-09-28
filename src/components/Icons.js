@@ -14,7 +14,7 @@ export const SoundCloudLogoSVG = () => (
 // Player Button Icons
 export const ButtonIconSVG = (props) => (
   <svg
-    className="sb-soundplayer-play-icon"
+    className="sb-soundplayer-icon"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32 32"
     fill="currentColor"
@@ -56,7 +56,7 @@ export const PrevIconSVG = () => (
 // Volume
 export const VolumeIconSVG = (props) => (
   <svg
-    className="sb-soundplayer-play-icon"
+    className="sb-soundplayer-icon"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 75 75"
     fill="currentColor"

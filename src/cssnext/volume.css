@@ -1,7 +1,6 @@
 .sb-soundplayer-volume {
   position: relative;
 }
-
 .sb-soundplayer-volume:hover div {
   width: 80px;
 }
@@ -11,13 +10,6 @@
   transition: width .2s ease-out;
   position: relative;
 }
-:root {
-  --sb-volume-dial-color: #FC561E;
-  --sb-volume-track-color: #AAA;
-  --sb-volume-progress-color: #FC561E;
-}
-
-
 .sb-soundplayer-volume-range {
   -webkit-appearance: none;
   width: 98%;
@@ -84,4 +76,10 @@
 /* progress fill */
 .sb-soundplayer-volume-range::-ms-fill-lower {
   background: var(--sb-volume-progress-color);
+}
+
+:root {
+  --sb-volume-dial-color: #FC561E;
+  --sb-volume-track-color: #DDD;
+  --sb-volume-progress-color: #FC561E;
 }

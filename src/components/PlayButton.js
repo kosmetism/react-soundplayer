@@ -17,7 +17,9 @@ class PlayButton extends Component {
     const { playing, soundCloudAudio, onTogglePlay } = this.props;
 
     if (!playing) {
-      soundCloudAudio && soundCloudAudio.play({ playlistIndex: soundCloudAudio._playlistIndex });
+      soundCloudAudio && soundCloudAudio.play({
+        playlistIndex: soundCloudAudio._playlistIndex
+      });
     } else {
       soundCloudAudio && soundCloudAudio.pause();
     }
@@ -38,7 +40,7 @@ class PlayButton extends Component {
       iconNode = <PlayIconSVG />;
     }
 
-    const classNames = ClassNames('sb-soundplayer-play-btn', className);
+    const classNames = ClassNames('sb-soundplayer-btn sb-soundplayer-play-btn', className);
 
     return (
       <button type="button" className={classNames} style={style} onClick={::this.handleClick}>

@@ -38,7 +38,7 @@ class Progress extends Component {
       innerStyle = {};
     }
 
-    innerStyle = Object.assign(innerStyle, {width: `${value}%`});
+    innerStyle = Object.assign({}, innerStyle, {width: `${value}%`});
 
     return (
       <div className={classNames} style={style} onClick={::this.handleSeekTrack}>

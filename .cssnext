@@ -10,9 +10,9 @@ const postcss = require('postcss');
 const postcssCssnext = require('postcss-cssnext');
 const postcssImport = require('postcss-import');
 
-const inputFolderName = 'cssnext/';
-const outputFolderName = 'styles/';
-const cssnextPath = path.join(__dirname, inputFolderName);
+const inputFolderPath = 'src/cssnext/';
+const outputFolderPath = 'styles/';
+const cssnextPath = path.join(__dirname, inputFolderPath);
 
 fs.readdir(cssnextPath, function (err, files) {
   if (err) {
@@ -20,14 +20,14 @@ fs.readdir(cssnextPath, function (err, files) {
   }
 
   files.forEach(function (file) {
-    console.log('%s -> %s', inputFolderName+file, outputFolderName+file);
+    console.log('%s -> %s', inputFolderPath+file, outputFolderPath+file);
 
     const input = fs.readFileSync(path.join(cssnextPath, file), 'utf8');
 
     postcss([postcssImport, postcssCssnext])
       .process(input)
       .then(function (result) {
-        fs.writeFileSync(path.join(__dirname, outputFolderName+file), result.css);
+        fs.writeFileSync(path.join(__dirname, outputFolderPath+file), result.css);
       });
   });
   console.log(' ');

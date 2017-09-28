@@ -18,7 +18,7 @@ class PrevButton extends Component {
 
   render() {
     const { className, style } = this.props;
-    const classNames = ClassNames('sb-soundplayer-play-btn', className);
+    const classNames = ClassNames('sb-soundplayer-btn sb-soundplayer-prev-btn', className);
 
     return (
       <button type="button" className={classNames} style={style} onClick={::this.handleClick}>

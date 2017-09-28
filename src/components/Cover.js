@@ -9,7 +9,9 @@ class Cover extends Component {
     const classNames = ClassNames('sb-soundplayer-cover', className);
 
     return (
-      <div className={classNames} style={Object.assign(style, {backgroundImage: `url(${backgroundUrl})`})}>
+      <div
+        className={classNames}
+        style={Object.assign({}, style, {backgroundImage: `url(${backgroundUrl})`})}>
         <div>
           <SoundCloudLogoSVG />
         </div>

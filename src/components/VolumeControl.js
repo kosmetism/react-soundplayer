@@ -6,7 +6,12 @@ import { VolumeIconLoudSVG, VolumeIconMuteSVG } from './Icons';
 
 class VolumeControl extends Component {
   handleVolumeChange(e) {
-    const { onVolumeChange, onToggleMute, soundCloudAudio, isMuted } = this.props;
+    const {
+      onVolumeChange,
+      onToggleMute,
+      soundCloudAudio,
+      isMuted
+    } = this.props;
     const xPos = (e.target.value / 100);
     const mute = (xPos <= 0 && !isMuted);
 
@@ -21,11 +26,14 @@ class VolumeControl extends Component {
 
     onVolumeChange && onVolumeChange.call(this, xPos, e);
   }
+
   handleMute(e) {
     const { onToggleMute, soundCloudAudio } = this.props;
+
     if (soundCloudAudio && !isNaN(soundCloudAudio.audio.muted)) {
       soundCloudAudio.audio.muted = !soundCloudAudio.audio.muted;
     }
+
     onToggleMute && onToggleMute.call(this, !this.props.isMuted, e);
   }
 
@@ -43,13 +51,13 @@ class VolumeControl extends Component {
     }
 
     const classNames = ClassNames('sb-soundplayer-volume', className);
-    const buttonClassNames = ClassNames(buttonClassName);
+    const buttonClassNames = ClassNames('sb-soundplayer-btn sb-soundplayer-volume-btn', buttonClassName);
     const rangeClassNames = ClassNames('sb-soundplayer-volume-range', rangeClassName);
 
     return (
       <div className={classNames}>
         <button className={buttonClassNames} onClick={::this.handleMute}>
-          { isMuted? <VolumeIconMuteSVG /> : <VolumeIconLoudSVG /> }
+          {isMuted ? <VolumeIconMuteSVG /> : <VolumeIconLoudSVG />}
         </button>
         <div>
           <input className={rangeClassNames} type="range" min="0" max="100" step="1" value={value} onChange={::this.handleVolumeChange} />

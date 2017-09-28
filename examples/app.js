@@ -26,10 +26,10 @@ import PlaylistSoundPlayer from './players/PlaylistSoundPlayer';
 import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 
 // dummy data
-const stepanIMeduza = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
-const pedro = 'https://soundcloud.com/oscar-b-lewis/pedro-fm-theme';
+const ksmtk = 'https://soundcloud.com/ksmtk/chronemics';
+const pedro = 'https://soundcloud.com/giallo-disco-records/gd025-vercetti-technicolor-hard-pill-ost';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
-const sayLouLou = 'https://soundcloud.com/sayloulou/nothing-but-a-heartbeat';
+const sayLouLou = 'https://soundcloud.com/sally-dige/holding-on';
 const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
   image: 'https://i1.sndcdn.com/artworks-000113169457-9bvvb7-t500x500.jpg',
@@ -38,8 +38,9 @@ const data = {
 };
 
 const clientId = window.clientId = process.env.CLIENT_ID || ''; // OR PUT YOUR CLIENT ID HERE
+
 const seekingIcon = (
-  <img src="./assets/preloader.svg" className="sb-soundplayer-play-icon" />
+  <img src="./assets/preloader.svg" className="sb-soundplayer-icon" />
 );
 
 class PureComponents extends React.Component {
@@ -89,14 +90,14 @@ class PureComponents extends React.Component {
 
     return (
       <div>
-        <h2 id="PureComponents" className="caps mt3">
+        <h2 id="PureComponents" className="caps mt4">
           <a href="#PureComponents" className="black">Pure Components</a>
         </h2>
         <hr className="mt1 mb1 b2 border-orange" />
 
         <div className="mt3 mb3">
-          Each component accepts <code className="black bg-darken-1 rounded">className</code> prop as regular DOM elements which makes it simple to use different styles with them.
-            Here is the list of all available so-called "dumb" components that accept data and callbacks with self-descriptive props:
+          Each component accepts <code className="black bg-darken-1 rounded">className</code> prop as regular DOM elements do. This allows to use different styles with them easily.
+          There is a list of all available so-called "dumb" components that accept data and callbacks with self-descriptive props:
         </div>
 
         <h3 id="PlayButton" className="mb2 h4">
@@ -113,12 +114,12 @@ class PureComponents extends React.Component {
           onTogglePlay={this.handleClick.bind(this)}
         />
         <pre><code className="html">{`<PlayButton
-    className={String}
-    playing={Boolean}
-    seeking={Boolean}
-    seekingIcon={ReactElement}
-    onTogglePlay={Function}
-    soundCloudAudio={instanceof SoundCloudAudio}
+  className={String}
+  playing={Boolean}
+  seeking={Boolean}
+  seekingIcon={ReactElement}
+  onTogglePlay={Function}
+  soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
         <hr />
@@ -131,9 +132,9 @@ class PureComponents extends React.Component {
         <div className="mb2">Switch to the next track in a playlist.</div>
         <NextButton className="button btn-big button-outline button-grow orange rounded mb2" />
         <pre><code className="html">{`<NextButton
-    className={String}
-    onNextClick={Function}
-    soundCloudAudio={instanceof SoundCloudAudio}
+  className={String}
+  onNextClick={Function}
+  soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
         <hr />
@@ -146,9 +147,9 @@ class PureComponents extends React.Component {
         <div className="mb2">Return to the previous track in a playlist.</div>
         <PrevButton className="button btn-big button-outline button-grow orange rounded mb2" />
         <pre><code className="html">{`<PrevButton
-    className={String}
-    onPrevClick={Function}
-    soundCloudAudio={instanceof SoundCloudAudio}
+  className={String}
+  onPrevClick={Function}
+  soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
         <hr />
@@ -173,16 +174,16 @@ class PureComponents extends React.Component {
           onVolumeChange={this.handleVolumeChange.bind(this)}
           onToggleMute={this.handleMuteToggle.bind(this)}
           className='mb2 flex flex-center'
-          buttonClassName="flex-none h2 button button-transparent button-grow rounded"
+          buttonClassName="flex-none button btn-big button-outline button-grow orange rounded"
         />
         <pre><code className="html">{`<VolumeControl
-    className={String}
-    buttonClassName={String}
-    rangeClassName={String}
-    volume={Number}
-    onVolumeChange={Function}
-    onToggleMute={Function}
-    soundCloudAudio={instanceof SoundCloudAudio}
+  className={String}
+  buttonClassName={String}
+  rangeClassName={String}
+  volume={Number}
+  onVolumeChange={Function}
+  onToggleMute={Function}
+  soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
         <hr />
@@ -193,8 +194,8 @@ class PureComponents extends React.Component {
           </a>
         </h3>
         <div className="mb2">
-                    Component that replaces native <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress" target="_blank"><code>{'<progress>'}</code> DOM element</a>.
-                    If <code className="black bg-darken-1 rounded">soundCloudAudio</code> prop is passed it automagically updates track audio time due to clicked progress position.
+          Component that replaces native <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress" target="_blank"><code>{'<progress>'}</code> DOM element</a>.
+          If <code className="black bg-darken-1 rounded">soundCloudAudio</code> prop is passed it automagically updates track audio time due to clicked progress position.
         </div>
         <Progress
           className="mb2"
@@ -202,11 +203,11 @@ class PureComponents extends React.Component {
           onSeekTrack={this.seekTrack.bind(this)}
         />
         <pre><code className="html">{`<Progress
-    className={String}
-    innerClassName={String}
-    value={Number}
-    onSeekTrack={Function}
-    soundCloudAudio={instanceof SoundCloudAudio}
+  className={String}
+  innerClassName={String}
+  value={Number}
+  onSeekTrack={Function}
+  soundCloudAudio={instanceof SoundCloudAudio}
 />
 `}</code></pre>
         <hr />
@@ -225,9 +226,9 @@ class PureComponents extends React.Component {
           currentTime={currentTime}
         />
         <pre><code className="html">{`<Timer
-    className={String}
-    duration={Number}
-    currentTime={Number}
+  className={String}
+  duration={Number}
+  currentTime={Number}
 />
 `}</code></pre>
         <hr />
@@ -245,16 +246,99 @@ class PureComponents extends React.Component {
           backgroundUrl={data.image}
         />
         <pre><code className="html">{`<Cover
-    className={String}
-    trackName={String}
-    artistName={String}
-    backgroundUrl={String}
+  className={String}
+  trackName={String}
+  artistName={String}
+  backgroundUrl={String}
 />
 `}</code></pre>
       </div>
     );
   }
 }
+
+class CustomPlayer extends React.Component {
+  play() {
+    const { soundCloudAudio, playing } = this.props;
+
+    if (playing) {
+      soundCloudAudio.pause();
+    } else {
+      soundCloudAudio.play();
+    }
+  }
+
+  render() {
+    const { track, playing } = this.props;
+
+    if (!track) {
+      return <div>Loading...</div>;
+    }
+
+    return (
+      <div className="mt3 mb3 border p2 rounded b2">
+        <h2 className="m0">{track.title}</h2>
+        <h3 className="mt0">by {track.user.username}</h3>
+        <button
+          className="button button-small bg-teal white rounded"
+          onClick={() => this.play()}
+        >
+          {playing ? 'Pause' : 'Play'}
+        </button>
+      </div>
+    );
+  }
+}
+
+class ContainerComponents extends React.Component {
+  render() {
+    const { onStartTrack } = this.props;
+
+    return (
+      <div>
+        <h2 id="Containers" className="mt4 caps">
+          <a href="#Containers" className="black">Higher-order Containers</a>
+        </h2>
+        <hr className="mt1 mb1 b2 border-orange" />
+
+        <div className="mt3">
+          In the core of <strong>ReactSoundPlayer</strong> there is a container that incapsulates
+          interaction with browser's Audio object and passes all necessary state data as properties inside children.
+        </div>
+        <h3 id="SoundPlayerContainer" className="mb2 mt3 h4">
+          <a href="#SoundPlayerContainer" className="black bg-yellow rounded">
+            <code>{'<SoundPlayerContainer />'}</code>
+          </a>
+        </h3>
+        <div className="mt1 mb2">
+          In order to use it just choose what kind of data you are consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).
+        </div>
+        <pre><code className="javascript">{`render() {
+  return (
+    <SoundPlayerContainer
+      clientId={String}
+      resolveUrl={String}
+      streamUrl={String}
+      onStartTrack={Function}
+      onStopTrack={Function}>
+      {/*Children get props full of useful data!*/}
+    </SoundPlayerContainer>
+  );
+}`}</code></pre>
+        <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
+        <SoundPlayerContainer
+          clientId={clientId}
+          resolveUrl={ksmtk}
+          onStartTrack={onStartTrack}
+        >
+          <CustomPlayer />
+        </SoundPlayerContainer>
+        <div className="mt2">
+          <pre><code className="javascript">{`import React from 'react';
+import { SoundPlayerContainer } from 'react-soundplayer/addons';
+
+const clientId = 'YOUR CLIENT ID';
+const resolveUrl = 'https://soundcloud.com/ksmtk/chronemics';
 
 class CustomPlayer extends React.Component {
   play() {
@@ -267,20 +351,17 @@ class CustomPlayer extends React.Component {
   }
 
   render() {
-    let { track, playing } = this.props;
+    const { track, playing } = this.props;
 
     if (!track) {
       return <div>Loading...</div>;
     }
 
     return (
-      <div className="mt3 mb3 border p2 rounded b2">
-        <h2 className="m0">{track.title}</h2>
-        <h3 className="mt0">by {track.user.username}</h3>
-        <button
-          className="button button-small bg-teal"
-          onClick={this.play.bind(this)}
-        >
+      <div>
+        <h2>{track.title}</h2>
+        <h3>{track.user.username}</h3>
+        <button onClick={this.play.bind(this)}>
           {playing ? 'Pause' : 'Play'}
         </button>
       </div>
@@ -288,96 +369,19 @@ class CustomPlayer extends React.Component {
   }
 }
 
-class ContainerComponents extends React.Component {
-  render() {
-    let { onStartTrack } = this.props;
-    return (
-      <div>
-        <h2 id="Containers" className="mt3 caps">
-          <a href="#Containers" className="black">Higher-order Containers</a>
-        </h2>
-        <hr className="mt1 mb1 b2 border-orange" />
-
-        <div className="mt3">
-                    In the heart of <strong>ReactSoundPlayer</strong> there is a container that incapsulates
-                    interaction with browser's Audio object and passes all necessary state data as properties inside children.
-        </div>
-        <h3 id="SoundPlayerContainer" className="mb2 mt3 h4">
-          <a href="#SoundPlayerContainer" className="black bg-yellow rounded">
-            <code>{'<SoundPlayerContainer />'}</code>
-          </a>
-        </h3>
-        <div className="mt1 mb2">
-                    In order to use it just choose what kind of data you are consuming (via <code className="black bg-darken-1 rounded">resolveUrl</code> or <code className="black bg-darken-1 rounded">streamUrl</code>).
-        </div>
-        <pre><code className="javascript">{`render() {
-    return (
-        <SoundPlayerContainer
-            clientId={String}
-            resolveUrl={String}
-            streamUrl={String}
-            onStartTrack={Function}
-            onStopTrack={Function}
-        >
-        {/*Children get props full of useful data!*/}
-        </SoundPlayerContainer>
-    );
-}`}</code></pre>
-        <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
-        <SoundPlayerContainer
-          clientId={clientId}
-          resolveUrl={stepanIMeduza}
-          onStartTrack={onStartTrack}
-        >
-          <CustomPlayer />
-        </SoundPlayerContainer>
-        <div className="mt2">
-          <pre><code className="javascript">{`import React from 'react';
-import { SoundPlayerContainer } from 'react-soundplayer/addons';
-
-const clientId = 'YOUR CLIENT ID';
-const resolveUrl = 'https://soundcloud.com/stepan-i-meduza-official/dolgo-obyasnyat';
-
-class CustomPlayer extends React.Component {
-    play() {
-        let { soundCloudAudio, playing } = this.props;
-        if (playing) {
-            soundCloudAudio.pause();
-        } else {
-            soundCloudAudio.play();
-        }
-    }
-
-    render() {
-        let { track, playing } = this.props;
-
-        if (!track) {
-            return <div>Loading...</div>;
-        }
-
-        return (
-            <div>
-                <h2>{track.title}</h2>
-                <h3>{track.user.username}</h3>
-                <button onClick={this.play.bind(this)}>
-                    {playing ? 'Pause' : 'Play'}
-                </button>
-            </div>
-        );
-    }
-}
-
 class App extends React.Component {
-    render() {
-        return (
-            <SoundPlayerContainer resolveUrl={streamUrl} clientId={clientId}>
-                <CustomPlayer />
-            </SoundPlayerContainer>
-        );
-    }
+  render() {
+    return (
+      <SoundPlayerContainer
+        resolveUrl={streamUrl}
+        clientId={clientId}>
+        <CustomPlayer />
+      </SoundPlayerContainer>
+    );
+  }
 }
 
-React.render(<App />, document.body);`}</code></pre>
+React.render(<App />, document.getElementById('app'));`}</code></pre>
         </div>
       </div>
     );
@@ -388,13 +392,13 @@ class BuiltInPlayers extends React.Component {
   render() {
     return (
       <div>
-        <h2 id="ExamplePlayers" className="caps mt3">
+        <h2 id="ExamplePlayers" className="caps mt4">
           <a href="#ExamplePlayers" className="black">Example Players</a>
         </h2>
         <hr className="mt1 mb1 b2 border-orange" />
         <div className="mt3">
-                    These beautiful players are built using <a href="http://labs.voronianski.com/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.com/react-soundplayer#SoundPlayerContainer">SoundPlayerContainer</a>.
-                    What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {'It\'s easy to create your own!'}
+          Example players on this page are built using <a href="http://labs.voronianski.com/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.com/react-soundplayer#SoundPlayerContainer">SoundPlayerContainer</a>.
+          What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {'It\'s easy to create your own!'}
         </div>
         <BasicSoundPlayer
           clientId={clientId}
@@ -434,17 +438,17 @@ class App extends React.Component {
           <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
           <p className="h3 mt1 mb2">Create custom SoundCloud players with React.js</p>
           <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline btn-big mb3 mt2 mr2 b2">View on Github</a>
-          <a href="#ExamplePlayers" className="h4 button bg-orange btn-big mb3 mt2 b2">Check Examples</a>
+          <a href="#ExamplePlayers" className="h4 button bg-orange btn-big mb3 mt2 b2 white rounded">Check Examples</a>
         </header>
         <div className="container">
           {/* getting started */}
-          <h2 id="GettingStarted" className="caps mt3">
+          <h2 id="GettingStarted" className="caps mt4">
             <a href="#GettingStarted" className="black">Getting Started</a>
           </h2>
           <hr className="mt1 mb1 b2 border-orange" />
           <pre className="mt3 mb2"><code className="bash">{'npm install react-soundplayer --save'}</code></pre>
           <div className="mb2">
-                        ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
+            ReactSoundPlayer is bundled with <a href="#PureComponents">components</a> and <a href="#Containers">addons</a> inside, both should be required separately.
           </div>
           <pre><code className="javascript">{`// all examples use ES6 syntax
 import { PlayButton, Progress, Icons } from 'react-soundplayer/components';
@@ -454,7 +458,7 @@ const { SoundCloudLogoSVG } = Icons;
 
 // ...`}</code></pre>
           <div className="mt2 mb2">
-                        Module depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio</strong></a> for managing HTML5 Audio.
+            Module depends on <a href="https://facebook.github.io/react/"><strong>React.js</strong></a> and <a href="https://github.com/voronianski/soundcloud-audio.js"><strong>SoundCloudAudio.js</strong></a> for managing HTML5 Audio.
           </div>
 
           {/* independent components */}
@@ -467,27 +471,27 @@ const { SoundCloudLogoSVG } = Icons;
           <BuiltInPlayers />
 
           {/* icons */}
-          <h2 id="IconComponents" className="caps mt3">
+          <h2 id="IconComponents" className="caps mt4">
             <a href="#IconComponents" className="black">Icon Components</a>
           </h2>
           <hr className="mt1 mb1 b2 border-orange" />
           <div className="mt3 mb2">
-                        Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
+            Icons for buttons and SoundCloud logo can be used on their own as well. All of them are pure <a href="http://caniuse.com/#search=svg"><strong>SVG</strong></a> right now.
           </div>
           <pre><code className="javascript">{`import { Icons } from 'react-soundplayer/components';
 
 // the list of available icons:
 const {
-    SoundCloudLogoSVG,
-    PlayIconSVG,
-    PauseIconSVG,
-    NextIconSVG,
-    PrevIconSVG
+  SoundCloudLogoSVG,
+  PlayIconSVG,
+  PauseIconSVG,
+  NextIconSVG,
+  PrevIconSVG
 } = Icons;
 `}</code></pre>
 
           {/* troubleshooting */}
-          <h2 id="Troubleshooting" className="caps mt3">
+          <h2 id="Troubleshooting" className="caps mt4">
             <a href="#Troubleshooting" className="black">Troubleshooting</a>
           </h2>
           <hr className="mt1 mb1 b2 border-orange" />
@@ -498,7 +502,7 @@ const {
           </div>
 
           {/* resources */}
-          <h2 id="UsefulResources" className="caps mt3">
+          <h2 id="UsefulResources" className="caps mt4">
             <a href="#UsefulResources" className="black">Useful Resources</a>
           </h2>
           <hr className="mt1 mb1 b2 border-orange" />
@@ -507,6 +511,7 @@ const {
             <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
             <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
             <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
+            <li>you can generate standalone "copy-paste" version with <a href="http://labs.voronianski.com/get-soundplayer">Soundplayer.js</a>!</li>
             <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
           </ul>
         </div>
