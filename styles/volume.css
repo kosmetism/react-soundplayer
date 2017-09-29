@@ -24,7 +24,7 @@
   height: 0.2em;
   cursor: pointer;
   animate: 0.2s;
-  background: #AAA;
+  background: #DDD;
   border-radius: 1.3px;
 }
 .sb-soundplayer-volume-range::-moz-range-track {
@@ -32,7 +32,7 @@
   height: 0.2em;
   cursor: pointer;
   animate: 0.2s;
-  background: #AAA;
+  background: #DDD;
   border-radius: 1.3px;
 }
 .sb-soundplayer-volume-range::-ms-track {
@@ -40,7 +40,7 @@
   height: 0.2em;
   cursor: pointer;
   animate: 0.2s;
-  background: #AAA;
+  background: #DDD;
   border-radius: 1.3px;
 }
 /* thumb dial */

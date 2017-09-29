@@ -155,10 +155,7 @@ class PureComponents extends React.Component {
         <hr />
         <div className="mt2">
           <strong><i>Important note:</i></strong> All buttons accept <code className="black bg-darken-1 rounded">soundCloudAudio</code> prop which
-          when passed will add actions to buttons automagically (e.g. play or pause, go to prev or next track),
-          {' callback function used in '}<code className="black bg-darken-1 rounded">onTogglePlay</code>,
-          <code className="black bg-darken-1 rounded">onNextClick</code> and
-          <code className="black bg-darken-1 rounded">onPrevClick</code> will still be called after.
+          when passed will add actions to buttons automagically (e.g. play or pause, go to prev or next track), {' callback function used in '}<code className="black bg-darken-1 rounded">onTogglePlay</code>, <code className="black bg-darken-1 rounded">onNextClick</code> and <code className="black bg-darken-1 rounded">onPrevClick</code> will still be called after.
         </div>
         <hr />
 
@@ -511,7 +508,7 @@ const {
             <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
             <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
             <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
-            <li>you can generate standalone "copy-paste" version with <a href="http://labs.voronianski.com/get-soundplayer">Soundplayer.js</a>!</li>
+            <li>generate standalone "copy-paste" version with <a href="http://labs.voronianski.com/get-soundplayer">Soundplayer.js</a></li>
             <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
           </ul>
         </div>

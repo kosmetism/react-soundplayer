@@ -1,12 +1,12 @@
 {
   "main": "app.js",
   "scripts": {
-    "start": "watchify . -o bundle.js -v -d",
-    "postcss": "postcss --use postcss-import --use postcss-cssnext -o ./styles.css ./main.css",
-    "cssnano": "cssnano < ./styles.css > ./styles.min.css",
+    "start": "watchify . -o ./build/bundle.js -v -d",
+    "postcss": "postcss --use postcss-import --use postcss-cssnext -o ./build/styles.css ./main.css",
+    "cssnano": "cssnano < ./build/styles.css > ./build/styles.min.css",
     "build-css": "npm run postcss && npm run cssnano",
-    "build-js": "browserify . -o bundle.js",
-    "build-js-prod": "NODE_ENV=production browserify app.js | uglifyjs -cm > bundle.min.js",
+    "build-js": "browserify . -o ./build/bundle.js",
+    "build-js-prod": "NODE_ENV=production browserify app.js | uglifyjs -cm > ./build/bundle.min.js",
     "build-dev": "npm run build-css && npm run build-js",
     "build-prod": "npm run build-css && npm run build-js-prod"
   },

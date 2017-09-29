@@ -1,6 +1,6 @@
 .sb-soundplayer-cover {
   color: #fff;
-  background-image: url(var(--sb-cover-fallback-bg));
+  background-color: #f5f5f5;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -49,7 +49,6 @@
 }
 
 :root {
-  --sb-cover-fallback-bg: '';
   --sb-cover-info-bg: rgba(0, 0, 0, .8);
   --sb-cover-logo-color: rgba(255,255,255,.9);
 }

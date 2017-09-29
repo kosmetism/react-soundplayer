@@ -1,4 +1,5 @@
 node_modules
-bundle.js
-styles.css
-styles.min.css
+build/bundle.js
+build/bundle.min.js
+build/styles.css
+build/styles.min.css

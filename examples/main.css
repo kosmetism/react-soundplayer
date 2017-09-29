@@ -33,6 +33,16 @@ h2 a:hover {
   opacity: .3;
 }
 
+.custom-track-bg::-webkit-slider-runnable-track {
+  background-color: rgba(0, 0, 0, .25);
+}
+.custom-track-bg::-moz-range-track {
+  background-color: rgba(0, 0, 0, .25);
+}
+.custom-track-bg::-ms-track {
+  background-color: rgba(0, 0, 0, .25);
+}
+
 :root {
   --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --container-width: 820px;
