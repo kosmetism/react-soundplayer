@@ -1,8 +1,11 @@
-# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;[react-soundplayer](http://labs.voronianski.com/react-soundplayer) &middot; [![npm version](http://badge.fury.io/js/react-soundplayer.svg)](http://badge.fury.io/js/react-soundplayer) [![Dependency Status](http://david-dm.org/soundblogs/react-soundplayer.svg)](http://david-dm.org/soundblogs/react-soundplayer) [![Download Count](http://img.shields.io/npm/dm/react-soundplayer.svg?style=flat)](http://www.npmjs.com/package/react-soundplayer)
+# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;[react-soundplayer](http://labs.voronianski.com/react-soundplayer) 
+[![npm version](http://badge.fury.io/js/react-soundplayer.svg)](http://badge.fury.io/js/react-soundplayer) 
+[![Dependency Status](http://david-dm.org/soundblogs/react-soundplayer.svg)](http://david-dm.org/soundblogs/react-soundplayer) 
+[![Download Count](http://img.shields.io/npm/dm/react-soundplayer.svg?style=flat)](http://www.npmjs.com/package/react-soundplayer)
 
 > Create highly-customizable SoundCloud (or HTML5 audio) players with React.
 
-[<img src="https://user-images.githubusercontent.com/974035/31036249-a39ee1dc-a56b-11e7-8eb8-c3b90e7e21c4.png" width="500" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
+[<img src="https://user-images.githubusercontent.com/974035/31037146-c21d53e2-a56f-11e7-9cd4-b4784f99040c.png" width="600" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
 ### [Documentation](http://labs.voronianski.com/react-soundplayer)
 
