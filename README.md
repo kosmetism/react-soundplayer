@@ -1,4 +1,4 @@
-# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;react-soundplayer
+# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;[react-soundplayer](http://labs.voronianski.com/react-soundplayer)
 
 [![npm version](http://badge.fury.io/js/react-soundplayer.svg)](http://badge.fury.io/js/react-soundplayer)
 [![Dependency Status](http://david-dm.org/soundblogs/react-soundplayer.svg)](http://david-dm.org/soundblogs/react-soundplayer)
@@ -9,6 +9,8 @@
 [<img src="https://user-images.githubusercontent.com/974035/31036249-a39ee1dc-a56b-11e7-8eb8-c3b90e7e21c4.png" width="500" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
 ### [Documentation](http://labs.voronianski.com/react-soundplayer)
+
+---
 
 ## Install
 
