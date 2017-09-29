@@ -35,6 +35,24 @@ const data = {
   track: 'Cherry (Full Album)'
 };
 
+const users = [{
+  title: 'Fanburst',
+  url: 'https://fanburst.com',
+  logo: 'https://pbs.twimg.com/profile_images/783752771950350336/Rq7dfxia.jpg'
+}, {
+  title: 'Properllerhead Software',
+  url: 'https://www.propellerheads.se',
+  logo: 'https://pbs.twimg.com/profile_images/558288234363367424/qChNU38G_400x400.png'
+}, {
+  title: 'Braille Face "Kōya"',
+  url: 'https://koya.brailleface.co',
+  logo: 'https://koya.brailleface.co/static/media/Artwork.62b8ca22.jpg'
+}, {
+  title: 'Straightline',
+  url: 'http://www.wearestraightline.com',
+  logo: 'http://www.wearestraightline.com/safari-pinned-tab.svg'
+}];
+
 const clientId = window.clientId = process.env.CLIENT_ID || ''; // OR PUT YOUR CLIENT ID HERE
 
 const seekingIcon = (
@@ -506,6 +524,32 @@ const {
             Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.
             {'If your sound isn\'t playing check the '}<a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code className="black bg-darken-1 rounded">streamable</code> property.
             If it is set to <code className="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
+          </div>
+
+          {/* who's using */}
+          <h2 id="WhosUsing" className="caps mt4">
+            <a href="#WhosUsing" className="black">Who's Using?</a>
+          </h2>
+          <hr className="mt1 mb1 b2 border-orange" />
+          <div className="mt3">
+            <div className="clearfix mxn2">
+              {users.map(user => {
+                return (
+                  <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
+                    <a href={user.url} className="block black" target="_blank">
+                      <img className="block" src={user.logo} />
+                      <div className="mt1">{user.title}</div>
+                    </a>
+                  </div>
+                );
+              })}
+              <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1" />
+              <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
+                <a href="https://github.com/soundblogs/react-soundplayer/issues/58" className="block black" target="_blank">
+                  <div className="mt1 bold right-align">+ Add your company here!</div>
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* resources */}
