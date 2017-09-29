@@ -326,6 +326,9 @@ class ContainerComponents extends React.Component {
         <SoundPlayerContainer
           clientId={clientId}
           resolveUrl={ksmtk}
+          onReady={() => {
+            console.log('player url ready!');
+          }}
           onStartTrack={onStartTrack}
         >
           <CustomPlayer />
@@ -371,7 +374,10 @@ class App extends React.Component {
     return (
       <SoundPlayerContainer
         resolveUrl={streamUrl}
-        clientId={clientId}>
+        clientId={clientId}
+        onReady={() => {
+          console.log('player url ready!');
+        }}>
         <CustomPlayer />
       </SoundPlayerContainer>
     );

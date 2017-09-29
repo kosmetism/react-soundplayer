@@ -62,6 +62,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
           if (!this.mounted) {
             return;
           }
+
           this.setState({
             [data.tracks ? 'playlist' : 'track']: data
           }, () => onReady && onReady());
