@@ -6,9 +6,9 @@
 
 > Create highly-customizable SoundCloud (or HTML5 audio) players with React.
 
-[<img src="https://user-images.githubusercontent.com/974035/31036249-a39ee1dc-a56b-11e7-8eb8-c3b90e7e21c4.png" width="800" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
+[<img src="https://user-images.githubusercontent.com/974035/31036249-a39ee1dc-a56b-11e7-8eb8-c3b90e7e21c4.png" width="500" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
-## [Documentation](http://labs.voronianski.com/react-soundplayer)
+### [Documentation](http://labs.voronianski.com/react-soundplayer)
 
 ## Install
 
@@ -16,7 +16,7 @@
 npm install react-soundplayer --save
 ```
 
-## [Examples](http://labs.voronianski.com/react-soundplayer/#ExamplePlayers)
+## Examples
 
 There are several examples [on the website](http://labs.voronianski.com/react-soundplayer/#ExamplePlayers). Here is the basic one to get you started:
 
@@ -27,7 +27,7 @@ import { PlayButton, Timer } from 'react-soundplayer/components';
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
 
 const clientId = 'YOUR CLIENT ID';
-const resolveUrl = '';
+const resolveUrl = 'https://soundcloud.com/ksmtk/chronemics';
 
 const Player = withSoundCloudAudio(props => {
     let { track, currentTime } = props;
