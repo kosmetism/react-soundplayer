@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
-import { SoundPlayerContainer } from '../../addons';
+import { withSoundCloudAudio } from '../../addons';
 import { PlayButton, PrevButton, NextButton, Progress, Timer, VolumeControl } from '../../components';
 
-class Player extends Component {
+class PlaylistSoundPlayer extends Component {
   constructor() {
     super();
 
@@ -115,19 +115,9 @@ class Player extends Component {
   }
 }
 
-class PlaylistSoundPlayer extends Component {
-  render() {
-    return (
-      <SoundPlayerContainer {...this.props}>
-        <Player />
-      </SoundPlayerContainer>
-    );
-  }
-}
-
 PlaylistSoundPlayer.propTypes = {
   resolveUrl: PropTypes.string.isRequired,
   clientId: PropTypes.string.isRequired
 };
 
-export default PlaylistSoundPlayer;
+export default withSoundCloudAudio(PlaylistSoundPlayer);

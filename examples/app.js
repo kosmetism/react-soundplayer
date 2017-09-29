@@ -15,9 +15,7 @@ import {
 } from '../components';
 
 // ..and addons
-import {
-  SoundPlayerContainer
-} from '../addons';
+import { withSoundCloudAudio } from '../addons';
 
 // example players
 import BasicSoundPlayer from './players/BasicSoundPlayer';
@@ -287,6 +285,8 @@ class CustomPlayer extends React.Component {
   }
 }
 
+const CustomPlayerWithAudio = withSoundCloudAudio(CustomPlayer);
+
 class ContainerComponents extends React.Component {
   render() {
     const { onStartTrack } = this.props;
@@ -324,16 +324,13 @@ class ContainerComponents extends React.Component {
   );
 }`}</code></pre>
         <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
-        <SoundPlayerContainer
+        <CustomPlayerWithAudio
           clientId={clientId}
           resolveUrl={ksmtk}
           onReady={() => {
             console.log('player url ready!');
           }}
-          onStartTrack={onStartTrack}
-        >
-          <CustomPlayer />
-        </SoundPlayerContainer>
+          onStartTrack={onStartTrack} />
         <div className="mt2">
           <pre><code className="javascript">{`import React from 'react';
 import { SoundPlayerContainer } from 'react-soundplayer/addons';

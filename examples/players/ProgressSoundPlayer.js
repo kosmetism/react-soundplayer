@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SoundPlayerContainer } from '../../addons';
+import { withSoundCloudAudio } from '../../addons';
 import { PlayButton, Progress, VolumeControl } from '../../components';
 
-class Player extends Component {
+class ProgressSoundPlayer extends Component {
   render() {
     let { track, currentTime, duration } = this.props;
 
@@ -32,19 +32,9 @@ class Player extends Component {
   }
 }
 
-class ProgressSoundPlayer extends Component {
-  render() {
-    return (
-      <SoundPlayerContainer {...this.props}>
-        <Player />
-      </SoundPlayerContainer>
-    );
-  }
-}
-
 ProgressSoundPlayer.propTypes = {
   resolveUrl: PropTypes.string.isRequired,
   clientId: PropTypes.string.isRequired
 };
 
-export default ProgressSoundPlayer;
+export default withSoundCloudAudio(ProgressSoundPlayer);

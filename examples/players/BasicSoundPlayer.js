@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SoundPlayerContainer } from '../../addons';
+import { withSoundCloudAudio } from '../../addons';
 import { PlayButton, Timer, VolumeControl } from '../../components';
 
-class Player extends Component {
+class BasicSoundPlayer extends Component {
   render() {
     let { track, currentTime } = this.props;
     return (
@@ -17,19 +17,9 @@ class Player extends Component {
   }
 }
 
-class BasicSoundPlayer extends Component {
-  render() {
-    return (
-      <SoundPlayerContainer {...this.props}>
-        <Player />
-      </SoundPlayerContainer>
-    );
-  }
-}
-
 BasicSoundPlayer.propTypes = {
   resolveUrl: PropTypes.string.isRequired,
   clientId: PropTypes.string.isRequired
 };
 
-export default BasicSoundPlayer;
+export default withSoundCloudAudio(BasicSoundPlayer);
