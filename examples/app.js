@@ -317,7 +317,8 @@ class ContainerComponents extends React.Component {
       resolveUrl={String}
       streamUrl={String}
       onStartTrack={Function}
-      onStopTrack={Function}>
+      onStopTrack={Function}
+      onReady={Function}>
       {/*Children get props full of useful data!*/}
     </SoundPlayerContainer>
   );

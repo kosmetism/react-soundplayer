@@ -33,6 +33,10 @@ h2 a:hover {
   opacity: .3;
 }
 
+.btn-small.btn-square {
+  padding: .25rem .3rem;
+}
+
 .custom-track-bg::-webkit-slider-runnable-track {
   background-color: rgba(0, 0, 0, .25);
 }
@@ -41,6 +45,15 @@ h2 a:hover {
 }
 .custom-track-bg::-ms-track {
   background-color: rgba(0, 0, 0, .25);
+}
+.custom-track-bg::-moz-range-thumb {
+  background: #fff;
+}
+.custom-track-bg::-webkit-slider-thumb {
+  background: #fff;
+}
+.custom-track-bg::-ms-thumb {
+  background: #fff;
 }
 
 :root {

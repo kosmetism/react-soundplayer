@@ -16,7 +16,7 @@ class Player extends Component {
           <div className='flex flex-center'>
             <VolumeControl
               className='mr2 flex flex-center'
-              buttonClassName="flex-none h4 button white btn-small button-outline button-grow bg-orange circle"
+              buttonClassName="flex-none h6 button white btn-small button-outline button-grow bg-orange circle btn-square"
               {...this.props}
             />
             <Progress
