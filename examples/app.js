@@ -535,7 +535,7 @@ const {
             <div className="clearfix mxn2">
               {users.map(user => {
                 return (
-                  <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
+                  <div key={user.title} className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
                     <a href={user.url} className="block black" target="_blank">
                       <img className="block" src={user.logo} />
                       <div className="mt1">{user.title}</div>
@@ -546,7 +546,7 @@ const {
               <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1" />
               <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
                 <a href="https://github.com/soundblogs/react-soundplayer/issues/58" className="block black" target="_blank">
-                  <div className="mt1 bold right-align">+ Add your company here!</div>
+                  <div className="mt1 bold right-align">+ Add your<br />website<br />here!</div>
                 </a>
               </div>
             </div>
