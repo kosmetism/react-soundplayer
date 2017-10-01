@@ -3,7 +3,7 @@
 [![Dependency Status](http://david-dm.org/soundblogs/react-soundplayer.svg)](http://david-dm.org/soundblogs/react-soundplayer) 
 [![Download Count](http://img.shields.io/npm/dm/react-soundplayer.svg?style=flat)](http://www.npmjs.com/package/react-soundplayer)
 
-> Create highly-customizable SoundCloud (or HTML5 audio) players with React.
+> Create highly-customizable SoundCloud (or any audio) players with React.js.
 
 [<img src="https://user-images.githubusercontent.com/974035/31037146-c21d53e2-a56f-11e7-9cd4-b4784f99040c.png" width="600" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
 
@@ -64,6 +64,46 @@ ReactDOM.render(
   <App />, 
   document.getElementById('#app')
 );
+```
+
+### Custom Audio Example
+
+It is also easy to built players **without** using SoundCloud API. You just need to pass audio source via `streamUrl` and all other necessary track meta information can be passed as custom props.
+
+```js
+import React from 'react';
+import { withSoundCloudAudio } from 'react-soundplayer/addons';
+import { PlayButton, Timer } from 'react-soundplayer/components';
+
+// audio source
+const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
+
+// some track meta information
+const trackTitle = 'Ksmtk - Reborn';
+
+const AWSSoundPlayer = withSoundCloudAudio(props => {
+  const { trackTitle } = props;
+
+  return (
+    <div>
+      <PlayButton {...this.props} />
+      <h2>{trackTitle}</h2>
+      <Timer {...this.props} />
+    </div>
+  );
+});
+
+class App extends React.Component {
+  render() {
+    return (
+      <AWSSoundPlayer
+        streamUrl={streamUrl}
+        trackTitle={trackTitle} />
+    );
+  }
+}
+
+React.render(<App />, document.getElementById('app'));
 ```
 
 ## References

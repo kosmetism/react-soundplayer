@@ -5,7 +5,7 @@ import { PlayButton, Progress, VolumeControl } from '../../components';
 
 class ProgressSoundPlayer extends Component {
   render() {
-    let { track, currentTime, duration } = this.props;
+    const { track, currentTime, duration } = this.props;
 
     return (
       <div className="p2 border navy mt1 mb3 flex flex-center rounded">

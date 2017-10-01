@@ -14,17 +14,21 @@ class PlaylistSoundPlayer extends Component {
   }
 
   playTrackAtIndex(playlistIndex) {
-    let { soundCloudAudio } = this.props;
+    const { soundCloudAudio } = this.props;
+
     this.setState({activeIndex: playlistIndex});
+
     soundCloudAudio.play({ playlistIndex });
   }
 
   nextIndex() {
+    const { playlist } = this.props;
     let { activeIndex } = this.state;
-    let { playlist } = this.props;
+
     if (activeIndex >= playlist.tracks.length - 1) {
       return;
     }
+
     if (activeIndex || activeIndex === 0) {
       this.setState({activeIndex: ++activeIndex});
     }
@@ -32,23 +36,25 @@ class PlaylistSoundPlayer extends Component {
 
   prevIndex() {
     let { activeIndex } = this.state;
+
     if (activeIndex <= 0) {
       return;
     }
+
     if (activeIndex || activeIndex === 0) {
       this.setState({activeIndex: --activeIndex});
     }
   }
 
   renderTrackList() {
-    let { playlist } = this.props;
+    const { playlist } = this.props;
 
     if (!playlist) {
-      return <div>Loading...</div>;
+      return <div className="p2 center">Loading...</div>;
     }
 
-    let tracks = playlist.tracks.map((track, i) => {
-      let classNames = ClassNames('flex flex-center full-width left-align button button-transparent', {
+    const tracks = playlist.tracks.map((track, i) => {
+      const classNames = ClassNames('flex flex-center full-width left-align button button-transparent', {
         'is-active': this.props.soundCloudAudio._playlistIndex === i
       });
 

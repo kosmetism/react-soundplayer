@@ -12,11 +12,12 @@ export default function withSoundCloudAudio (WrappedComponent) {
     constructor(props, context) {
       super(props, context);
 
-      if (!props.clientId && !props.soundCloudAudio) {
+      if (!props.clientId && !props.soundCloudAudio && !props.streamUrl) {
         console.warn(
           `You need to get a clientId from SoundCloud,
-          or pass in an instance of SoundCloudAudio.
-          https://github.com/soundblogs/react-soundplayer#usage`
+          pass in an instance of SoundCloudAudio
+          or use streamUrl with audio source instead
+          https://github.com/soundblogs/react-soundplayer#examples`
         );
       }
 
