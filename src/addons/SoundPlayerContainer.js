@@ -14,7 +14,7 @@ class SoundPlayerContainer extends Component {
 
   componentWillMount() {
     console.warn(`
-      <SoundPlayerContainer /> is deprecated! Please use HOC withSoundCloudAudio instead.
+      <SoundPlayerContainer /> is deprecated! Please use HOC addons/withSoundCloudAudio instead.
       https://reactjs.org/docs/higher-order-components.html
       https://labs.voronianski.com/react-soundplayer/#Containers
     `);

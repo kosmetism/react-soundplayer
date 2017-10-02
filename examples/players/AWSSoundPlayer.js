@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withSoundCloudAudio } from '../../addons';
+import { withCustomAudio } from '../../addons';
 import { PlayButton, Timer } from '../../components';
 
 class AWSSoundPlayer extends Component {
@@ -24,4 +24,4 @@ AWSSoundPlayer.propTypes = {
   trackTitle: PropTypes.string.isRequired
 };
 
-export default withSoundCloudAudio(AWSSoundPlayer);
+export default withCustomAudio(AWSSoundPlayer);

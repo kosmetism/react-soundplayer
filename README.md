@@ -72,8 +72,10 @@ It is also easy to built players **without** using SoundCloud API. You just need
 
 ```js
 import React from 'react';
-import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { PlayButton, Timer } from 'react-soundplayer/components';
+
+// it's just an alias for `withSoundCloudAudio` but makes code clearer
+import { withCustomAudio } from 'react-soundplayer/addons';
 
 // audio source
 const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
@@ -81,7 +83,7 @@ const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples
 // some track meta information
 const trackTitle = 'Ksmtk - Reborn';
 
-const AWSSoundPlayer = withSoundCloudAudio(props => {
+const AWSSoundPlayer = withCustomAudio(props => {
   const { trackTitle } = props;
 
   return (

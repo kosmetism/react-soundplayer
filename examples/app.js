@@ -476,8 +476,10 @@ class CustomAudioExample extends React.Component {
           {...this.props} />
         <div className="mt2">
           <pre><code className="javascript">{`import React from 'react';
-import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { PlayButton, Timer } from 'react-soundplayer/components';
+
+// it's just an alias for 'withSoundCloudAudio' but makes code clearer
+import { withCustomAudio } from 'react-soundplayer/addons';
 
 // audio source
 const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
@@ -485,7 +487,7 @@ const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples
 // some track meta information
 const trackTitle = 'Ksmtk - Reborn';
 
-const AWSSoundPlayer = withSoundCloudAudio(props => {
+const AWSSoundPlayer = withCustomAudio(props => {
   const { trackTitle } = props;
 
   return (
@@ -626,7 +628,7 @@ const {
           <hr className="mt1 mb1 b2 border-orange" />
           <ul className="mt3 mb4">
             <li>simply the best CSS modular toolkit on the web - <a href="http://www.basscss.com"><strong>BASSCSS</strong></a></li>
-            <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio</a></li>
+            <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio.js</a></li>
             <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
             <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
             <li>generate standalone "copy-paste" version with <a href="http://labs.voronianski.com/get-soundplayer">Soundplayer.js</a></li>
