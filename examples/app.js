@@ -25,10 +25,10 @@ import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 import AWSSoundPlayer from './players/AWSSoundPlayer';
 
 // dummy data
-const ksmtk = 'https://soundcloud.com/ksmtk/chronemics';
-const pedro = 'https://soundcloud.com/giallo-disco-records/gd025-vercetti-technicolor-hard-pill-ost';
+const ksmtkChronemics = 'https://soundcloud.com/ksmtk/chronemics';
+const ksmtkNightcall = 'https://soundcloud.com/ksmtk/nightcall';
+const gialloDisco = 'https://soundcloud.com/giallo-disco-records/gd025-vercetti-technicolor-hard-pill-ost';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
-const sayLouLou = 'https://soundcloud.com/sally-dige/holding-on';
 const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
   image: 'https://i1.sndcdn.com/artworks-000168705014-y0hq07-t500x500.jpg',
@@ -334,7 +334,7 @@ const EnhancedPlayer = withSoundCloudAudio(Player)
         <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
         <CustomPlayer
           clientId={clientId}
-          resolveUrl={ksmtk}
+          resolveUrl={ksmtkChronemics}
           onReady={() => {
             console.log('player url ready!');
           }}
@@ -412,7 +412,7 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <BasicSoundPlayer
           clientId={clientId}
-          resolveUrl={pedro}
+          resolveUrl={gialloDisco}
           {...this.props}
         />
 
@@ -423,7 +423,7 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <ProgressSoundPlayer
           clientId={clientId}
-          resolveUrl={sayLouLou}
+          resolveUrl={ksmtkNightcall}
           {...this.props}
         />
 
