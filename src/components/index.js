@@ -5,4 +5,6 @@ export PrevButton from './PrevButton';
 export Progress from './Progress';
 export Timer from './Timer';
 export Cover from './Cover';
-export Icons from './Icons';
+
+// workaround for dists
+export const Icons = require('./Icons');

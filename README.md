@@ -72,6 +72,7 @@ It is also easy to built players **without** using SoundCloud API. You just need
 
 ```js
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { PlayButton, Timer } from 'react-soundplayer/components';
 
 // it's just an alias for `withSoundCloudAudio` but makes code clearer
@@ -105,7 +106,7 @@ class App extends React.Component {
   }
 }
 
-React.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 ```
 
 ## References
