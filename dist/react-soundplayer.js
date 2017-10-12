@@ -2017,6 +2017,9 @@ exports.PrevButton = _PrevButton3.default;
 exports.Progress = _Progress3.default;
 exports.Timer = _Timer3.default;
 exports.Cover = _Cover3.default;
+
+// workaround for dists
+
 var Icons = exports.Icons = __webpack_require__(4);
 
 /***/ }),

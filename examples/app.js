@@ -406,7 +406,7 @@ class BuiltInPlayers extends React.Component {
         </div>
 
         <h3 className="mb1 mt3 h5">
-          <a href="https://github.com/soundblogs/react-soundplayer/blob/master/examples/players/BasicSoundPlayer.js" className="black">
+          <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/BasicSoundPlayer.js" className="black">
             BasicSoundPlayer.js
           </a>
         </h3>
@@ -417,7 +417,7 @@ class BuiltInPlayers extends React.Component {
         />
 
         <h3 className="mb1 mt3 h5">
-          <a href="https://github.com/soundblogs/react-soundplayer/blob/master/examples/players/ProgressSoundPlayer.js" className="black">
+          <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/ProgressSoundPlayer.js" className="black">
             ProgressSoundPlayer.js
           </a>
         </h3>
@@ -428,7 +428,7 @@ class BuiltInPlayers extends React.Component {
         />
 
         <h3 className="mb1 mt3 h5">
-          <a href="https://github.com/soundblogs/react-soundplayer/blob/master/examples/players/PlaylistSoundPlayer.js" className="black">
+          <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/PlaylistSoundPlayer.js" className="black">
             PlaylistSoundPlayer.js
           </a>
         </h3>
@@ -439,7 +439,7 @@ class BuiltInPlayers extends React.Component {
         />
 
         <h3 className="mb1 mt3 h5">
-          <a href="https://github.com/soundblogs/react-soundplayer/blob/master/examples/players/BackgroundSoundPlayer.js" className="black">
+          <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/BackgroundSoundPlayer.js" className="black">
             BackgroundSoundPlayer.js
           </a>
         </h3>
@@ -466,7 +466,7 @@ class CustomAudioExample extends React.Component {
           all other necessary track meta information can be passed as custom props.
         </div>
         <h3 className="mb1 mt3 h5">
-          <a href="https://github.com/soundblogs/react-soundplayer/blob/master/examples/players/AWSSoundPlayer.js" className="black">
+          <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/AWSSoundPlayer.js" className="black">
             AWSSoundPlayer.js
           </a>
         </h3>
@@ -528,7 +528,7 @@ class App extends React.Component {
           <img src="./assets/soundcloud.png" width="90" className="mt2" />
           <h1 className="h1 caps mt2 mb0">React Sound Player</h1>
           <p className="h3 mt1 mb2">Create custom SoundCloud (or any audio) players with React.js</p>
-          <a href="https://github.com/soundblogs/react-soundplayer" className="h4 button button-outline btn-big mb3 mt2 mr2 b2">View on Github</a>
+          <a href="https://github.com/kosmetism/react-soundplayer" className="h4 button button-outline btn-big mb3 mt2 mr2 b2">View on Github</a>
           <a href="#ExamplePlayers" className="h4 button bg-orange btn-big mb3 mt2 b2 white rounded">Check Examples</a>
         </header>
         <div className="container">
@@ -614,7 +614,7 @@ const {
               })}
               <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1" />
               <div className="col col-6 sm-col-4 md-col-3 lg-col-2 px2 mb1">
-                <a href="https://github.com/soundblogs/react-soundplayer/issues/58" className="block black" target="_blank">
+                <a href="https://github.com/kosmetism/react-soundplayer/issues/58" className="block black" target="_blank">
                   <div className="mt1 bold right-align">+ Add your<br />website<br />here!</div>
                 </a>
               </div>
