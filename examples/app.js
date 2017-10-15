@@ -25,9 +25,9 @@ import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 import AWSSoundPlayer from './players/AWSSoundPlayer';
 
 // dummy data
-const ksmtkChronemics = 'https://soundcloud.com/ksmtk/chronemics';
-const ksmtkNightcall = 'https://soundcloud.com/ksmtk/nightcall';
-const gialloDisco = 'https://soundcloud.com/giallo-disco-records/gd025-vercetti-technicolor-hard-pill-ost';
+const ksmtkChronemics = 'https://soundcloud.com/kosmetism/chronemics';
+const ksmtkNightcall = 'https://soundcloud.com/kosmetism/nightcall';
+const ksmtkSoulSurvivor = 'https://soundcloud.com/kosmetism/soul-survivor';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
 const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
 const data = {
@@ -412,7 +412,7 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <BasicSoundPlayer
           clientId={clientId}
-          resolveUrl={gialloDisco}
+          resolveUrl={ksmtkSoulSurvivor}
           {...this.props}
         />
 
