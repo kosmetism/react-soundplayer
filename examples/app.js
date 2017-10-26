@@ -29,7 +29,7 @@ const ksmtkChronemics = 'https://soundcloud.com/kosmetism/chronemics';
 const ksmtkNightcall = 'https://soundcloud.com/kosmetism/nightcall';
 const ksmtkSoulSurvivor = 'https://soundcloud.com/kosmetism/soul-survivor';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
-const pcMusic = 'https://soundcloud.com/pcmus/sets/deep-trouble';
+const ksmtkSet = 'https://soundcloud.com/kosmetism/sets/ksmtk';
 const data = {
   image: 'https://i1.sndcdn.com/artworks-000168705014-y0hq07-t500x500.jpg',
   artist: 'Chromatics',
@@ -434,7 +434,7 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <PlaylistSoundPlayer
           clientId={clientId}
-          resolveUrl={pcMusic}
+          resolveUrl={ksmtkSet}
           {...this.props}
         />
 
