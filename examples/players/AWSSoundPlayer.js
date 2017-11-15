@@ -20,8 +20,13 @@ class AWSSoundPlayer extends Component {
 }
 
 AWSSoundPlayer.propTypes = {
+  preloadType: PropTypes.string,
   streamUrl: PropTypes.string.isRequired,
   trackTitle: PropTypes.string.isRequired
+};
+
+AWSSoundPlayer.defaultProps = {
+  preloadType: 'auto'
 };
 
 export default withCustomAudio(AWSSoundPlayer);
