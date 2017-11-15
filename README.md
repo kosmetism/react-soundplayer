@@ -68,7 +68,7 @@ ReactDOM.render(
 
 ### Custom Audio Example
 
-It is also easy to built players **without** using SoundCloud API. You just need to pass audio source via `streamUrl` and all other necessary track meta information can be passed as custom props.
+It is also easy to built players **without** using SoundCloud API. You just need to pass audio source via `streamUrl` and all other necessary track meta information can be passed as custom props. Also you can choose `preloadType`, according to [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio#Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio#Attributes), by default this property equal to 'auto'.
 
 ```js
 import React from 'react';
@@ -101,7 +101,8 @@ class App extends React.Component {
     return (
       <AWSSoundPlayer
         streamUrl={streamUrl}
-        trackTitle={trackTitle} />
+        trackTitle={trackTitle} 
+        preloadType='auto' />
     );
   }
 }

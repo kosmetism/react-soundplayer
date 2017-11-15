@@ -54,10 +54,10 @@ export default function withSoundCloudAudio (WrappedComponent) {
 
     requestAudio() {
       const { soundCloudAudio } = this;
-      const { resolveUrl, streamUrl, onReady } = this.props;
+      const { resolveUrl, streamUrl, onReady, preloadType = 'auto' } = this.props;
 
       if (streamUrl) {
-        soundCloudAudio.preload(streamUrl);
+        soundCloudAudio.preload(streamUrl, preloadType);
       } else if (resolveUrl) {
         soundCloudAudio.resolve(resolveUrl, (data) => {
           if (!this.mounted) {

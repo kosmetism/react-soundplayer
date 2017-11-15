@@ -473,6 +473,7 @@ class CustomAudioExample extends React.Component {
         <AWSSoundPlayer
           streamUrl={awsKsmtkStreamUrl}
           trackTitle={awsKsmtkTrackTitle}
+          preloadType="metadata"
           {...this.props} />
         <div className="mt2">
           <pre><code className="javascript">{`import React from 'react';
@@ -504,7 +505,8 @@ class App extends React.Component {
     return (
       <AWSSoundPlayer
         streamUrl={streamUrl}
-        trackTitle={trackTitle} />
+        trackTitle={trackTitle}
+        preloadType="metadata" />
     );
   }
 }
