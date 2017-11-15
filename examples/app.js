@@ -28,6 +28,7 @@ import AWSSoundPlayer from './players/AWSSoundPlayer';
 const ksmtkChronemics = 'https://soundcloud.com/kosmetism/chronemics';
 const ksmtkNightcall = 'https://soundcloud.com/kosmetism/nightcall';
 const ksmtkSoulSurvivor = 'https://soundcloud.com/kosmetism/soul-survivor';
+const haghorrorDerNeueKult = 'https://soundcloud.com/kosmetism/haghorror-der-neue-kult-preview';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
 const ksmtkSet = 'https://soundcloud.com/kosmetism/sets/ksmtk';
 const data = {
@@ -334,7 +335,7 @@ const EnhancedPlayer = withSoundCloudAudio(Player)
         <div className="mb2">With this information in mind it is really easy to create your own custom players like on example below:</div>
         <CustomPlayer
           clientId={clientId}
-          resolveUrl={ksmtkChronemics}
+          resolveUrl={haghorrorDerNeueKult}
           onReady={() => {
             console.log('player url ready!');
           }}
@@ -412,7 +413,7 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <BasicSoundPlayer
           clientId={clientId}
-          resolveUrl={ksmtkSoulSurvivor}
+          resolveUrl={ksmtkChronemics}
           {...this.props}
         />
 
