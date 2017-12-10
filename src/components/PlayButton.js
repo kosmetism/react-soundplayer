@@ -13,6 +13,13 @@ class PlayButton extends Component {
     );
   }
 
+  componentWillUnmount() {
+    const { playing, soundCloudAudio } = this.props;
+    if (playing && soundCloudAudio) {
+      soundCloudAudio.pause();
+    }
+  }
+
   handleClick(e) {
     const { playing, soundCloudAudio, onTogglePlay } = this.props;
 
