@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import SoundCloudAudio from 'soundcloud-audio';
 import hoistStatics from 'hoist-non-react-statics';
-import { stopAllOther, addToPlayedStore } from '../utils/audioStore.js';
+import {
+  stopAllOther,
+  addToPlayedStore,
+  resetPlayedStore
+} from '../utils/audioStore.js';
 
 function getDisplayName (WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -43,12 +47,15 @@ export default function withSoundCloudAudio (WrappedComponent) {
 
     componentDidMount() {
       this.mounted = true;
+
       this.requestAudio();
       this.listenAudioEvents();
     }
 
     componentWillUnmount() {
       this.mounted = false;
+
+      resetPlayedStore();
       this.soundCloudAudio.unbindAll();
     }
 

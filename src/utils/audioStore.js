@@ -1,5 +1,5 @@
 // handling multiple audio on the page helpers
-const _playedAudios = [];
+let _playedAudios = [];
 
 function each (arr, cb) {
   if (arr) {
@@ -32,4 +32,12 @@ export function addToPlayedStore (soundCloudAudio) {
   if (!isPresent) {
     _playedAudios.push(soundCloudAudio);
   }
+}
+
+export function resetPlayedStore () {
+  each(_playedAudios, soundCloudAudio => {
+    soundCloudAudio.stop();
+  });
+
+  _playedAudios = [];
 }

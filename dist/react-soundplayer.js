@@ -687,6 +687,7 @@ function withSoundCloudAudio(WrappedComponent) {
       key: 'componentDidMount',
       value: function componentDidMount() {
         this.mounted = true;
+
         this.requestAudio();
         this.listenAudioEvents();
       }
@@ -694,6 +695,8 @@ function withSoundCloudAudio(WrappedComponent) {
       key: 'componentWillUnmount',
       value: function componentWillUnmount() {
         this.mounted = false;
+
+        (0, _audioStore.resetPlayedStore)();
         this.soundCloudAudio.unbindAll();
       }
     }, {
@@ -2035,6 +2038,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.stopAllOther = stopAllOther;
 exports.addToPlayedStore = addToPlayedStore;
+exports.resetPlayedStore = resetPlayedStore;
 // handling multiple audio on the page helpers
 var _playedAudios = [];
 
@@ -2069,6 +2073,14 @@ function addToPlayedStore(soundCloudAudio) {
   if (!isPresent) {
     _playedAudios.push(soundCloudAudio);
   }
+}
+
+function resetPlayedStore() {
+  each(_playedAudios, function (soundCloudAudio) {
+    soundCloudAudio.stop();
+  });
+
+  _playedAudios = [];
 }
 
 /***/ }),
