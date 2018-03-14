@@ -36,7 +36,7 @@ const data = {
   artist: 'Chromatics',
   track: 'Cherry (Full Album)'
 };
-const awsKsmtkStreamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
+const awsKsmtkStreamUrl = 'https://labs.voronianski.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
 const awsKsmtkTrackTitle = 'Ksmtk - Reborn';
 
 const users = [{
