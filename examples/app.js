@@ -288,8 +288,7 @@ const CustomPlayer = withSoundCloudAudio(props => {
       <h3 className="mt0">by {track.user.username}</h3>
       <button
         className="button button-small bg-teal white rounded"
-        onClick={() => play()}
-      >
+        onClick={() => play()}>
         {playing ? 'Pause' : 'Play'}
       </button>
     </div>
