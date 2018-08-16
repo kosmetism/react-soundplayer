@@ -30,7 +30,7 @@ const ksmtkNightcall = 'https://soundcloud.com/kosmetism/nightcall';
 const ksmtkSoulSurvivor = 'https://soundcloud.com/kosmetism/soul-survivor';
 const haghorrorDerNeueKult = 'https://soundcloud.com/kosmetism/haghorror-der-neue-kult-preview';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
-const ksmtkSet = 'https://soundcloud.com/kosmetism/sets/ksmtk';
+const haghorrorSet = 'https://soundcloud.com/kosmetism/sets/haghorror-playlist';
 const data = {
   image: 'https://i1.sndcdn.com/artworks-000168705014-y0hq07-t500x500.jpg',
   artist: 'Chromatics',
@@ -414,8 +414,7 @@ class BuiltInPlayers extends React.Component {
         <BasicSoundPlayer
           clientId={clientId}
           resolveUrl={ksmtkChronemics}
-          {...this.props}
-        />
+          {...this.props} />
 
         <h3 className="mb1 mt3 h5">
           <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/ProgressSoundPlayer.js" className="black">
@@ -425,8 +424,7 @@ class BuiltInPlayers extends React.Component {
         <ProgressSoundPlayer
           clientId={clientId}
           resolveUrl={ksmtkNightcall}
-          {...this.props}
-        />
+          {...this.props} />
 
         <h3 className="mb1 mt3 h5">
           <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/PlaylistSoundPlayer.js" className="black">
@@ -435,9 +433,8 @@ class BuiltInPlayers extends React.Component {
         </h3>
         <PlaylistSoundPlayer
           clientId={clientId}
-          resolveUrl={ksmtkSet}
-          {...this.props}
-        />
+          resolveUrl={haghorrorSet}
+          {...this.props} />
 
         <h3 className="mb1 mt3 h5">
           <a href="https://github.com/kosmetism/react-soundplayer/blob/master/examples/players/BackgroundSoundPlayer.js" className="black">
@@ -447,8 +444,7 @@ class BuiltInPlayers extends React.Component {
         <BackgroundSoundPlayer
           clientId={clientId}
           resolveUrl={glassCandy}
-          {...this.props}
-        />
+          {...this.props} />
       </div>
     );
   }

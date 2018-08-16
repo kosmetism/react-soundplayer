@@ -19,20 +19,17 @@ class BackgroundSoundPlayer extends Component {
         <div className="flex flex-center px2 relative z1">
           <PlayButton
             className="flex-none h2 mr2 button button-transparent button-grow rounded"
-            {...this.props}
-          />
+            {...this.props} />
           <VolumeControl
             className='mr2 flex flex-center'
             buttonClassName="flex-none h2 button button-transparent button-grow rounded"
             rangeClassName="custom-track-bg"
-            {...this.props}
-          />
+            {...this.props} />
           <Progress
             className="flex-auto bg-darken-3 rounded"
             innerClassName="rounded-left bg-white"
             value={(currentTime / duration) * 100 || 0}
-            {...this.props}
-          />
+            {...this.props} />
         </div>
       </div>
     );

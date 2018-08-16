@@ -17,14 +17,12 @@ class ProgressSoundPlayer extends Component {
             <VolumeControl
               className='mr2 flex flex-center'
               buttonClassName="flex-none h6 button white btn-small button-outline button-grow bg-orange circle btn-square"
-              {...this.props}
-            />
+              {...this.props} />
             <Progress
               className="mt1 mb1 rounded"
               innerClassName="rounded-left"
               value={(currentTime / duration) * 100 || 0}
-              {...this.props}
-            />
+              {...this.props} />
           </div>
         </div>
       </div>
