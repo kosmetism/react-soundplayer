@@ -26,10 +26,9 @@ import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
 // dummy data
 const ksmtkChronemics = 'https://soundcloud.com/kosmetism/chronemics';
 const ksmtkNightcall = 'https://soundcloud.com/kosmetism/nightcall';
-const ksmtkSoulSurvivor = 'https://soundcloud.com/kosmetism/soul-survivor';
 const haghorrorDerNeueKult = 'https://soundcloud.com/kosmetism/haghorror-der-neue-kult-preview';
 const glassCandy = 'https://soundcloud.com/johnnyjewel/glass-candy-shell-game';
-const haghorrorSet = 'https://soundcloud.com/kosmetism/sets/haghorror-playlist';
+const haghorrorSet = 'https://soundcloud.com/kosmetism/sets/haghorror';
 const data = {
   image: 'https://i1.sndcdn.com/artworks-000168705014-y0hq07-t500x500.jpg',
   artist: 'Chromatics',
@@ -49,9 +48,9 @@ const users = [{
   url: 'https://koya.brailleface.co',
   logo: 'https://koya.brailleface.co/static/media/Artwork.62b8ca22.jpg'
 }, {
-  title: 'Straightline',
-  url: 'http://www.wearestraightline.com',
-  logo: 'http://www.wearestraightline.com/safari-pinned-tab.svg'
+  title: 'Abakus',
+  url: 'https://abakus.no',
+  logo: 'https://i.imgur.com/n2Rr3Ly.png'
 }];
 
 const clientId = process.env.CLIENT_ID || ''; // OR PUT YOUR CLIENT ID HERE
