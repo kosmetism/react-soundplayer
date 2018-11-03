@@ -474,7 +474,7 @@ import { withCustomAudio } from 'react-soundplayer/addons';
 const streamUrl = 'https://example.org/path/to/file.mp3';
 
 // some track meta information
-const trackTitle = 'Ksmtk - Reborn';
+const trackTitle = 'Great song by random artist';
 
 const AWSSoundPlayer = withCustomAudio(props => {
   const { trackTitle } = props;
