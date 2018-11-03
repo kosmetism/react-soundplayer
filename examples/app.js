@@ -22,7 +22,6 @@ import BasicSoundPlayer from './players/BasicSoundPlayer';
 import ProgressSoundPlayer from './players/ProgressSoundPlayer';
 import PlaylistSoundPlayer from './players/PlaylistSoundPlayer';
 import BackgroundSoundPlayer from './players/BackgroundSoundPlayer';
-import AWSSoundPlayer from './players/AWSSoundPlayer';
 
 // dummy data
 const ksmtkChronemics = 'https://soundcloud.com/kosmetism/chronemics';
@@ -36,8 +35,6 @@ const data = {
   artist: 'Chromatics',
   track: 'Cherry (Full Album)'
 };
-const awsKsmtkStreamUrl = 'https://labs.voronianski.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
-const awsKsmtkTrackTitle = 'Ksmtk - Reborn';
 
 const users = [{
   title: 'Fanburst',
@@ -466,11 +463,6 @@ class CustomAudioExample extends React.Component {
             AWSSoundPlayer.js
           </a>
         </h3>
-        <AWSSoundPlayer
-          streamUrl={awsKsmtkStreamUrl}
-          trackTitle={awsKsmtkTrackTitle}
-          preloadType="metadata"
-          {...this.props} />
         <div className="mt2">
           <pre><code className="javascript">{`import React from 'react';
 import { PlayButton, Timer } from 'react-soundplayer/components';
@@ -479,7 +471,7 @@ import { PlayButton, Timer } from 'react-soundplayer/components';
 import { withCustomAudio } from 'react-soundplayer/addons';
 
 // audio source
-const streamUrl = 'https://s3-eu-west-1.amazonaws.com/react-soundplayer-examples/ksmtk-reborn-edit.mp3';
+const streamUrl = 'https://example.org/path/to/file.mp3';
 
 // some track meta information
 const trackTitle = 'Ksmtk - Reborn';
