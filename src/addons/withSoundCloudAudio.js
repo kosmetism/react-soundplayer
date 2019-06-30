@@ -95,6 +95,7 @@ export default function withSoundCloudAudio (WrappedComponent) {
       soundCloudAudio.on('pause', ::this.onAudioPaused);
       soundCloudAudio.on('ended', ::this.onAudioEnded);
       soundCloudAudio.on('volumechange', ::this.onVolumeChange);
+      soundCloudAudio.on('canplay', ::this.onCanPlay);
     }
 
     onSeekingTrack() {
@@ -138,6 +139,12 @@ export default function withSoundCloudAudio (WrappedComponent) {
         volume: this.soundCloudAudio.audio.volume,
         isMuted: this.soundCloudAudio.audio.muted
       });
+    }
+
+    onCanPlay() {
+      const { onCanPlayTrack } = this.props;
+
+      onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
     }
 
     getCurrentTime() {
