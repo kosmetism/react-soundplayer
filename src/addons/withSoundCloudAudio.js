@@ -54,8 +54,18 @@ export default function withSoundCloudAudio (WrappedComponent) {
     }
 
     componentDidUpdate(prevProps) {
-      if (this.props.streamUrl === prevProps.streamUrl) return;
+      this.props.streamUrl !== prevProps.streamUrl &&
+        this.init(prevProps);
+    }
 
+    componentWillUnmount() {
+      this.mounted = false;
+
+      resetPlayedStore();
+      this.soundCloudAudio.unbindAll();
+    }
+
+    init(prevProps) {
       if (this.props.streamUrl) {
         this.setState({ hasSetStartTime: false }, () => {
           this.requestAudio();
@@ -77,13 +87,6 @@ export default function withSoundCloudAudio (WrappedComponent) {
           hasSetStartTime: false
         });
       }
-    }
-
-    componentWillUnmount() {
-      this.mounted = false;
-
-      resetPlayedStore();
-      this.soundCloudAudio.unbindAll();
     }
 
     requestAudio() {
