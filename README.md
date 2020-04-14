@@ -87,9 +87,9 @@ const AWSSoundPlayer = withCustomAudio(props => {
 
   return (
     <div>
-      <PlayButton {...this.props} />
+      <PlayButton {...props} />
       <h2>{trackTitle}</h2>
-      <Timer {...this.props} />
+      <Timer {...props} />
     </div>
   );
 });
