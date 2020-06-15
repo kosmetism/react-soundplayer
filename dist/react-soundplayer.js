@@ -580,7 +580,8 @@ function withSoundCloudAudio(WrappedComponent) {
         seeking: false,
         playing: false,
         volume: 1,
-        isMuted: false
+        isMuted: false,
+        hasSetStartTime: false
       };
       return _this;
     }
@@ -594,6 +595,11 @@ function withSoundCloudAudio(WrappedComponent) {
         this.listenAudioEvents();
       }
     }, {
+      key: 'componentDidUpdate',
+      value: function componentDidUpdate(prevProps) {
+        this.props.streamUrl !== prevProps.streamUrl && this.init(prevProps);
+      }
+    }, {
       key: 'componentWillUnmount',
       value: function componentWillUnmount() {
         this.mounted = false;
@@ -602,9 +608,36 @@ function withSoundCloudAudio(WrappedComponent) {
         this.soundCloudAudio.unbindAll();
       }
     }, {
+      key: 'init',
+      value: function init(prevProps) {
+        var _this2 = this;
+
+        if (this.props.streamUrl) {
+          this.setState({ hasSetStartTime: false }, function () {
+            _this2.requestAudio();
+
+            !prevProps.streamUrl && _this2.listenAudioEvents();
+
+            _this2.state.playing && _this2.soundCloudAudio.play();
+          });
+        } else {
+          this.soundCloudAudio.stop();
+
+          this.soundCloudAudio.cleanData();
+
+          this.setState({
+            duration: 0,
+            currentTime: 0,
+            seeking: false,
+            playing: false,
+            hasSetStartTime: false
+          });
+        }
+      }
+    }, {
       key: 'requestAudio',
       value: function requestAudio() {
-        var _this2 = this;
+        var _this3 = this;
 
         var soundCloudAudio = this.soundCloudAudio;
         var _props = this.props,
@@ -617,11 +650,11 @@ function withSoundCloudAudio(WrappedComponent) {
           soundCloudAudio.preload(streamUrl, preloadType);
         } else if (resolveUrl) {
           soundCloudAudio.resolve(resolveUrl, function (data) {
-            if (!_this2.mounted) {
+            if (!_this3.mounted) {
               return;
             }
 
-            _this2.setState(_defineProperty({}, data.tracks ? 'playlist' : 'track', data), function () {
+            _this3.setState(_defineProperty({}, data.tracks ? 'playlist' : 'track', data), function () {
               return onReady && onReady();
             });
           });
@@ -696,9 +729,20 @@ function withSoundCloudAudio(WrappedComponent) {
     }, {
       key: 'onCanPlay',
       value: function onCanPlay() {
-        var onCanPlayTrack = this.props.onCanPlayTrack;
+        var _props2 = this.props,
+            onCanPlayTrack = _props2.onCanPlayTrack,
+            startTime = _props2.startTime;
 
-        onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
+        if (startTime && !this.state.hasSetStartTime) {
+          this.soundCloudAudio.setTime(startTime);
+
+          this.setState({
+            hasSetStartTime: true,
+            currentTime: this.soundCloudAudio.audio.currentTime
+          });
+        } else {
+          onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
+        }
       }
     }, {
       key: 'getCurrentTime',
