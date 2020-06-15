@@ -397,7 +397,7 @@ class BuiltInPlayers extends React.Component {
         </h2>
         <hr className="mt1 mb1 b2 border-orange" />
         <div className="mt3">
-          Example players on this page are built using <a href="http://labs.voronianski.com/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.com/react-soundplayer#withSoundCloudAudio">withSoundCloudAudio</a> addon.
+          Example players on this page are built using <a href="http://labs.voronianski.dev/react-soundplayer#PureComponents">pure components</a> and <a href="http://labs.voronianski.dev/react-soundplayer#withSoundCloudAudio">withSoundCloudAudio</a> addon.
           What makes them extremely pretty is a low-level modular CSS toolkit named <a href="http://www.basscss.com"><strong>BASSCSS</strong></a>. {'It\'s easy to create your own!'}
         </div>
 
@@ -620,7 +620,7 @@ const {
             <li>easy management of HTML5 Audio API by <a href="https://github.com/voronianski/soundcloud-audio.js">SoundCloudAudio.js</a></li>
             <li>inspired by <a href="http://jxnblk.com/plangular">Plangular</a></li>
             <li>we all 💛 <a href="https://developers.soundcloud.com/docs/api/reference">SoundCloud API</a>!</li>
-            <li>generate standalone "copy-paste" version with <a href="http://labs.voronianski.com/get-soundplayer">Soundplayer.js</a></li>
+            <li>generate standalone "copy-paste" version with <a href="http://labs.voronianski.dev/get-soundplayer">Soundplayer.js</a></li>
             <li>follow updates on <a href="https://twitter.com/voronianski">Twitter</a></li>
           </ul>
         </div>

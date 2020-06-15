@@ -16,7 +16,7 @@ class SoundPlayerContainer extends Component {
     console.warn(`
       <SoundPlayerContainer /> is deprecated! Please use HOC addons/withSoundCloudAudio instead.
       https://reactjs.org/docs/higher-order-components.html
-      https://labs.voronianski.com/react-soundplayer/#Containers
+      https://labs.voronianski.dev/react-soundplayer/#Containers
     `);
   }
 

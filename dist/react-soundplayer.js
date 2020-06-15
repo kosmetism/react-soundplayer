@@ -642,6 +642,7 @@ function withSoundCloudAudio(WrappedComponent) {
         soundCloudAudio.on('pause', this.onAudioPaused.bind(this));
         soundCloudAudio.on('ended', this.onAudioEnded.bind(this));
         soundCloudAudio.on('volumechange', this.onVolumeChange.bind(this));
+        soundCloudAudio.on('canplay', this.onCanPlay.bind(this));
       }
     }, {
       key: 'onSeekingTrack',
@@ -691,6 +692,13 @@ function withSoundCloudAudio(WrappedComponent) {
           volume: this.soundCloudAudio.audio.volume,
           isMuted: this.soundCloudAudio.audio.muted
         });
+      }
+    }, {
+      key: 'onCanPlay',
+      value: function onCanPlay() {
+        var onCanPlayTrack = this.props.onCanPlayTrack;
+
+        onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
       }
     }, {
       key: 'getCurrentTime',
@@ -834,7 +842,7 @@ var SoundPlayerContainer = function (_Component) {
   }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
-      console.warn('\n      <SoundPlayerContainer /> is deprecated! Please use HOC addons/withSoundCloudAudio instead.\n      https://reactjs.org/docs/higher-order-components.html\n      https://labs.voronianski.com/react-soundplayer/#Containers\n    ');
+      console.warn('\n      <SoundPlayerContainer /> is deprecated! Please use HOC addons/withSoundCloudAudio instead.\n      https://reactjs.org/docs/higher-order-components.html\n      https://labs.voronianski.dev/react-soundplayer/#Containers\n    ');
     }
   }, {
     key: 'render',

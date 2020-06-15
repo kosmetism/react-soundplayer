@@ -1,11 +1,11 @@
-# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;[react-soundplayer](http://labs.voronianski.com/react-soundplayer) 
+# <img src="http://www.officialpsds.com/images/thumbs/Soundcloud-Logo-psd47614.png" width="75" align="left">&nbsp;[react-soundplayer](http://labs.voronianski.dev/react-soundplayer) 
 [![npm version](http://badge.fury.io/js/react-soundplayer.svg)](http://badge.fury.io/js/react-soundplayer) [![Download Count](http://img.shields.io/npm/dm/react-soundplayer.svg?style=flat)](http://www.npmjs.com/package/react-soundplayer) <a href="https://www.buymeacoffee.com/voronianski" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="20" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 > Create highly-customizable SoundCloud (or any audio) players with React.js.
 
-[<img src="https://user-images.githubusercontent.com/974035/31037146-c21d53e2-a56f-11e7-9cd4-b4784f99040c.png" width="600" />](http://labs.voronianski.com/react-soundplayer#ExamplePlayers)
+[<img src="https://user-images.githubusercontent.com/974035/31037146-c21d53e2-a56f-11e7-9cd4-b4784f99040c.png" width="600" />](http://labs.voronianski.dev/react-soundplayer#ExamplePlayers)
 
-### [Documentation](http://labs.voronianski.com/react-soundplayer)
+### [Documentation](http://labs.voronianski.dev/react-soundplayer)
 
 ## Install
 
@@ -15,7 +15,7 @@ npm install react-soundplayer --save
 
 ## Examples
 
-There are several examples [on the website](http://labs.voronianski.com/react-soundplayer/#ExamplePlayers). Here is the basic one to get you started:
+There are several examples [on the website](http://labs.voronianski.dev/react-soundplayer/#ExamplePlayers). Here is the basic one to get you started:
 
 ```javascript
 import React from 'react';
@@ -114,7 +114,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 - easy management of HTML5 Audio API by [SoundCloudAudio.js](https://github.com/voronianski/soundcloud-audio.js/)
 - inspired by [Plangular](http://jxnblk.com/plangular/)
 - we all :heart: [SoundCloud API](https://developers.soundcloud.com/docs/api/reference)!
-- generate standalone "copy-paste" version with [Soundplayer.js](labs.voronianski.com/get-soundplayer)
+- generate standalone "copy-paste" version with [Soundplayer.js](labs.voronianski.dev/get-soundplayer)
 - follow updates on [Twitter](https://twitter.com/voronianski)
 
 ---
