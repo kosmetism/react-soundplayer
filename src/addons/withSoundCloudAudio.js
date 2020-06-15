@@ -41,7 +41,8 @@ export default function withSoundCloudAudio (WrappedComponent) {
         seeking: false,
         playing: false,
         volume: 1,
-        isMuted: false
+        isMuted: false,
+        hasSetStartTime: false
       };
     }
 
@@ -52,11 +53,40 @@ export default function withSoundCloudAudio (WrappedComponent) {
       this.listenAudioEvents();
     }
 
+    componentDidUpdate(prevProps) {
+      this.props.streamUrl !== prevProps.streamUrl &&
+        this.init(prevProps);
+    }
+
     componentWillUnmount() {
       this.mounted = false;
 
       resetPlayedStore();
       this.soundCloudAudio.unbindAll();
+    }
+
+    init(prevProps) {
+      if (this.props.streamUrl) {
+        this.setState({ hasSetStartTime: false }, () => {
+          this.requestAudio();
+
+          !prevProps.streamUrl && this.listenAudioEvents();
+
+          this.state.playing && this.soundCloudAudio.play();
+        });
+      } else {
+        this.soundCloudAudio.stop();
+
+        this.soundCloudAudio.cleanData();
+
+        this.setState({
+          duration: 0,
+          currentTime: 0,
+          seeking: false,
+          playing: false,
+          hasSetStartTime: false
+        });
+      }
     }
 
     requestAudio() {
@@ -142,9 +172,18 @@ export default function withSoundCloudAudio (WrappedComponent) {
     }
 
     onCanPlay() {
-      const { onCanPlayTrack } = this.props;
+      const { onCanPlayTrack, startTime } = this.props;
 
-      onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
+      if (startTime && !this.state.hasSetStartTime) {
+        this.soundCloudAudio.setTime(startTime);
+
+        this.setState({
+          hasSetStartTime: true,
+          currentTime: this.soundCloudAudio.audio.currentTime
+        });
+      } else {
+        onCanPlayTrack && onCanPlayTrack(this.soundCloudAudio);
+      }
     }
 
     getCurrentTime() {
