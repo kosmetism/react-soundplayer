@@ -58,7 +58,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "react": "^16.0.0",
-    "webpack": "^2.7.0",
+    "webpack": "^5.75.0",
     "webpack-umd-external": "^1.0.2"
   }
 }
