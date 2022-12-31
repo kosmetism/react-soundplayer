@@ -25,7 +25,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "babelify": "^7.3.0",
+    "babelify": "^10.0.0",
     "browserify": "^14.4.0",
     "cssnano-cli": "^1.0.5",
     "envify": "^4.1.0",
